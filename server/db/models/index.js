@@ -9,7 +9,7 @@ const Word = require('./word');
  *    BlogPost.belongsTo(User)
  */
 Dictionary.belongsToMany(Word, {through: 'Groups'});
-Word.belongsToMany(Dictionary, {through: 'Groups'});
+// Word.belongsToMany(Dictionary, {through: 'Groups'});
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,

@@ -10,7 +10,7 @@
  * Now that you've got the main idea, check it out in practice below!
  */
 const db = require('../server/db')
-const {User, Dictionary, Word} = require('../server/db/models')
+const {User, Dictionary} = require('../server/db/models')
 const satList = [
   {word: 'abject', definition: 'of the most contemptible kind'},
   {word: 'aberration', definition: 'a state or condition markedly different from the norm'},
@@ -221,8 +221,8 @@ seed()
   })
   .then(() => {
     console.log('closing db connection')
-    db.close()
     console.log('db connection closed')
+    // db.close()
   })
 
 /*

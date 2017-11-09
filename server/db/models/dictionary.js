@@ -10,7 +10,12 @@ const Dictionary = db.define('dictionary', {
     type: Sequelize.STRING,
     allowNull: true
   }
-})
+  }, {
+    defaultScope: {
+      include: [{all: true}]
+    }
+  }
+)
 
 module.exports = Dictionary;
 

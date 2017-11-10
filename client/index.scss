@@ -19,3 +19,11 @@ body {
     display: inline-block;
   }
 }
+
+.gamePiece {
+  height: 20vh;
+}
+
+.gamePice:active {
+  background-color: red;
+}

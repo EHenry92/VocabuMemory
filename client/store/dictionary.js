@@ -7,31 +7,32 @@ const DELETE_DICTIONARY = 'DELETE_DICTIONARY';
 const ADD_DICTIONARY = 'ADD_DICTIONARY';
 const ADD_DICTIONARY_WORD = 'ADD_DICTIONARY_WORD';
 
-const getDictionaries = (dictionaries) => {
+export const getDictionaries = (dictionaries) => {
   const action = {type: GET_DICTIONARIES, dictionaries};
+  console.log("the action", action)
   return action;
 }
 
-const getDictionary = (id) => {
-  const action = {type: GET_DICTIONARY, id};
+export const getDictionary = (dictionary) => {
+  const action = {type: GET_DICTIONARY, dictionary};
   return action;
 }
-const editDictionary = (dictionary) => {
+export const editDictionary = (dictionary) => {
   const action = {type: EDIT_DICTIONARY, dictionary};
   return action;
 }
 
-const deleteDictionary = (id) => {
+export const deleteDictionary = (id) => {
   const action = {type: DELETE_DICTIONARY, id};
   return action;
 }
 
-const addDictionary = (dictionary) => {
+export const addDictionary = (dictionary) => {
   const action = {type: ADD_DICTIONARY, dictionary};
   return action;
 }
 
-const addDictionaryWord = (id, word) => {
+export const addDictionaryWord = (id, word) => {
   const action = {type: ADD_DICTIONARY_WORD, id, word};
   return action;
 }
@@ -88,7 +89,7 @@ export const fetchDictionary = (id) => {
   }
 }
 
-export const postWord = (dictionaryId, wordId) => {
+export const addWord = (dictionaryId, wordId) => {
   return (dispatch) =>  {
     axios.get(`/api/dictionaries/${dictionaryId}/${wordId}`)
     .then(res => res.data)
@@ -96,5 +97,24 @@ export const postWord = (dictionaryId, wordId) => {
       dispatch(addDictionaryWord(dictionary))
     })
     .catch(err => err)
+  }
+}
+
+export default function reducer (state = [], action) {
+  switch (action.type) {
+    case GET_DICTIONARIES:
+      return action.dictionaries;
+    case GET_DICTIONARY:
+      return action.dictionary;
+    case EDIT_DICTIONARY:
+      return [...state, action.dictionary];
+    case DELETE_DICTIONARY:
+      return state.filter(dictionary => dictionary.id !== action.id);
+    case ADD_DICTIONARY:
+      return [...state, action.dictionary]
+    case ADD_DICTIONARY_WORD:
+      return [...state, action.dictionary]
+    default:
+      return state;
   }
 }

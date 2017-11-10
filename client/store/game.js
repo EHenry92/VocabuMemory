@@ -16,8 +16,7 @@ export const viewMatches = (words) => ({type: VIEW_MATCHES, words});
 export const pickWords = (words) => ({type: PICK_WORDS, words});
 export const setSize = (size) => ({type: SET_SIZE, size});
 
-export const postMatch = (word) => (dispatch) => {
-  return dispatch(addMatch(word));
+export const postMatch = (id) => (dispatch) => {
 }
 
 export const fetchCards = (id) => (dispatch) => {

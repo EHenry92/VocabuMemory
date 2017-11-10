@@ -31,21 +31,28 @@ export class GameBoard extends Component {
             this.setState({click1: evt.target.name})
           }
           else {
-            const pairs = document.getElementsByClassName('cardFace')
+            const pairs = document.getElementsByClassName('cardFace');
             if (this.state.click1 == evt.target.name) {
-                pairs[0].classList.remove('inGame');
-                pairs[1].classList.remove('inGame');
+                pairs[0].disabled = true;
+                pairs[1].disabled = true;
+                pairs[0].classList.add('outGame');
+                pairs[0].classList.remove('cardFace');
+                pairs[0].classList.add('outGame');
+                pairs[0].classList.remove('cardFace');
+                setTimeout(() => {
+                  this.setState({click1: -1, clicks: 0})
+                }, 500)
               }
-              else {
+            else {
                 setTimeout(() => {
                   pairs[0].classList.add('cardBack');
                   pairs[0].classList.remove('cardFace');
                   pairs[0].classList.add('cardBack');
                   pairs[0].classList.remove('cardFace');
                   this.setState({click1: -1, clicks: 0})
-                }, 3000);
-              }
+                }, 2000);
             }
+          }
       }
     }
     render ()   {
@@ -65,7 +72,7 @@ export class GameBoard extends Component {
                         value = {idx}
                         onClick={this.pick}
                         name = {item.id}
-                        className="gamePiece cardBack inGame">
+                        className="gamePiece cardBack">
                         {item.data}
                     </button>
                   </div>)

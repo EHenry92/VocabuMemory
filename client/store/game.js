@@ -1,7 +1,9 @@
 import axios from 'axios';
 let initialState = {
   cards: [],
-  score: 0
+  score: 0,
+  select1: -1,
+  select2: -1
 }
 const ADD_MATCH = 'ADD_MATCH';
 const VIEW_MATCHES = 'VIEW_MATCHES';
@@ -9,7 +11,7 @@ const END_GAME = 'END_GAME';
 const PICK_WORDS = 'PICK_WORDS';
 const SET_SIZE = 'SET_SIZE';
 
-export const addmatch = (word) => ({type: ADD_MATCH, word});
+export const addMatch = (word) => ({type: ADD_MATCH, word});
 export const viewMatches = (words) => ({type: VIEW_MATCHES, words});
 export const pickWords = (words) => ({type: PICK_WORDS, words});
 export const setSize = (size) => ({type: SET_SIZE, size});
@@ -25,27 +27,13 @@ export const fetchCards = (id) => (dispatch) => {
       let out = [];
       let mixed = shuffle(dictionary.words)
       for (var i = 0; i < 10;i++) {
-        out.push({data: mixed[i].word, match: i, id: mixed.id})
-        out.push({data: mixed[i].definition, match: i, id: mixed.id})
+        out.push({data: mixed[i].word, match: i, id: mixed[i].id})
+        out.push({data: mixed[i].definition, match: i, id: mixed[i].id})
       }
       return shuffle(out);
     })
     .then(words => dispatch(pickWords(words)))
     .catch(err => err)
-      // componentDidMount() {
-    //   if (Array.isArray(this.props.words)) {
-    //       let out = [];
-    //        let mixed = this.shuffle(this.props.words)
-    //       for (var i = 0; i < 10;i++) {
-    //         out.push({data: mixed[i].word, match: i, id: mixed.id})
-    //         out.push({data: mixed[i].definition, match: i, id: mixed.id})
-    //       }
-    //       let words = this.shuffle(out)
-    //      this.props.setCards(words)
-    //   }
-    // }
-
-    // dispatch(pickWords(cards))
 }
 
 export default function reducer(state = initialState, action) {

@@ -22,8 +22,21 @@ body {
 
 .gamePiece {
   height: 20vh;
+  width: 20vw;
 }
-
-.gamePice:active {
-  background-color: red;
+.cardBack {
+  background-color: black;
+  color:black;
+}
+.cardFace {
+  background-color: orange;
+  color: black;
+}
+.sideBar {
+  height: 100vh;
+}
+.gameBoard {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

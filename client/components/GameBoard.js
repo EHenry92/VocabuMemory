@@ -10,7 +10,9 @@ export class GameBoard extends Component {
       super(props);
       this.pick = this.pick.bind(this);
       this.state = {
-        clicks: 0
+        clicks: 0,
+        click1: -1,
+        allDisabled: false
       };
 
     }
@@ -19,46 +21,54 @@ export class GameBoard extends Component {
     }
     pick(evt) {
       evt.preventDefault();
-      this.setState({clicks: this.state.clicks + 1});
-      if (this.state.clicks <= 1) {
-        let card = document.getElementsByClassName('gamePiece')[evt.target.value];
-        card.classList.add('teal');
-        card.classList.remove('black');
+      const place = evt.target.value;
+      if (this.state.clicks < 2) {
+        this.setState({clicks: this.state.clicks + 1});
+          let card = document.getElementsByClassName('gamePiece')[place];
+            card.classList.add('cardFace');
+            card.classList.remove('cardBack');
+          if (this.state.click1 == -1) {
+            this.setState({click1: evt.target.name})
+          }
+          else {
+            const pairs = document.getElementsByClassName('cardFace')
+            if (this.state.click1 == evt.target.name) {
+                pairs[0].classList.remove('inGame');
+                pairs[1].classList.remove('inGame');
+              }
+              else {
+                setTimeout(() => {
+                  pairs[0].classList.add('cardBack');
+                  pairs[0].classList.remove('cardFace');
+                  pairs[0].classList.add('cardBack');
+                  pairs[0].classList.remove('cardFace');
+                  this.setState({click1: -1, clicks: 0})
+                }, 3000);
+              }
+            }
       }
-      //get the element
-
-      //add a className to the element
-      //add the element number to the
-      // if (!this.state.card1) {this.setState({card1: evt.target.value})}
-      // else {
-      //   this.props.addPair(evt.target.value)
-      // }
-      // console.log(this.state.card1)
     }
     render ()   {
       let list = [];
       if (Array.isArray(this.props.list))  {
         list = this.props.list
       }
-      // let list = this.props.list;
         return (
             <div>
-              <div className="row">
+              <div className="row gameBoard">
               {
                 list.map((item, idx) => {
-                  // return <div key={item.id}>{item.word}</div>
                   return (
-                  <div key={item.data} className="col s3">
+                  <div key={item.data} className="">
                     <button
                         key={item.data}
                         value = {idx}
                         onClick={this.pick}
-                        className="card-panel black gamePiece">
+                        name = {item.id}
+                        className="gamePiece cardBack inGame">
                         {item.data}
                     </button>
                   </div>)
-
-
                 })
               }
                 </div>
@@ -75,18 +85,5 @@ const mapStateToProps = (state) => {
 
   }
 }
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     loadInitialDictionary () {
-//       dispatch(fetchDictionary(1))
-//     },
-//     addPair (idx) {
-//       dispatch(postMatch(idx))
-//     },
-//     chooseCards (words) {
-//       dispatch(setCards(words))
-//     }
-//   }
-// }
 const mapDispatchToProps = {fetchDictionary, postMatch, fetchCards};
 export default connect(mapStateToProps, mapDispatchToProps)(GameBoard);

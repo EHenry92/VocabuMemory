@@ -174,6 +174,22 @@ const satList = [
   {word:  'impute', definition: 'attribute or credit to'}
 ];
 
+const mathList = [
+  {word: 'sum', definition: 'the result of adding two numbers'},
+  {word: 'difference', definition: 'the result of subtracting two numbers'},
+  {word: 'product', definition: 'the result of multiplying two numbers'},
+  {word: 'quotient', definition: 'the result of dividng two numbers'},
+  {word: 'improper fraction', definition: 'a fraction whose numberator is greater than its denominator'},
+  {word: 'absolute value', definition: 'the distance between a number and zero'},
+  {word: 'evaluate', definition: 'find the value of'},
+  {word: 'degree', definition: 'the unit of measure of an angle'},
+  {word: 'equation', definition: 'a mathematical statment that sets two expressions equalt to each other'},
+  {word: 'graph', definition: 'a type of drawing used to represent data'},
+  {word: 'mixed number', definition: 'a number written as a whole number and a fraction'},
+  {word: 'integer', definition: 'positive and negative numbers'},
+  {word: 'congruent', definition: 'figures or angles that have the same size and same shape'},
+  {word: 'simular', definition: 'figures or angles that have the same shape but different sizes'}
+]
 async function seed () {
   await db.sync({force: true})
   console.log('db synced!')
@@ -202,6 +218,16 @@ async function seed () {
     .catch(err => console.log(err))
     ,
     Dictionary.create({title: 'Elementry Math', image: 'https://cdn.themeasuredmom.com/wp-content/uploads/2015/02/block-play.jpg'})
+    .then(dictionary => {
+      for (var i = 0; i < mathList.length; i++){
+        dictionary.createWord({
+          word: mathList[i].word,
+          definition: mathList[i].definition,
+          level: 2,
+          verified: true
+        })
+      }
+    })
   ])
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!

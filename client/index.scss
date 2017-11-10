@@ -19,3 +19,27 @@ body {
     display: inline-block;
   }
 }
+
+.gamePiece {
+  height: 20vh;
+  width: 20vw;
+}
+.outGame {
+  background-color:white;
+}
+.cardBack {
+  background-color: black;
+  color:black;
+}
+.cardFace {
+  background-color: orange;
+  color: black;
+}
+.sideBar {
+  height: 100vh;
+}
+.gameBoard {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

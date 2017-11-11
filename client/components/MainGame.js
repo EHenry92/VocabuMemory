@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import { NavLink } from 'react-router-dom';
 import {fetchDictionaries} from '../store/dictionary';
-import {fetchCards} from '../store/game';
+import {fetchCards, destroyCards} from '../store/game';
 import {connect} from 'react-redux';
 import {GameBoard} from './index';
 
@@ -13,7 +13,8 @@ export class MainGame extends Component {
         level: true,
         value: -1,
         option: 'level',
-        size: 20
+        size: 20,
+        began: false
       }
       this.handleOptionChange = this.handleOptionChange.bind(this);
       this.playGame = this.playGame.bind(this);
@@ -27,7 +28,6 @@ export class MainGame extends Component {
       this.setState({level: !this.state.level, option: evt.target.value, value: -1})
     }
     handleSizeChange(evt) {
-      console.log("the size", evt.target.value)
       this.setState({size: evt.target.value})
     }
     handleSelectChange(evt) {
@@ -35,8 +35,13 @@ export class MainGame extends Component {
     }
     playGame(evt) {
       evt.preventDefault();
-      if (this.state.value > -1 && this.state.option) {
-          this.props.fetchCards(this.state.option, this.state.value, this.state.size)
+      if ((!this.state.began) && (this.state.value > -1 && this.state.option)) {
+              this.props.fetchCards(this.state.option, this.state.value, this.state.size)
+              this.setState({began: true})
+      }
+      else {
+        this.props.destroyCards();
+        this.setState({began: false});
       }
 
     }
@@ -96,10 +101,13 @@ export class MainGame extends Component {
                 4x3<input type="radio" name="sizeChoice" value={12} />
                 4x5<input type="radio" name="sizeChoice" value={20} />
                 {/* 5x5<input type="radio" name="sizeChoice" value={25} /> */}
-
                 </label>
               </div>
-              <button>Play</button>
+              { !this.state.began ?
+                  <button type="submit" value="play">Play</button>
+                  :
+                  <button value="reset">Reset</button>
+              }
               </form>
               <GameBoard />
             </div>
@@ -112,5 +120,5 @@ const mapStateToProps = (state) => {
     dictionary: state.dictionary
   }
 }
-const mapDispatchToProps = {fetchDictionaries, fetchCards}
+const mapDispatchToProps = {fetchDictionaries, fetchCards, destroyCards}
 export default connect(mapStateToProps, mapDispatchToProps)(MainGame);

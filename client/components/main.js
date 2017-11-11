@@ -16,22 +16,22 @@ const Main = (props) => {
   return (
     <div>
       <nav>
+        <span>
+        <Link to="/home">Home </Link>
+        <Link to="/game">Game</Link>
+          </span>
         {
           isLoggedIn
-            ? <div>
+            ? <span>
               {/* The navbar will show these links after you log in */}
-              <Link to="/home">Home</Link>
+              <Link to="/profile">My Profile</Link>
               <a href="#" onClick={handleClick}>Logout</a>
-              <Link to="/game">Game</Link>
-
-            </div>
-            : <div>
+            </span>
+            : <span>
               {/* The navbar will show these links before you log in */}
               <Link to="/login">Login</Link>
               <Link to="/signup">Sign Up</Link>
-              <Link to="/game">Game</Link>
-
-            </div>
+            </span>
         }
       </nav>
       <hr />

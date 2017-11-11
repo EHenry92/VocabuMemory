@@ -19,20 +19,38 @@ export const setSize = (size) => ({type: SET_SIZE, size});
 export const postMatch = (id) => (dispatch) => {
 }
 
-export const fetchCards = (id) => (dispatch) => {
-    return axios.get(`/api/dictionaries/${id}`)
-    .then(res => res.data)
-    .then(dictionary => {
-      let out = [];
-      let mixed = shuffle(dictionary.words)
-      for (var i = 0; i < 10;i++) {
-        out.push({data: mixed[i].word, match: i, id: mixed[i].id})
-        out.push({data: mixed[i].definition, match: i, id: mixed[i].id})
-      }
-      return shuffle(out);
-    })
-    .then(words => dispatch(pickWords(words)))
-    .catch(err => err)
+export const fetchCards = (option, value, size) => (dispatch) => {
+    return (
+      option == 'level' ?
+          axios.get(`/api/words/level/${value}`)
+          .then(res => res.data)
+          .then(dictionary => {
+            let out = [];
+            let mixed = shuffle(dictionary.words)
+            for (var i = 0; i < (size / 2) ;i++) {
+              out.push({data: mixed[i].word, match: i, id: mixed[i].id})
+              out.push({data: mixed[i].definition, match: i, id: mixed[i].id})
+            }
+            return shuffle(out);
+          })
+          .then(words => dispatch(pickWords(words)))
+          .catch(err => err)
+    :
+          axios.get(`/api/dictionaries/${value}`)
+          .then(res => res.data)
+          .then(dictionary => {
+            let out = [];
+            let mixed = shuffle(dictionary.words)
+            for (var i = 0; i < (size / 2);i++) {
+              out.push({data: mixed[i].word, match: i, id: mixed[i].id})
+              out.push({data: mixed[i].definition, match: i, id: mixed[i].id})
+            }
+            return shuffle(out);
+          })
+          .then(words => dispatch(pickWords(words)))
+          .catch(err => err)
+  )
+
 }
 
 export default function reducer(state = initialState, action) {

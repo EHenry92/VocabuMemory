@@ -8,4 +8,7 @@ export {default as UserHome} from './user-home'
 export {Login, Signup} from './auth-form'
 export {default as DictionaryList} from './DictionaryList';
 export {default as GameBoard} from './GameBoard';
+export {default as WordList} from './WordList';
+export {default as MainGame} from './MainGame';
+export {default as Home} from './Home';
 

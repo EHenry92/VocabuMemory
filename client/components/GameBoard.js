@@ -17,7 +17,7 @@ export class GameBoard extends Component {
 
     }
     componentWillMount()  {
-      this.props.fetchCards(1);
+      // this.props.fetchCards(1);
     }
     pick(evt) {
       evt.preventDefault();

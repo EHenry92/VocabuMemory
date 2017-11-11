@@ -22,6 +22,10 @@ const Word = db.define('word', {
     type: Sequelize.BOOLEAN,
     defaultValue: false,
     allowNull: true
+  },
+  sentence: {
+    type: Sequelize.TEXT,
+    allowNull: true
   }
 })
 

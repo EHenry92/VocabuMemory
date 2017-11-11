@@ -2,8 +2,6 @@ import axios from 'axios';
 let initialState = {
   cards: [],
   score: 0,
-  select1: -1,
-  select2: -1
 }
 const ADD_MATCH = 'ADD_MATCH';
 const VIEW_MATCHES = 'VIEW_MATCHES';
@@ -15,6 +13,7 @@ export const addMatch = (word) => ({type: ADD_MATCH, word});
 export const viewMatches = (words) => ({type: VIEW_MATCHES, words});
 export const pickWords = (words) => ({type: PICK_WORDS, words});
 export const setSize = (size) => ({type: SET_SIZE, size});
+export const endGame = () => ({type: END_GAME})
 
 export const postMatch = (id) => (dispatch) => {
 }
@@ -24,10 +23,10 @@ export const fetchCards = (option, value, size) => (dispatch) => {
       option == 'level' ?
           axios.get(`/api/words/level/${value}`)
           .then(res => res.data)
-          .then(dictionary => {
+          .then(words => {
             let out = [];
-            let mixed = shuffle(dictionary.words)
-            for (var i = 0; i < (size / 2) ;i++) {
+            let mixed = shuffle(words)
+            for (var i = 0; i < (size / 2) ; i++) {
               out.push({data: mixed[i].word, match: i, id: mixed[i].id})
               out.push({data: mixed[i].definition, match: i, id: mixed[i].id})
             }
@@ -52,6 +51,9 @@ export const fetchCards = (option, value, size) => (dispatch) => {
   )
 
 }
+export const destroyCards = () => (dispatch) => {
+  dispatch(endGame());
+}
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -65,7 +67,7 @@ export default function reducer(state = initialState, action) {
     case END_GAME:
       return {
         cards: [],
-        score: 0
+        score: 0,
       }
     case SET_SIZE:
       return action.size;

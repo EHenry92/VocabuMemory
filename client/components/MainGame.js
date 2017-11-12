@@ -109,7 +109,15 @@ export class MainGame extends Component {
                   <button value="reset">Reset</button>
               }
               </form>
+              <div id="gameSpace">
               <GameBoard />
+              <span id="wordBank">
+              {
+
+              }
+              </span>
+              </div>
+
             </div>
         )
     }

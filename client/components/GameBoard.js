@@ -22,7 +22,7 @@ export class GameBoard extends Component {
       if (this.state.clicks < 2) {
         this.setState({clicks: this.state.clicks + 1});
           let card = document.getElementsByClassName('gamePiece')[place];
-          let hint = document.getElementsByClassName('hintButton')[place];
+          const hint = document.getElementsByClassName('hintButton')[place];
             hint.disabled = false;
             card.classList.add('cardFace');
             card.classList.remove('cardBack');

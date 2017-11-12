@@ -9,10 +9,11 @@ body {
     display: block;
   }
 
-  nav a {
-    display: inline-block;
-    margin: 1em;
-  }
+  // nav a {
+  //   display: inline-block;
+  //   margin: 1em;
+  //   text-decoration: none;
+  // }
 
   form div {
     margin: 1em;
@@ -23,16 +24,23 @@ body {
 .gamePiece {
   height: 20vh;
   width: 20vw;
+  margin-left: 10px;
+  border-radius: 12px;
+  font-size: 2vw;
+
 }
+
 .outGame {
   background-color:white;
 }
 .cardBack {
-  background-color: black;
-  color:black;
+  color: transparent;
+  border-color: rgb(9, 165, 238);
+  border-width: 5px;
+  // background:linear-gradient(to right, rgb(7, 223, 194) , rgb(9, 165, 238));
 }
 .cardFace {
-  background-color: orange;
+  background-color: rgb(7, 223, 194);
   color: black;
 }
 .sideBar {
@@ -42,12 +50,56 @@ body {
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
+
 }
 .hintButton {
   width: 20vw;
+  margin-left: 10px;
 }
 
 .hintButton:disabled{
   color:white;
   background-color: white;
+}
+
+/* Add a black background color to the top navigation */
+nav {
+  background-color: rgb(9, 165, 238);
+  // #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+nav a:hover {
+  background-color: rgb(7, 223, 194);
+  // #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+nav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+// #gameSpace {
+//   display: flex;
+//   flex-direction: row;
+
+// }
+#wordBank {
+  height: 80vh;
+  width: 20vw;
+  background-color: black;
 }

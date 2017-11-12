@@ -22,6 +22,8 @@ export class GameBoard extends Component {
       if (this.state.clicks < 2) {
         this.setState({clicks: this.state.clicks + 1});
           let card = document.getElementsByClassName('gamePiece')[place];
+          let hint = document.getElementsByClassName('hintButton')[place];
+            hint.disabled = false;
             card.classList.add('cardFace');
             card.classList.remove('cardBack');
           if (this.state.click1 == -1) {
@@ -29,6 +31,7 @@ export class GameBoard extends Component {
           }
           else {
             const pairs = document.getElementsByClassName('cardFace');
+            hint.disabled = true;
             if (this.state.click1 == evt.target.name) {
                 pairs[0].disabled = true;
                 pairs[1].disabled = true;
@@ -41,6 +44,7 @@ export class GameBoard extends Component {
                 }, 500)
               }
             else {
+                hint.disabled = true;
                 setTimeout(() => {
                   pairs[0].classList.add('cardBack');
                   pairs[0].classList.remove('cardFace');
@@ -72,6 +76,17 @@ export class GameBoard extends Component {
                         className="gamePiece cardBack">
                         {item.data}
                     </button>
+                    <div>
+                    <button
+                      className = "hintButton"
+                      key={item.hint}
+                      value = {item.hint}
+                      onClick={this.hint}
+                      name = {'hint'}
+                      disabled = "true"
+                      >Hint
+                      </button>
+                    </div>
                   </div>)
                 })
               }

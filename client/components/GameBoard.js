@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
-// import { NavLink } from 'react-router-dom';
 import {fetchDictionary} from '../store/dictionary';
 import {postMatch, fetchCards} from '../store/game';
 import {connect} from 'react-redux';
-import Results from './Results.js'
+import {Results} from './index';
 
 export class GameBoard extends Component {
     constructor(props)  {
       super(props);
       this.pick = this.pick.bind(this);
       this.hint = this.hint.bind(this);
+      this.showresults = this.showresults.bind(this);
       this.state = {
         clicks: 0,
         click1: -1,
         hint: '',
         showHint: false,
-        clickCount: 0
+        clickCount: 0,
+        complete: false
       };
 
     }
@@ -29,12 +30,6 @@ export class GameBoard extends Component {
           let card = document.getElementsByClassName('gamePiece')[place];
             card.classList.add('cardFace');
             card.classList.remove('cardBack');
-
-          let inGame = document.getElementsByClassName('cardBack');
-          if (!inGame){
-            displayResults(this.state.clickCount);
-          }
-
           if (this.state.click1 == -1) {
             this.setState({click1: evt.target.name})
           }
@@ -48,9 +43,17 @@ export class GameBoard extends Component {
                 pairs[0].classList.add('outGame');
                 pairs[0].classList.remove('cardFace');
                 this.props.postMatch(evt.target.name);
-                setTimeout(() => {
-                  this.setState({click1: -1, clicks: 0})
-                }, 500)
+                if (this.props.matched.length === this.props.pairs - 1) {
+                  setTimeout(() => {
+                    this.setState({click1: -1, clicks: 0, complete: true})
+                  }, 500)
+                }
+                else {
+                  setTimeout(() => {
+                    this.setState({click1: -1, clicks: 0})
+                  }, 500)
+                }
+
               }
             else {
                 setTimeout(() => {
@@ -68,6 +71,11 @@ export class GameBoard extends Component {
       evt.preventDefault();
       this.setState({showHint: true})
     }
+   showresults(evt) {
+     evt.preventDefault();
+    this.setState({complete: false})
+   }
+
     render ()   {
       let list = [];
       if (Array.isArray(this.props.list))  {
@@ -103,14 +111,15 @@ export class GameBoard extends Component {
                 })
               }
                 </div>
+                {
+                  this.state.complete &&
+                  <Results
+                            clickCount = {this.state.clickCount}
+                            closePopup={this.showresults}
+                            matches={this.props.matched} />
+                }
             </div>
         )
-    }
-    displayResults(clicks)  {
-      console.log ("here")
-      return (
-        <Results clickCount={clicks} />
-      )
     }
 }
 
@@ -119,7 +128,8 @@ const mapStateToProps = (state) => {
     game: state.game,
     list: state.game.cards,
     dictionary: state.dictionary,
-    matched: state.game.matches
+    matched: state.game.matches,
+    pairs: state.game.cards.length / 2
 
   }
 }

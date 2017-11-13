@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {fetchDictionaries} from '../store/dictionary';
 import {fetchCards, destroyCards} from '../store/game';
 import {connect} from 'react-redux';
-import {GameBoard, Results} from './index';
+import {GameBoard} from './index';
 
 
 export class MainGame extends Component {
@@ -13,7 +13,7 @@ export class MainGame extends Component {
         value: -1,
         option: 'level',
         size: 16,
-        began: false
+        began: false,
       }
       this.handleOptionChange = this.handleOptionChange.bind(this);
       this.playGame = this.playGame.bind(this);
@@ -42,13 +42,8 @@ export class MainGame extends Component {
         this.props.destroyCards();
         this.setState({began: false});
       }
-
     }
     render () {
-      let showMessage = false;
-      if (this.state.began && (this.props.matched.length == this.state.size / 2)) {
-          showMessage = true;
-      }
         return (
           <div>
             <div id="controlBox">
@@ -110,23 +105,7 @@ export class MainGame extends Component {
               </div>
               <div>
               <GameBoard />
-              <div id="wordBank">
-              <ul>
-              {
-                this.props.matched &&
-                this.props.matched.map(word => {
-                  return (<li key={word.id}>{word.word}
-                  <p>{word.definition}</p>
-                  </li>)
-                })
-              }
-              </ul>
               </div>
-              </div>
-                {
-                  showMessage &&
-                  <Results />
-                }
             </div>
         )
     }
@@ -135,7 +114,6 @@ export class MainGame extends Component {
 const mapStateToProps = (state) => {
   return {
     dictionary: state.dictionary,
-    matched: state.game.matches
   }
 }
 const mapDispatchToProps = {fetchDictionaries, fetchCards, destroyCards}

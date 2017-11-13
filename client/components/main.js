@@ -18,19 +18,11 @@ const Main = (props) => {
       <nav>
         <a href="/home">Home</a>
         <a href="/game">Game</a>
-        {
-          isLoggedIn
-            ? <span>
-              {/* The navbar will show these links after you log in */}
-              <a href="/profile">My Profile</a>
-              <a href="#" onClick={handleClick}>Logout</a>
-            </span>
-            : <span>
-              {/* The navbar will show these links before you log in */}
-              <a href="/login">Login</a>
-              <a href="/signup">SignUp</a>
-            </span>
-        }
+        <a href="/dictionaries">Dictionaries</a>
+        <a href="/words">Words</a>
+        <a id="title">
+        VocabuMemory
+        </a>
       </nav>
       <hr />
       {children}
@@ -68,17 +60,17 @@ Main.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired
 }
 
-{/* <span>
+{/* <div>
         <Link to="/home">Home </Link>
         <Link to="/game">Game</Link>
-          </span>
+          </div>
         {
           isLoggedIn
-            ? <span>
+            ? <div>
               <Link to="/profile">My Profile</Link>
               <a href="#" onClick={handleClick}>Logout</a>
-            </span>
-            : <span>
+            </div>
+            : <div>
               <Link to="/login">Login</Link>
               <Link to="/signup">Sign Up</Link>
-            </span> */}
+            </div> */}

@@ -9,10 +9,13 @@ export class GameBoard extends Component {
     constructor(props)  {
       super(props);
       this.pick = this.pick.bind(this);
+      this.hint = this.hint.bind(this);
       this.state = {
         clicks: 0,
         click1: -1,
-        allDisabled: false
+        hint: '',
+        showHint: false,
+        clickCount: 0
       };
 
     }
@@ -20,10 +23,10 @@ export class GameBoard extends Component {
       evt.preventDefault();
       const place = evt.target.value;
       if (this.state.clicks < 2) {
-        this.setState({clicks: this.state.clicks + 1});
+        let aHint = this.props.list[place].hint;
+        this.setState({clicks: this.state.clicks + 1, hint: aHint, clickCount: this.state.clickCount + 1, showHint: false});
+
           let card = document.getElementsByClassName('gamePiece')[place];
-          const hint = document.getElementsByClassName('hintButton')[place];
-            hint.disabled = false;
             card.classList.add('cardFace');
             card.classList.remove('cardBack');
           if (this.state.click1 == -1) {
@@ -31,7 +34,6 @@ export class GameBoard extends Component {
           }
           else {
             const pairs = document.getElementsByClassName('cardFace');
-            hint.disabled = true;
             if (this.state.click1 == evt.target.name) {
                 pairs[0].disabled = true;
                 pairs[1].disabled = true;
@@ -39,12 +41,12 @@ export class GameBoard extends Component {
                 pairs[0].classList.remove('cardFace');
                 pairs[0].classList.add('outGame');
                 pairs[0].classList.remove('cardFace');
+                this.props.postMatch(evt.target.name);
                 setTimeout(() => {
                   this.setState({click1: -1, clicks: 0})
                 }, 500)
               }
             else {
-                hint.disabled = true;
                 setTimeout(() => {
                   pairs[0].classList.add('cardBack');
                   pairs[0].classList.remove('cardFace');
@@ -56,6 +58,10 @@ export class GameBoard extends Component {
           }
       }
     }
+    hint(evt) {
+      evt.preventDefault();
+      this.setState({showHint: true})
+    }
     render ()   {
       let list = [];
       if (Array.isArray(this.props.list))  {
@@ -63,6 +69,17 @@ export class GameBoard extends Component {
       }
         return (
             <div>
+              <div id="hintBox">
+              <button
+                onClick={this.hint}>
+                Hint
+                </button>
+              {
+                this.state.showHint &&
+                <div>{this.state.hint}</div>
+
+              }
+              </div>
               <div className="row gameBoard">
               {
                 list.map((item, idx) => {
@@ -76,17 +93,6 @@ export class GameBoard extends Component {
                         className="gamePiece cardBack">
                         {item.data}
                     </button>
-                    <div>
-                    <button
-                      className = "hintButton"
-                      key={item.hint}
-                      value = {item.hint}
-                      onClick={this.hint}
-                      name = {'hint'}
-                      disabled = "true"
-                      >Hint
-                      </button>
-                    </div>
                   </div>)
                 })
               }

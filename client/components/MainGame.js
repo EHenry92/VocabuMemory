@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import { NavLink } from 'react-router-dom';
 import {fetchDictionaries} from '../store/dictionary';
 import {fetchCards, destroyCards} from '../store/game';
 import {connect} from 'react-redux';
@@ -13,7 +12,7 @@ export class MainGame extends Component {
         level: true,
         value: -1,
         option: 'level',
-        size: 20,
+        size: 16,
         began: false
       }
       this.handleOptionChange = this.handleOptionChange.bind(this);
@@ -47,48 +46,44 @@ export class MainGame extends Component {
     }
     render () {
         return (
-            <div> Select One
+          <div>
+            <div id="controlBox">
               <form
                 onSubmit = {this.playGame}
                 className="controlPanel">
               <div>
-                dictionary
+
                   <input
                     type="radio"
                     name="gameGroup"
                     value="dictionary"
                     onChange = {this.handleOptionChange}
-                    checked={!this.state.level} />
+                    checked={!this.state.level} />Select a dictionary
 
                 </div>
                 <div>
-                  Level
+
                   <input
                     type="radio"
                     name="gameGroup"
                     value="level"
                     onChange = {this.handleOptionChange}
-                    checked = {this.state.level} />
+                    checked = {this.state.level} />Select a level
 
               </div>
               {
                 this.state.option === 'level' ?
                 <select onChange={this.handleSelectChange}>
-                <option name="choice">Choose</option>
+                <option name="choice">Levels</option>
                   <option name="choice" value= "1">1</option>
                   <option name="choice" value= "2">2</option>
                   <option name="choice" value= "3">3</option>
                   <option name="choice" value= "4">4</option>
                   <option name="choice" value= "5">5</option>
-                  <option name="choice" value= "6">6</option>
-                  <option name="choice" value= "7">7</option>
-                  <option name="choice" value= "8">8</option>
-                  <option name="choice" value= "9">9</option>
-                  <option name="choice" value= "10">10</option>
                 </select>
                 :
                 <select name="choice" onChange={this.handleSelectChange}>
-                <option name="choice">Choose</option>
+                <option name="choice">Dictionaries</option>
                 {
                   this.props.dictionary.map(list => {
                     return <option name="choice" value ={list.id} key={list.id}>{list.title}</option>
@@ -98,8 +93,8 @@ export class MainGame extends Component {
               }
               <div>
                 <label onChange={this.handleSizeChange}>Size:
-                4x3<input type="radio" name="sizeChoice" value={12} />
-                4x5<input type="radio" name="sizeChoice" value={20} />
+                <input type="radio" name="sizeChoice" value={12} /> 4x3
+                <input type="radio" name="sizeChoice" value={16} /> 4x4
                 {/* 5x5<input type="radio" name="sizeChoice" value={25} /> */}
                 </label>
               </div>
@@ -109,13 +104,21 @@ export class MainGame extends Component {
                   <button value="reset">Reset</button>
               }
               </form>
+              </div>
               <div id="gameSpace">
               <GameBoard />
-              <span id="wordBank">
+              <div id="wordBank">
+              <ul>
               {
-
+                this.props.matched &&
+                this.props.matched.map(word => {
+                  return (<li key={word.id}>{word.word}
+                  <p>{word.definition}</p>
+                  </li>)
+                })
               }
-              </span>
+              </ul>
+              </div>
               </div>
 
             </div>
@@ -125,7 +128,8 @@ export class MainGame extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    dictionary: state.dictionary
+    dictionary: state.dictionary,
+    matched: state.game.matches
   }
 }
 const mapDispatchToProps = {fetchDictionaries, fetchCards, destroyCards}

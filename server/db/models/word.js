@@ -15,7 +15,7 @@ const Word = db.define('word', {
     defaultValue: 2
   },
   image: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: true
   },
   verified: {

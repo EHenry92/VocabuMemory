@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {fetchDictionaries} from '../store/dictionary'
 import {connect} from 'react-redux';
 
@@ -16,7 +16,7 @@ export class DictionaryList extends Component {
               <ul>
                 {
                   this.props.dictionary.map(list => {
-                    return <li key={list.id}>{list.title}</li>
+                    return <li key={list.id}><NavLink to={`/dictionary/${list.id}`}key={list.id}>{list.title}</NavLink></li>
                   })
                 }
               </ul>

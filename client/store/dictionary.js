@@ -9,7 +9,6 @@ const ADD_DICTIONARY_WORD = 'ADD_DICTIONARY_WORD';
 
 export const getDictionaries = (dictionaries) => {
   const action = {type: GET_DICTIONARIES, dictionaries};
-  console.log("the action", action)
   return action;
 }
 

@@ -18,7 +18,7 @@ const Main = (props) => {
       <nav>
         <a href="/home">Home</a>
         <a href="/game">Game</a>
-        <a href="/dictionaries">Dictionaries</a>
+        <a href="/dictionary">Dictionaries</a>
         <a href="/words">Words</a>
         <a id="title">
         VocabuMemory

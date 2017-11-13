@@ -54,12 +54,12 @@ const mathList = [
   {word: 'absolute value', definition: 'the distance between a number and zero'},
   {word: 'evaluate', definition: 'find the value of'},
   {word: 'degree', definition: 'the unit of measure of an angle'},
-  {word: 'equation', definition: 'a mathematical statment that sets two expressions equalt to each other'},
+  {word: 'equation', definition: 'a mathematical statment that sets two expressions equal to each other'},
   {word: 'graph', definition: 'a type of drawing used to represent data'},
   {word: 'mixed number', definition: 'a number written as a whole number and a fraction'},
   {word: 'integer', definition: 'positive and negative numbers'},
   {word: 'congruent', definition: 'figures or angles that have the same size and same shape'},
-  {word: 'simular', definition: 'figures or angles that have the same shape but different sizes'}
+  {word: 'similar', definition: 'figures or angles that have the same shape but different sizes'}
 ]
 async function seed () {
   await db.sync({force: true})

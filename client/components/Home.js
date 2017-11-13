@@ -40,9 +40,9 @@ export default function Home (){
 								<li />
 							</ul>
 							<figcaption>
-								<h1>Practice your vocabulary skills by matching word to their definition</h1>
+								<h1>Stretch your memory muscles while reviewing your vocabulary.</h1>
 								<span />
-								<p>Evlis Henry</p>
+								<p> By Evlis Henry</p>
 							</figcaption>
 						</figure>
 					</li>

@@ -13,7 +13,7 @@ export class MainGame extends Component {
         value: -1,
         option: 'level',
         size: 16,
-        began: false
+        began: false,
       }
       this.handleOptionChange = this.handleOptionChange.bind(this);
       this.playGame = this.playGame.bind(this);
@@ -42,7 +42,6 @@ export class MainGame extends Component {
         this.props.destroyCards();
         this.setState({began: false});
       }
-
     }
     render () {
         return (
@@ -95,7 +94,6 @@ export class MainGame extends Component {
                 <label onChange={this.handleSizeChange}>Size:
                 <input type="radio" name="sizeChoice" value={12} /> 4x3
                 <input type="radio" name="sizeChoice" value={16} /> 4x4
-                {/* 5x5<input type="radio" name="sizeChoice" value={25} /> */}
                 </label>
               </div>
               { !this.state.began ?
@@ -107,20 +105,7 @@ export class MainGame extends Component {
               </div>
               <div>
               <GameBoard />
-              <div id="wordBank">
-              <ul>
-              {
-                this.props.matched &&
-                this.props.matched.map(word => {
-                  return (<li key={word.id}>{word.word}
-                  <p>{word.definition}</p>
-                  </li>)
-                })
-              }
-              </ul>
               </div>
-              </div>
-
             </div>
         )
     }
@@ -129,7 +114,6 @@ export class MainGame extends Component {
 const mapStateToProps = (state) => {
   return {
     dictionary: state.dictionary,
-    matched: state.game.matches
   }
 }
 const mapDispatchToProps = {fetchDictionaries, fetchCards, destroyCards}

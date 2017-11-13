@@ -1,17 +1,5 @@
-/**
- * Welcome to the seed file! This seed file uses a newer language feature called...
- *
- *                  -=-= ASYNC...AWAIT -=-=
- *
- * Async-await is a joy to use! Read more about it in the MDN docs:
- *
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
- *
- * Now that you've got the main idea, check it out in practice below!
- */
 const db = require('../server/db')
 const {User, Dictionary} = require('../server/db/models')
-const Promise = require('bluebird')
 const satList = [
   {word: 'abject', definition: 'of the most contemptible kind', sentence: 'While I am feeling a little sad at the moment, I do not plan on being abject for much longer.'},
   {word: 'aberration', definition: 'a state or condition markedly different from the norm', sentence: 'A person with one blue eye and one green eye is said to have a genetic aberration.'},
@@ -62,6 +50,8 @@ const mathList = [
   {word: 'congruent', definition: 'figures or angles that have the same size and same shape'},
   {word: 'similar', definition: 'figures or angles that have the same shape but different sizes'}
 ]
+
+
 async function seed () {
   await db.sync({force: true})
   console.log('db synced!')
@@ -129,19 +119,16 @@ async function seed () {
 // Execute the `seed` function
 // `Async` functions always return a promise, so we can use `catch` to handle any errors
 // that might occur inside of `seed`
-seed()
-  .then(function(){
-    console.log("success")
-  },err => {
+seed({force: true})
+  .catch(err => {
     console.error(err.message)
     console.error(err.stack)
     process.exitCode = 1
   })
-  .finally(function () {
+  .then(() => {
     console.log('closing db connection')
     console.log('db connection closed')
     db.close()
-    return null;
   })
 
 /*

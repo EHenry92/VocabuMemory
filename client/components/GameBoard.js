@@ -76,15 +76,15 @@ export class GameBoard extends Component {
                 </button>
               {
                 this.state.showHint &&
-                <div>{this.state.hint}</div>
+               <div><a>{this.state.hint}</a></div>
 
               }
               </div>
-              <div className="row gameBoard">
+              <div className="gameBoard">
               {
                 list.map((item, idx) => {
                   return (
-                  <div key={item.data} className="">
+                  <div key={item.data}>
                     <button
                         key={item.data}
                         value = {idx}

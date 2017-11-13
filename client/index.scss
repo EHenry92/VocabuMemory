@@ -24,7 +24,7 @@ body {
 .gamePiece {
   height: 20vh;
   width: 20vw;
-  margin-left: 10px;
+  margin: 10px;
   border-radius: 12px;
   font-size: 2vw;
   transition: transform 1s;
@@ -44,25 +44,14 @@ body {
 .cardFace {
   background-color: rgb(6, 170, 145);
   color: black;
+}
 
-}
-.sideBar {
-  height: 100vh;
-}
 .gameBoard {
   display:flex;
   flex-flow: row wrap;
-
-}
-.hintButton {
-  width: 20vw;
-  margin-left: 10px;
+  width: 90vw;
 }
 
-.hintButton:disabled{
-  color:white;
-  background-color: white;
-}
 
 /* Add a black background color to the top navigation */
 nav {
@@ -105,11 +94,6 @@ nav a.active {
   color: white;
 }
 
-#gameSpace {
-  display: flex;
-  flex-direction: row;
-  width:99vw;
-}
 #wordBank {
   height: 80vh;
   width: 40vw;
@@ -121,30 +105,9 @@ nav a.active {
 }
 #hintBox {
   border-radius: 12px;
-  width: 99vw;
   height: 35px;
-  background-color: rgb(6, 170, 145);
 
 }
-
-
-
-
-
-::before,
-::after {
-	content: "";
-}
-
-
-
-// body {
-// 	background: #deebef;
-// 	color: #34495e;
-// 	font-family: 'Lato', 'Arial', sans-serif;
-// 	font-weight: 400;
-// 	line-height: 1.2;
-// }
 
 ul {
 	margin: 0;

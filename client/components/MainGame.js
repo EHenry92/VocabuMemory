@@ -105,7 +105,7 @@ export class MainGame extends Component {
               }
               </form>
               </div>
-              <div id="gameSpace">
+              <div>
               <GameBoard />
               <div id="wordBank">
               <ul>

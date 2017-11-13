@@ -5,12 +5,9 @@ import {postMatch, fetchCards} from '../store/game';
 import {connect} from 'react-redux';
 
 
-export class GameBoard extends Component {
+export default class Results extends Component {
     constructor(props)  {
       super(props);
-      this.pick = this.pick.bind(this);
-      this.hint = this.hint.bind(this);
-      this.displaymessage = this.displayMessage.bind(this);
       this.state = {
       };
 
@@ -44,10 +41,10 @@ export class GameBoard extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    words: this.state.game.matches
-  }
-}
-const mapDispatchToProps = {fetchDictionary, postMatch, fetchCards};
-export default connect(mapStateToProps, mapDispatchToProps)(GameBoard);
+// const mapStateToProps = (state) => {
+//   return {
+//     words: this.state.game.matches
+//   }
+// }
+// const mapDispatchToProps = {fetchDictionary, postMatch, fetchCards};
+// export default connect(mapStateToProps, mapDispatchToProps)(Results);

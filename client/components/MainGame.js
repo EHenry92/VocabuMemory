@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {fetchDictionaries} from '../store/dictionary';
 import {fetchCards, destroyCards} from '../store/game';
 import {connect} from 'react-redux';
-import {GameBoard} from './index';
+import {GameBoard, Results} from './index';
 
 
 export class MainGame extends Component {
@@ -45,6 +45,10 @@ export class MainGame extends Component {
 
     }
     render () {
+      let showMessage = false;
+      if (this.state.began && (this.props.matched.length == this.state.size / 2)) {
+          showMessage = true;
+      }
         return (
           <div>
             <div id="controlBox">
@@ -95,7 +99,6 @@ export class MainGame extends Component {
                 <label onChange={this.handleSizeChange}>Size:
                 <input type="radio" name="sizeChoice" value={12} /> 4x3
                 <input type="radio" name="sizeChoice" value={16} /> 4x4
-                {/* 5x5<input type="radio" name="sizeChoice" value={25} /> */}
                 </label>
               </div>
               { !this.state.began ?
@@ -120,7 +123,10 @@ export class MainGame extends Component {
               </ul>
               </div>
               </div>
-
+                {
+                  showMessage &&
+                  <Results />
+                }
             </div>
         )
     }

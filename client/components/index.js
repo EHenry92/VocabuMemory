@@ -11,4 +11,5 @@ export {default as GameBoard} from './GameBoard';
 export {default as WordList} from './WordList';
 export {default as MainGame} from './MainGame';
 export {default as Home} from './Home';
+export {default as Results} from './Results';
 

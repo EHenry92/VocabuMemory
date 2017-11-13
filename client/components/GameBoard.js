@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {fetchDictionary} from '../store/dictionary';
 import {postMatch, fetchCards} from '../store/game';
 import {connect} from 'react-redux';
-
+import Results from './Results.js'
 
 export class GameBoard extends Component {
     constructor(props)  {
@@ -29,6 +29,12 @@ export class GameBoard extends Component {
           let card = document.getElementsByClassName('gamePiece')[place];
             card.classList.add('cardFace');
             card.classList.remove('cardBack');
+
+          let inGame = document.getElementsByClassName('cardBack');
+          if (!inGame){
+            displayResults(this.state.clickCount);
+          }
+
           if (this.state.click1 == -1) {
             this.setState({click1: evt.target.name})
           }
@@ -100,13 +106,20 @@ export class GameBoard extends Component {
             </div>
         )
     }
+    displayResults(clicks)  {
+      console.log ("here")
+      return (
+        <Results clickCount={clicks} />
+      )
+    }
 }
 
 const mapStateToProps = (state) => {
   return {
     game: state.game,
     list: state.game.cards,
-    dictionary: state.dictionary
+    dictionary: state.dictionary,
+    matched: state.game.matches
 
   }
 }

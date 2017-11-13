@@ -4,7 +4,7 @@ import {Router} from 'react-router'
 import {Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from './history'
-import {Main, Login, Signup, UserHome, DictionaryList, MainGame, Home} from './components'
+import {Main, Login, Signup, UserHome, DictionaryList, MainGame, Home, CSSTEST} from './components'
 import {me} from './store'
 
 /**
@@ -36,7 +36,8 @@ class Routes extends Component {
             {/* <Route component={Login} /> */}
             <Route path="/game" component={MainGame} />
             <Route path="/dictionary" component={DictionaryList} />
-            <Route path="/home" component={Home} />
+            <Route path="/" component={Home} />
+            <Route path="/test" component={CSSTEST} />
           </Switch>
         </Main>
       </Router>

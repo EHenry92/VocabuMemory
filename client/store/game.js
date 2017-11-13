@@ -2,6 +2,7 @@ import axios from 'axios';
 let initialState = {
   cards: [],
   score: 0,
+  matches: []
 }
 const ADD_MATCH = 'ADD_MATCH';
 const VIEW_MATCHES = 'VIEW_MATCHES';
@@ -16,6 +17,12 @@ export const setSize = (size) => ({type: SET_SIZE, size});
 export const endGame = () => ({type: END_GAME})
 
 export const postMatch = (id) => (dispatch) => {
+  axios.get(`/api/words/${id}`)
+  .then(res => res.data)
+  .then(word => {
+    dispatch(addMatch(word))
+  })
+  .catch(err => err)
 }
 
 export const fetchCards = (option, value, size) => (dispatch) => {
@@ -27,8 +34,14 @@ export const fetchCards = (option, value, size) => (dispatch) => {
             let out = [];
             let mixed = shuffle(words)
             for (var i = 0; i < (size / 2) ; i++) {
-              out.push({data: mixed[i].word, match: i, id: mixed[i].id})
-              out.push({data: mixed[i].definition, match: i, id: mixed[i].id})
+              out.push({data: mixed[i].word,
+                        match: i,
+                        id: mixed[i].id,
+                        hint: mixed[i].sentence})
+              out.push({data: mixed[i].definition,
+                        match: i,
+                        id: mixed[i].id,
+                        hintImage: mixed[i].image})
             }
             return shuffle(out);
           })
@@ -41,16 +54,23 @@ export const fetchCards = (option, value, size) => (dispatch) => {
             let out = [];
             let mixed = shuffle(dictionary.words)
             for (var i = 0; i < (size / 2);i++) {
-              out.push({data: mixed[i].word, match: i, id: mixed[i].id})
-              out.push({data: mixed[i].definition, match: i, id: mixed[i].id})
+              out.push({data: mixed[i].word,
+                        match: i,
+                        id: mixed[i].id,
+                        hint: mixed[i].sentence
+                      })
+              out.push({data: mixed[i].definition,
+                        match: i,
+                        id: mixed[i].id,
+                        hint: mixed[i].image})
             }
             return shuffle(out);
           })
           .then(words => dispatch(pickWords(words)))
           .catch(err => err)
   )
-
 }
+
 export const destroyCards = () => (dispatch) => {
   dispatch(endGame());
 }
@@ -59,8 +79,8 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD_MATCH:
       return Object.assign({}, state, {
-        word: [...state.words, action.word],
-        score: state.score + 1
+        score: state.score + 1,
+        matches: [...state.matches, action.word]
       })
     case VIEW_MATCHES:
       return action.words;

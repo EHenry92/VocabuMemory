@@ -9,10 +9,13 @@ export class GameBoard extends Component {
     constructor(props)  {
       super(props);
       this.pick = this.pick.bind(this);
+      this.hint = this.hint.bind(this);
       this.state = {
         clicks: 0,
         click1: -1,
-        allDisabled: false
+        hint: '',
+        showHint: false,
+        clickCount: 0
       };
 
     }
@@ -20,7 +23,9 @@ export class GameBoard extends Component {
       evt.preventDefault();
       const place = evt.target.value;
       if (this.state.clicks < 2) {
-        this.setState({clicks: this.state.clicks + 1});
+        let aHint = this.props.list[place].hint;
+        this.setState({clicks: this.state.clicks + 1, hint: aHint, clickCount: this.state.clickCount + 1, showHint: false});
+
           let card = document.getElementsByClassName('gamePiece')[place];
             card.classList.add('cardFace');
             card.classList.remove('cardBack');
@@ -36,6 +41,7 @@ export class GameBoard extends Component {
                 pairs[0].classList.remove('cardFace');
                 pairs[0].classList.add('outGame');
                 pairs[0].classList.remove('cardFace');
+                this.props.postMatch(evt.target.name);
                 setTimeout(() => {
                   this.setState({click1: -1, clicks: 0})
                 }, 500)
@@ -52,6 +58,10 @@ export class GameBoard extends Component {
           }
       }
     }
+    hint(evt) {
+      evt.preventDefault();
+      this.setState({showHint: true})
+    }
     render ()   {
       let list = [];
       if (Array.isArray(this.props.list))  {
@@ -59,11 +69,22 @@ export class GameBoard extends Component {
       }
         return (
             <div>
-              <div className="row gameBoard">
+              <div id="hintBox">
+              <button
+                onClick={this.hint}>
+                Hint
+                </button>
+              {
+                this.state.showHint &&
+               <div><a>{this.state.hint}</a></div>
+
+              }
+              </div>
+              <div className="gameBoard">
               {
                 list.map((item, idx) => {
                   return (
-                  <div key={item.data} className="">
+                  <div key={item.data}>
                     <button
                         key={item.data}
                         value = {idx}

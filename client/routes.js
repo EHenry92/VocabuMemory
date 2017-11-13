@@ -35,8 +35,8 @@ class Routes extends Component {
             {/* Displays our Login component as a fallback */}
             {/* <Route component={Login} /> */}
             <Route path="/game" component={MainGame} />
-            <Route exact path="/dictionary" component={DictionaryList} />
-            <Route path="/dictionary" component={WordList} />
+            <Route exact path="/dictionaries" component={DictionaryList} />
+            <Route path="/dictionary/:id" component={WordList} />
             <Route path="/" component={Home} />
           </Switch>
         </Main>

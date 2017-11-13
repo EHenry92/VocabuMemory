@@ -16,7 +16,7 @@ export class DictionaryList extends Component {
               <ul>
                 {
                   this.props.dictionary.map(list => {
-                    return <li key={list.id}><NavLink to={`/dictionary/${list.id}`}key={list.id}>{list.title}</NavLink></li>
+                    return <li key={list.id}><NavLink to={`/dictionary/${list.id}`} key={list.id}>{list.title}</NavLink></li>
                   })
                 }
               </ul>

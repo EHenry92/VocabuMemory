@@ -11,14 +11,14 @@ import {logout} from '../store'
  *  rendered out by the component's `children`.
  */
 const Main = (props) => {
-  const {children, handleClick, isLoggedIn} = props
+  const {children, handleClick} = props
 
   return (
     <div>
       <nav>
         <a href="/home">Home</a>
         <a href="/game">Game</a>
-        <a href="/dictionary">Dictionaries</a>
+        <a href="/dictionaries">Dictionaries</a>
         <a href="/words">Words</a>
         <a id="title">
         VocabuMemory

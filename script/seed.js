@@ -11,6 +11,7 @@
  */
 const db = require('../server/db')
 const {User, Dictionary} = require('../server/db/models')
+const Promise = require('bluebird')
 const satList = [
   {word: 'abject', definition: 'of the most contemptible kind', sentence: 'While I am feeling a little sad at the moment, I do not plan on being abject for much longer.'},
   {word: 'aberration', definition: 'a state or condition markedly different from the norm', sentence: 'A person with one blue eye and one green eye is said to have a genetic aberration.'},
@@ -129,15 +130,18 @@ async function seed () {
 // `Async` functions always return a promise, so we can use `catch` to handle any errors
 // that might occur inside of `seed`
 seed()
-  .catch(err => {
+  .then(function(){
+    console.log("success")
+  },err => {
     console.error(err.message)
     console.error(err.stack)
     process.exitCode = 1
   })
-  .then(() => {
+  .finally(function () {
     console.log('closing db connection')
     console.log('db connection closed')
-    // db.close()
+    db.close()
+    return null;
   })
 
 /*

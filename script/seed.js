@@ -1,5 +1,5 @@
 const db = require('../server/db')
-const {User, Dictionary} = require('../server/db/models')
+const {User, Dictionary, Word, Group} = require('../server/db/models')
 const satList = [
   {word: 'abject', definition: 'of the most contemptible kind', sentence: 'While I am feeling a little sad at the moment, I do not plan on being abject for much longer.'},
   {word: 'aberration', definition: 'a state or condition markedly different from the norm', sentence: 'A person with one blue eye and one green eye is said to have a genetic aberration.'},

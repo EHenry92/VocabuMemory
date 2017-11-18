@@ -71,7 +71,7 @@ export const fetchDictionary = (id) => {
   return (dispatch) =>  {
    axios.delete(`/api/dictionaries/${id}`)
    .then(res => res.data)
-   .then(()=> {
+   .then(_ => {
      dispatch(deleteDictionary(id))
    })
    .catch(err => err)
@@ -108,7 +108,7 @@ export default function reducer (state = [], action) {
     case EDIT_DICTIONARY:
       return [...state, action.dictionary];
     case DELETE_DICTIONARY:
-      return state.filter(dictionary => dictionary.id !== action.id);
+      return state.filter(dictionary => dictionary.id != action.id);
     case ADD_DICTIONARY:
       return [...state, action.dictionary]
     case ADD_DICTIONARY_WORD:

@@ -83,6 +83,7 @@ export class GameBoard extends Component {
       }
         return (
             <div>
+              <h4>Directions: Match each word to its definition.</h4>
               <div id="hintBox">
               <button
                 onClick={this.hint}>

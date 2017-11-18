@@ -1,6 +1,7 @@
 const User = require('./user');
 const Dictionary = require('./dictionary');
 const Word = require('./word');
+const Group = require('./group');
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -8,8 +9,8 @@ const Word = require('./word');
  *
  *    BlogPost.belongsTo(User)
  */
-Dictionary.belongsToMany(Word, {through: 'Groups'});
-// Word.belongsToMany(Dictionary, {through: 'Groups'});
+Dictionary.belongsToMany(Word, {through: Group});
+Word.belongsToMany(Dictionary, {through: Group});
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -18,5 +19,5 @@ Dictionary.belongsToMany(Word, {through: 'Groups'});
  * instead of: const User = require('../db/models/user')
  */
 module.exports = {
-  User, Dictionary, Word
+  User, Dictionary, Word, Group
 }

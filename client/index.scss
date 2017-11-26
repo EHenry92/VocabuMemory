@@ -20,6 +20,11 @@ body {
     display: inline-block;
   }
 }
+#wordList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
 .gamePiece {
   height: 20vh;

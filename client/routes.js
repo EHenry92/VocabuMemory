@@ -36,6 +36,7 @@ class Routes extends Component {
             <Route path="/game" component={MainGame} />
             <Route exact path="/dictionaries" component={DictionaryList} />
             <Route path="/dictionary/:id" component={WordList} />
+            <Route path="/words" component={WordList} />
             <Route path="/" component={Home} />
           </Switch>
         </Main>

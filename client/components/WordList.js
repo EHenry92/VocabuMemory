@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import { NavLink } from 'react-router-dom';
 import {fetchDictionary} from '../store/dictionary';
+import {fetchWords} from '../store/word'
 import {connect} from 'react-redux';
-import fetchWords from '../store';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 
 export class WordList extends Component {
@@ -31,10 +30,11 @@ export class WordList extends Component {
         }
         else {words = this.props.words}
         return (
-            <div>
+            <div id="wordList">
               { words &&
                 words.map(list => {
-                  return <Card key={list.id}>
+                  return <Card key={list.id}
+                  style={{width: 300}}>
                   <CardHeader
                     title={list.word}
                     actAsExpander={true}
@@ -64,7 +64,7 @@ export class WordList extends Component {
 const mapStateToProps = (state) => {
   return {
     dictionary: state.dictionary,
-    words: state.words
+    words: state.word
   }
 }
 const mapDispatchToProps = {fetchDictionary, fetchWords}

@@ -507,3 +507,194 @@ const fifthGrade = [
 
 
 */
+
+
+
+/*
+
+
+1	damp	slightly wet	2	https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjSxcOPibrXAhUc0IMKHW1LBSQQjRwIBw&url=http%3A%2F%2Fwww.envirovent.com%2Fblog%2Fkeep-condensation-and-damp-out-this-winter%2F&psig=AOvVaw1n5ycDdw5aZCvh9VbALFKL&ust=1510611615451846	TRUE	Don't put that damp towel into the bag.	2017-11-25 15:22:28.865+00	2017-11-25 15:22:28.865+00
+2	sharp	having an edge or point that is able to cut or pierce something.	2	https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.mcourts-haberdashery.co.uk%2Fekmps%2Fshops%2Fdonnablackman%2Fimages%2Fa30sr-8-1-2-serra-sharp-scissors-794-p.jpg&imgrefurl=http%3A%2F%2Fwww.mcourts-haberdashery.co.uk%2Fa30sr---8-12-serra-sharp-scissors-794-p.asp&docid=myBpLvHXjxGNyM&tbnid=S2adSTC1lNpzQM%3A&vet=10ahUKEwj4_azHirrXAhVFSSYKHdo2CT0QMwilASgDMAM..i&w=600&h=338&safe=strict&bih=696&biw=721&q=sharp%20sissors&ved=0ahUKEwj4_azHirrXAhVFSSYKHdo2CT0QMwilASgDMAM&iact=mrc&uact=8	TRUE	The scissors are not sharp.	2017-11-25 15:22:28.865+00	2017-11-25 15:22:28.865+00
+3	burning	very hot or bright	2	https://www.google.com/imgres?imgurl=http%3A%2F%2Fblog.theclymb.com%2Fwp-content%2Fuploads%2F2013%2F08%2FCaveman-Campfire.jpg&imgrefurl=http%3A%2F%2Fwww.theclymb.com%2Fstories%2Fout-there%2F6-camp-recipes-so-easy-a-caveman-could-make-them%2F&docid=r5Hp33I4RVBwJM&tbnid=Jzd6kUTn4e_5rM%3A&vet=10ahUKEwjN9OPMibrXAhXDLSYKHZhrDTcQMwj4ASgFMAU..i&w=550&h=368&safe=strict&bih=696&biw=721&q=camp%20fire&ved=0ahUKEwjN9OPMibrXAhXDLSYKHZhrDTcQMwj4ASgFMAU&iact=mrc&uact=8	TRUE	A burning pain started in her stomach and ended up in ther eyes.	2017-11-25 15:22:28.865+00	2017-11-25 15:22:28.865+00
+4	snoring	breathe sound while asleep	2	https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.jdshospital.com%2Fwp-content%2Fuploads%2F2011%2F03%2Fme-snoring.jpg&imgrefurl=http%3A%2F%2Fwww.jdshospital.com%2Fsnoring%2F&docid=UPzLmE7nLvT6dM&tbnid=N5YMhmT7K6t1QM%3A&vet=10ahUKEwiS7PPjibrXAhXINSYKHRTOCFQQMwiVAigEMAQ..i&w=300&h=216&safe=strict&bih=696&biw=721&q=snoring&ved=0ahUKEwiS7PPjibrXAhXINSYKHRTOCFQQMwiVAigEMAQ&iact=mrc&uact=8	TRUE	Tom lay in bed, snoring slightly.	2017-11-25 15:22:28.865+00	2017-11-25 15:22:28.865+00
+5	sloppy	messy, careless	2	https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj449X5ibrXAhUE34MKHe0nA4MQjRwIBw&url=https%3A%2F%2Fwww.c2educate.com%2Fblog%2Fwhy-a-messy-bedroom-might-do-lasting-harm%2F&psig=AOvVaw2N_nhr6WjyWO5FS14Whu8O&ust=1510611886292328	TRUE	We complained about Janet's sloppy cleaning when we found traces of mud in an unused room.	2017-11-25 15:22:28.865+00	2017-11-25 15:22:28.865+00
+6	whisper	speak very softly	2	https://www.google.com/imgres?imgurl=http%3A%2F%2Fclipart-library.com%2Fdata_images%2F53083.jpg&imgrefurl=http%3A%2F%2Fclipart-library.com%2Fwhisper-cliparts.html&docid=CKdK6qJSWhW7CM&tbnid=pElMZP_kp26xpM%3A&vet=10ahUKEwjb9OuDirrXAhWGYiYKHYxFDGYQMwjKASgIMAg..i&w=800&h=559&safe=strict&bih=696&biw=721&q=whisper&ved=0ahUKEwjb9OuDirrXAhWGYiYKHYxFDGYQMwjKASgIMAg&iact=mrc&uact=8	TRUE	Jackson pretended to whisper, but said loud enough for anyone to hear.	2017-11-25 15:22:28.866+00	2017-11-25 15:22:28.866+00
+7	mushy	soft and pulpy	2	https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.seriouseats.com%2Frecipes%2Fassets_c%2F2012%2F07%2F201207-216410-british-bites-mushy-peas-thumb-625xauto-260323.jpg&imgrefurl=http%3A%2F%2Fwww.seriouseats.com%2Frecipes%2F2012%2F07%2Fmushy-peas-british-recipe.html&docid=uHH-pR1R1-SNYM&tbnid=QWtPvcJZGfbUeM%3A&vet=10ahUKEwjLi7uNirrXAhWBOSYKHTjOBZEQMwg_KAAwAA..i&w=625&h=469&safe=strict&bih=696&biw=721&q=mushy&ved=0ahUKEwjLi7uNirrXAhWBOSYKHTjOBZEQMwg_KAAwAA&iact=mrc&uact=8	TRUE	Due to the extensive rain showers, the mushy ground required everyone to wear boots or their shoes would sink into the mud.	2017-11-25 15:22:28.866+00	2017-11-25 15:22:28.866+00
+8	rotten	suffering from decay.	2	https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjWm4itirrXAhVsw4MKHYpaABQQjRwIBw&url=http%3A%2F%2Fsni.scholastic.com%2FSN1%2F10_03_15_SN1%2F&psig=AOvVaw18n4ksFTfh8T0Plo7d-5J2&ust=1510611970924867	TRUE	On the outside, the apple looked good, but the inside was rotten.	2017-11-25 15:22:28.866+00	2017-11-25 15:22:28.866+00
+9	sum	an amount added together	2		TRUE	The total sum of money from the tournament equals over three thousand dollars.	2017-11-25 15:22:28.882+00	2017-11-25 15:22:28.882+00
+10	product	the result of multiplying two numbers	2		TRUE	6 is the product of 2 and 3	2017-11-25 15:22:28.882+00	2017-11-25 15:22:28.882+00
+11	difference	the result of subtracting two numbers	2		TRUE	The difference between 7 and 12 is 5	2017-11-25 15:22:28.882+00	2017-11-25 15:22:28.882+00
+12	quotient	the result of dividng two numbers	2		TRUE	The quotient of 50 and 5 is 10	2017-11-25 15:22:28.882+00	2017-11-25 15:22:28.882+00
+13	improper fraction	a fraction whose numberator is greater than its denominator	2		TRUE		2017-11-25 15:22:28.882+00	2017-11-25 15:22:28.882+00
+14	absolute value	the distance between a number and zero	2		TRUE		2017-11-25 15:22:28.882+00	2017-11-25 15:22:28.882+00
+15	evaluate	find the value of	2		TRUE		2017-11-25 15:22:28.883+00	2017-11-25 15:22:28.883+00
+16	degree	the unit of measure of an angle	2		TRUE		2017-11-25 15:22:28.883+00	2017-11-25 15:22:28.883+00
+17	equation	a mathematical statment that sets two expressions equal to each other	2		TRUE		2017-11-25 15:22:28.883+00	2017-11-25 15:22:28.883+00
+18	graph	a type of drawing used to represent data	2		TRUE		2017-11-25 15:22:28.883+00	2017-11-25 15:22:28.883+00
+19	mixed number	a number written as a whole number and a fraction	2		TRUE		2017-11-25 15:22:28.883+00	2017-11-25 15:22:28.883+00
+20	integer	positive and negative numbers	2		TRUE		2017-11-25 15:22:28.883+00	2017-11-25 15:22:28.883+00
+21	congruent	figures or angles that have the same size and same shape	2		TRUE		2017-11-25 15:22:28.884+00	2017-11-25 15:22:28.884+00
+22	similar	figures or angles that have the same shape but different sizes	2		TRUE		2017-11-25 15:22:28.884+00	2017-11-25 15:22:28.884+00
+23	aberration	a state or condition markedly different from the norm	5		TRUE	A person with one blue eye and one green eye is said to have a genetic aberration.	2017-11-25 15:22:28.884+00	2017-11-25 15:22:28.884+00
+24	abject	of the most contemptible kind	5		TRUE	While I am feeling a little sad at the moment, I do not plan on being abject for much longer.	2017-11-25 15:22:28.884+00	2017-11-25 15:22:28.884+00
+25	abjure	formally reject or disavow a formerly held belief	5		TRUE	Even though Tom made a promise to abjure from criminal acts, he continued to break the law.	2017-11-25 15:22:28.884+00	2017-11-25 15:22:28.884+00
+26	abnegation	the denial and rejection of a doctrine or belief	5		TRUE	After growing up in a very religious household, Cara knew a great deal about the abnegation of materialistic items	2017-11-25 15:22:28.885+00	2017-11-25 15:22:28.885+00
+27	abrogate	revoke formally	5		TRUE	If you talk out loud in class, I will abrogate your right to choose where to sit.	2017-11-25 15:22:28.885+00	2017-11-25 15:22:28.885+00
+28	abstruse	difficult to penetrate	5		TRUE	Some of the classic novels are too abstruse for beginning readers to understand.	2017-11-25 15:22:28.885+00	2017-11-25 15:22:28.885+00
+29	abscond	run away, often taking something or somebody along	5		TRUE	The robbers’ plan was to abscond with all of the millionaire’s valuable paintings and jewels.	2017-11-25 15:22:28.885+00	2017-11-25 15:22:28.885+00
+30	accede	yield to another's wish or opinion	5		TRUE	At your insistence and to avoid a prolonged argument, I will accede to your contract terms.	2017-11-25 15:22:28.885+00	2017-11-25 15:22:28.885+00
+31	accost	approach and speak to someone aggressively or insistently	5		TRUE	The policemen asked Greg to describe the man who accosted him.	2017-11-25 15:22:28.885+00	2017-11-25 15:22:28.885+00
+32	accretion	an increase by natural growth or addition	5		TRUE	Sophia was convinced that the accretion of ice on her car’s windshield was preventing her wipers from operating correctly.	2017-11-25 15:22:28.885+00	2017-11-25 15:22:28.885+00
+33	 acumen	shrewdness shown by keen insight	5		TRUE	John’s business acumen, along with his computer skills, made him an asset to the software company.	2017-11-25 15:22:28.885+00	2017-11-25 15:22:28.885+00
+34	adamant	impervious to pleas, persuasion, requests, reason	5		TRUE	He is so adamant in his beliefs that no one can change his mind!	2017-11-25 15:22:28.885+00	2017-11-25 15:22:28.885+00
+35	admonish	scold or reprimand; take to task	5		TRUE	I hope my boss does not admonish me for being late.	2017-11-25 15:22:28.885+00	2017-11-25 15:22:28.885+00
+36	adumbrate	describe roughly or give the main points or summary of	5		TRUE	When my mother lit the candle in the darkness, it was nice to see the light adumbrate our shadows on the wall.	2017-11-25 15:22:28.886+00	2017-11-25 15:22:28.886+00
+37	adverse	in an opposing direction	5		TRUE	Adverse weather conditions forced us to pull off of the road and wait until things cleared up.	2017-11-25 15:22:28.886+00	2017-11-25 15:22:28.886+00
+38	bane	something causing misery or death	5		TRUE	In Dr. Seuss’s famous story, the Grinch was the bane of Christmas in Whoville, but ultimately his cold heart could not stand up to the true Christmas spirit.	2017-11-25 15:22:28.886+00	2017-11-25 15:22:28.886+00
+39	bashful	self-consciously timid	5		TRUE	Because Sally is bashful she won’t speak in public.	2017-11-25 15:22:28.886+00	2017-11-25 15:22:28.886+00
+40	beguile	influence by slyness	5		TRUE	The realtor hoped to beguile buyers by decorating the house with fancy furnishings.	2017-11-25 15:22:28.886+00	2017-11-25 15:22:28.886+00
+41	bereft	sorrowful through loss or deprivation	5		TRUE	After learning she had won the lottery, Betty was bereft of speech.	2017-11-25 15:22:28.886+00	2017-11-25 15:22:28.886+00
+42	blandishment	flattery intended to persuade	5		TRUE	Despite his nervousness at meeting his in-laws, Dylan was able to offer just the right blandishment to get their approval.	2017-11-25 15:22:28.886+00	2017-11-25 15:22:28.886+00
+43	bilk	cheat somebody out of what is due, especially money	5		TRUE	She hoped it was clear that this charity was not just another way to bilk citizens out of what little funds they had.	2017-11-25 15:22:28.886+00	2017-11-25 15:22:28.886+00
+44	bombastic	ostentatiously lofty in style	5		TRUE	The cheerleading squad led the crowd in bombastic cheers. 	2017-11-25 15:22:28.886+00	2017-11-25 15:22:28.886+00
+45	execrable	unequivocally detestable	5		TRUE	Because the conditions in that restaurant were so execrable, several diners became ill and the Health Department was called in to shut it down.	2017-11-25 15:22:28.887+00	2017-11-25 15:22:28.887+00
+46	expiate	make amends for	5		TRUE	The boy gave his younger sister a cookie to expiate for breaking her toy.	2017-11-25 15:22:28.887+00	2017-11-25 15:22:28.887+00
+47	exigent	demanding immediate attention	5		TRUE	The drought made water an exigent concern for the regional government.	2017-11-25 15:22:28.887+00	2017-11-25 15:22:28.887+00
+48	expedient	appropriate to a purpose	5		TRUE	It is expedient that the hospital staff take all life-saving methods.	2017-11-25 15:22:28.887+00	2017-11-25 15:22:28.887+00
+49	expunge	remove by erasing or crossing out or as if by drawing a line	5		TRUE	Because the court has decided to expunge my record, there will be no evidence of my past misdeeds.	2017-11-25 15:22:28.887+00	2017-11-25 15:22:28.887+00
+50	extraneous	not belonging to that in which it is contained	5		TRUE		2017-11-25 15:22:28.887+00	2017-11-25 15:22:28.887+00
+51	extol	praise, glorify, or honor	5		TRUE		2017-11-25 15:22:28.888+00	2017-11-25 15:22:28.888+00
+52	extant	still in existence; not extinct or destroyed or lost	5		TRUE		2017-11-25 15:22:28.888+00	2017-11-25 15:22:28.888+00
+53	expurgate	edit by omitting or modifying parts considered indelicate	5		TRUE		2017-11-25 15:22:28.888+00	2017-11-25 15:22:28.888+00
+54	fallacious	containing or based on incorrect reasoning	5		TRUE		2017-11-25 15:22:28.888+00	2017-11-25 15:22:28.888+00
+55	fatuous	devoid of intelligence	5		TRUE		2017-11-25 15:22:28.888+00	2017-11-25 15:22:28.888+00
+56	fetter	a shackle for the ankles or feet	5		TRUE		2017-11-25 15:22:28.888+00	2017-11-25 15:22:28.888+00
+57	flagrant	conspicuously and outrageously bad or reprehensible	5		TRUE		2017-11-25 15:22:28.888+00	2017-11-25 15:22:28.888+00
+58	elegy	a mournful poem; a lament for the dead	5		TRUE		2017-11-25 15:22:28.889+00	2017-11-25 15:22:28.889+00
+59	elicit	call forth, as an emotion, feeling, or response	5		TRUE		2017-11-25 15:22:28.889+00	2017-11-25 15:22:28.889+00
+60	embezzlement	the fraudulent appropriation of funds or property	5		TRUE		2017-11-25 15:22:28.889+00	2017-11-25 15:22:28.889+00
+61	emend	make corrections to	5		TRUE		2017-11-25 15:22:28.889+00	2017-11-25 15:22:28.889+00
+62	emollient	a substance with a soothing effect when applied to the skin	5		TRUE		2017-11-25 15:22:28.889+00	2017-11-25 15:22:28.889+00
+63	empirical	derived from experiment and observation rather than theory	5		TRUE		2017-11-25 15:22:28.889+00	2017-11-25 15:22:28.889+00
+64	emulate	strive to equal or match, especially by imitating	5		TRUE		2017-11-25 15:22:28.889+00	2017-11-25 15:22:28.889+00
+65	enervate	weaken mentally or morally	5		TRUE		2017-11-25 15:22:28.889+00	2017-11-25 15:22:28.889+00
+66	enfranchise	grant freedom to, as from slavery or servitude	5		TRUE		2017-11-25 15:22:28.889+00	2017-11-25 15:22:28.889+00
+67	engender	call forth	5		TRUE		2017-11-25 15:22:28.889+00	2017-11-25 15:22:28.889+00
+68	ephemeral	anything short-lived, as an insect that lives only for a day	5		TRUE		2017-11-25 15:22:28.89+00	2017-11-25 15:22:28.89+00
+69	epistolary	written in the form of letters or correspondence	5		TRUE		2017-11-25 15:22:28.89+00	2017-11-25 15:22:28.89+00
+70	equanimity	steadiness of mind under stress	5		TRUE		2017-11-25 15:22:28.89+00	2017-11-25 15:22:28.89+00
+71	equivocal	open to two or more interpretations	5		TRUE		2017-11-25 15:22:28.89+00	2017-11-25 15:22:28.89+00
+72	espouse	choose and follow a theory, idea, policy, etc.	5		TRUE		2017-11-25 15:22:28.89+00	2017-11-25 15:22:28.89+00
+73	evanescent	tending to vanish like vapor	5		TRUE		2017-11-25 15:22:28.89+00	2017-11-25 15:22:28.89+00
+74	evince	give expression to	5		TRUE		2017-11-25 15:22:28.89+00	2017-11-25 15:22:28.89+00
+75	exacerbate	make worse	5		TRUE		2017-11-25 15:22:28.89+00	2017-11-25 15:22:28.89+00
+76	advocate	a person who pleads for a person, cause, or idea	5		TRUE		2017-11-25 15:22:28.891+00	2017-11-25 15:22:28.891+00
+77	affluent	having an abundant supply of money or possessions of value	5		TRUE		2017-11-25 15:22:28.891+00	2017-11-25 15:22:28.891+00
+78	aggrandize	embellish; increase the scope, power, or importance of	5		TRUE		2017-11-25 15:22:28.891+00	2017-11-25 15:22:28.891+00
+79	alacrity	liveliness and eagerness	5		TRUE		2017-11-25 15:22:28.891+00	2017-11-25 15:22:28.891+00
+80	alias	a name that has been assumed temporarily	5		TRUE		2017-11-25 15:22:28.891+00	2017-11-25 15:22:28.891+00
+81	ambivalent	uncertain or unable to decide about what course to follow	5		TRUE		2017-11-25 15:22:28.891+00	2017-11-25 15:22:28.891+00
+82	amenable	disposed or willing to comply	5		TRUE		2017-11-25 15:22:28.891+00	2017-11-25 15:22:28.891+00
+83	amorphous	having no definite form or distinct shape	5		TRUE		2017-11-25 15:22:28.891+00	2017-11-25 15:22:28.891+00
+84	anachronistic	chronologically misplaced	5		TRUE		2017-11-25 15:22:28.892+00	2017-11-25 15:22:28.892+00
+85	 anathema	a formal ecclesiastical curse accompanied by excommunication	5		TRUE		2017-11-25 15:22:28.892+00	2017-11-25 15:22:28.892+00
+86	annex	attach to	5		TRUE		2017-11-25 15:22:28.892+00	2017-11-25 15:22:28.892+00
+87	antediluvian	of or relating to the period before the biblical flood	5		TRUE		2017-11-25 15:22:28.892+00	2017-11-25 15:22:28.892+00
+88	antiseptic	thoroughly clean and free of disease-causing organisms	5		TRUE		2017-11-25 15:22:28.892+00	2017-11-25 15:22:28.892+00
+89	apathetic	showing little or no emotion or animation	5		TRUE		2017-11-25 15:22:28.893+00	2017-11-25 15:22:28.893+00
+90	antithesis	exact opposite	5		TRUE		2017-11-25 15:22:28.893+00	2017-11-25 15:22:28.893+00
+91	apocryphal	being of questionable authenticity	5		TRUE		2017-11-25 15:22:28.893+00	2017-11-25 15:22:28.893+00
+92	approbation	official approval	5		TRUE		2017-11-25 15:22:28.893+00	2017-11-25 15:22:28.893+00
+93	arbitrary	based on or subject to individual discretion or preference	5		TRUE		2017-11-25 15:22:28.893+00	2017-11-25 15:22:28.893+00
+94	arboreal	of or relating to or formed by trees	5		TRUE		2017-11-25 15:22:28.893+00	2017-11-25 15:22:28.893+00
+95	arcane	requiring secret or mysterious knowledge	5		TRUE		2017-11-25 15:22:28.893+00	2017-11-25 15:22:28.893+00
+96	archetypal	of an original type after which other things are patterned	5		TRUE		2017-11-25 15:22:28.893+00	2017-11-25 15:22:28.893+00
+97	arrogate	seize and take control without authority	5		TRUE		2017-11-25 15:22:28.893+00	2017-11-25 15:22:28.893+00
+98	ascetic	someone who practices self denial as a spiritual discipline	5		TRUE		2017-11-25 15:22:28.894+00	2017-11-25 15:22:28.894+00
+99	aspersion	a disparaging remark	5		TRUE		2017-11-25 15:22:28.894+00	2017-11-25 15:22:28.894+00
+100	assiduous	marked by care and persistent effort	5		TRUE		2017-11-25 15:22:28.894+00	2017-11-25 15:22:28.894+00
+101	dour	showing a brooding ill humor	5		TRUE		2017-11-25 15:22:28.894+00	2017-11-25 15:22:28.894+00
+102	duplicity	acting in bad faith	5		TRUE		2017-11-25 15:22:28.894+00	2017-11-25 15:22:28.894+00
+103	atrophy	a decrease in size of an organ caused by disease or disuse	5		TRUE		2017-11-25 15:22:28.894+00	2017-11-25 15:22:28.894+00
+104	callous	emotionally hardened	5		TRUE		2017-11-25 15:22:28.894+00	2017-11-25 15:22:28.894+00
+105	calumny	a false accusation of an offense	5		TRUE		2017-11-25 15:22:28.894+00	2017-11-25 15:22:28.894+00
+106	camaraderie	the quality of affording easy familiarity and sociability	5		TRUE		2017-11-25 15:22:28.894+00	2017-11-25 15:22:28.894+00
+107	candor	the quality of being honest and straightforward	5		TRUE		2017-11-25 15:22:28.895+00	2017-11-25 15:22:28.895+00
+108	capitulate	surrender under agreed conditions	5		TRUE		2017-11-25 15:22:28.895+00	2017-11-25 15:22:28.895+00
+109	carouse	engage in boisterous, drunken merrymaking	5		TRUE		2017-11-25 15:22:28.895+00	2017-11-25 15:22:28.895+00
+110	carp	any of various freshwater fish of the family Cyprinidae	5		TRUE		2017-11-25 15:22:28.895+00	2017-11-25 15:22:28.895+00
+111	caucus	meet to select a candidate or promote a policy	5		TRUE		2017-11-25 15:22:28.895+00	2017-11-25 15:22:28.895+00
+112	cavort	play boisterously	5		TRUE		2017-11-25 15:22:28.895+00	2017-11-25 15:22:28.895+00
+113	circumlocution	an indirect way of expressing something	5		TRUE		2017-11-25 15:22:28.895+00	2017-11-25 15:22:28.895+00
+114	circumscribe	draw a geometric figure around another figure	5		TRUE		2017-11-25 15:22:28.895+00	2017-11-25 15:22:28.895+00
+115	circumvent	surround so as to force to give up	5		TRUE		2017-11-25 15:22:28.895+00	2017-11-25 15:22:28.895+00
+116	clamor	utter or proclaim insistently and noisily	5		TRUE		2017-11-25 15:22:28.896+00	2017-11-25 15:22:28.896+00
+117	cogent	powerfully persuasive	5		TRUE		2017-11-25 15:22:28.896+00	2017-11-25 15:22:28.896+00
+118	commensurate	corresponding in size or degree or extent	5		TRUE		2017-11-25 15:22:28.896+00	2017-11-25 15:22:28.896+00
+119	cognizant	having or showing knowledge or understanding or realization	5		TRUE		2017-11-25 15:22:28.896+00	2017-11-25 15:22:28.896+00
+120	complement	something added to embellish or make perfect	5		TRUE		2017-11-25 15:22:28.896+00	2017-11-25 15:22:28.896+00
+121	compunction	a feeling of deep regret, usually for some misdeed	5		TRUE		2017-11-25 15:22:28.896+00	2017-11-25 15:22:28.896+00
+122	concomitant	following or accompanying as a consequence	5		TRUE		2017-11-25 15:22:28.896+00	2017-11-25 15:22:28.896+00
+123	conduit	a passage through which water or electric wires can pass	5		TRUE		2017-11-25 15:22:28.896+00	2017-11-25 15:22:28.896+00
+124	conflagration	a very intense and uncontrolled fire	5		TRUE		2017-11-25 15:22:28.896+00	2017-11-25 15:22:28.896+00
+125	congruity	the quality of agreeing; being suitable and appropriate	5		TRUE		2017-11-25 15:22:28.897+00	2017-11-25 15:22:28.897+00
+126	connive	form intrigues (for) in an underhand manner	5		TRUE		2017-11-25 15:22:28.897+00	2017-11-25 15:22:28.897+00
+127	consign	give over to another for care or safekeeping	5		TRUE		2017-11-25 15:22:28.897+00	2017-11-25 15:22:28.897+00
+128	constituent	one of the individual parts making up a composite entity	5		TRUE		2017-11-25 15:22:28.897+00	2017-11-25 15:22:28.897+00
+129	construe	make sense of; assign a meaning to	5		TRUE		2017-11-25 15:22:28.897+00	2017-11-25 15:22:28.897+00
+130	contusion	an injury in which the skin is not broken	5		TRUE		2017-11-25 15:22:28.897+00	2017-11-25 15:22:28.897+00
+131	contrite	feeling or expressing pain or sorrow for sins or offenses	5		TRUE		2017-11-25 15:22:28.897+00	2017-11-25 15:22:28.897+00
+132	contentious	showing an inclination to disagree	5		TRUE		2017-11-25 15:22:28.897+00	2017-11-25 15:22:28.897+00
+133	contravene	go against, as of rules and laws	5		TRUE		2017-11-25 15:22:28.898+00	2017-11-25 15:22:28.898+00
+134	corpulence	the property of excessive fatness	5		TRUE		2017-11-25 15:22:28.898+00	2017-11-25 15:22:28.898+00
+135	cupidity	extreme greed for material wealth	5		TRUE		2017-11-25 15:22:28.898+00	2017-11-25 15:22:28.898+00
+136	covet	wish, long, or crave for	5		TRUE		2017-11-25 15:22:28.898+00	2017-11-25 15:22:28.898+00
+137	defunct	no longer in force or use; inactive	5		TRUE		2017-11-25 15:22:28.898+00	2017-11-25 15:22:28.898+00
+138	demagogue	a leader who seeks support by appealing to popular passions	5		TRUE		2017-11-25 15:22:28.898+00	2017-11-25 15:22:28.898+00
+139	denigrate	charge falsely or with malicious intent	5		TRUE		2017-11-25 15:22:28.898+00	2017-11-25 15:22:28.898+00
+140	derivative	 a compound obtained from another compound	5		TRUE		2017-11-25 15:22:28.898+00	2017-11-25 15:22:28.898+00
+141	despot	a cruel and oppressive dictator	5		TRUE		2017-11-25 15:22:28.898+00	2017-11-25 15:22:28.898+00
+142	diaphanous	so thin as to transmit light	5		TRUE		2017-11-25 15:22:28.899+00	2017-11-25 15:22:28.899+00
+143	didactic	instructive, especially excessively	5		TRUE		2017-11-25 15:22:28.899+00	2017-11-25 15:22:28.899+00
+144	dirge	a song or hymn of mourning as a memorial to a dead person	5		TRUE		2017-11-25 15:22:28.899+00	2017-11-25 15:22:28.899+00
+145	debauch	a wild gathering involving excessive drinking	5		TRUE		2017-11-25 15:22:28.899+00	2017-11-25 15:22:28.899+00
+146	debunk	expose while ridiculing	5		TRUE		2017-11-25 15:22:28.899+00	2017-11-25 15:22:28.899+00
+147	disaffected	discontented as toward authority	5		TRUE		2017-11-25 15:22:28.9+00	2017-11-25 15:22:28.9+00
+148	discomfit	cause to lose one's composure	5		TRUE		2017-11-25 15:22:28.9+00	2017-11-25 15:22:28.9+00
+149	disparate	fundamentally different or distinct in quality or kind	5		TRUE		2017-11-25 15:22:28.901+00	2017-11-25 15:22:28.901+00
+150	dispel	to cause to separate and go in different directions	5		TRUE		2017-11-25 15:22:28.901+00	2017-11-25 15:22:28.901+00
+151	disrepute	the state of being held in low esteem	5		TRUE		2017-11-25 15:22:28.901+00	2017-11-25 15:22:28.901+00
+152	cajole	influence or urge by gentle urging, caressing, or flattering	5		TRUE		2017-11-25 15:22:28.902+00	2017-11-25 15:22:28.902+00
+153	cleave	separate or cut with a tool, such as a sharp instrument	5		TRUE		2017-11-25 15:22:28.902+00	2017-11-25 15:22:28.902+00
+154	convivial	occupied with or fond of the pleasures of good company	5		TRUE		2017-11-25 15:22:28.902+00	2017-11-25 15:22:28.902+00
+155	cobbler	a person who makes or repairs shoes	5		TRUE		2017-11-25 15:22:28.902+00	2017-11-25 15:22:28.902+00
+156	dearth	an insufficient quantity or number	5		TRUE		2017-11-25 15:22:28.902+00	2017-11-25 15:22:28.902+00
+157	debacle	a sudden and violent collapse	5		TRUE		2017-11-25 15:22:28.903+00	2017-11-25 15:22:28.903+00
+158	divisive	dissenting with the majority opinion	5		TRUE		2017-11-25 15:22:28.903+00	2017-11-25 15:22:28.903+00
+159	duress	compulsory force or threat	5		TRUE		2017-11-25 15:22:28.903+00	2017-11-25 15:22:28.903+00
+160	dogmatic	pertaining to a code of beliefs accepted as authoritative	5		TRUE	The vet said Scampi was licking her nose because she was stressed out, but I didn’t think she had been under any duress.	2017-11-25 15:22:28.903+00	2017-11-25 15:22:28.903+00
+161	edict	a formal or authoritative proclamation	5		TRUE	A crowd formed outside the courthouse to protest the jury’s edict that set the defendant free.	2017-11-25 15:22:28.903+00	2017-11-25 15:22:28.903+00
+162	eclectic	selecting what seems best of various styles or ideas	5		TRUE	The restaurant’s eclectic menu included foods from a number of ethnic groups and cultures.	2017-11-25 15:22:28.903+00	2017-11-25 15:22:28.903+00
+163	ebullient	joyously unrestrained	5		TRUE	The ebullient song was so uplifting that I danced in my chair. 	2017-11-25 15:22:28.903+00	2017-11-25 15:22:28.903+00
+164	exhort	spur on or encourage especially by cheers and shouts	5		TRUE	In her monthly speech, the school counselor will exhort the students to plan for their futures so they will be prepared for life.	2017-11-25 15:22:28.903+00	2017-11-25 15:22:28.903+00
+165	egregious	conspicuously and outrageously bad or reprehensible	5		TRUE	After cheating on the exam, the students were warned that further egregious violations would have then expelled from school.	2017-11-25 15:22:28.903+00	2017-11-25 15:22:28.903+00
+166	foil	hinder or prevent, as an effort, plan, or desire	5		TRUE	The neighborhood watch program has helped the police department foil many crimes.	2017-11-25 15:22:28.903+00	2017-11-25 15:22:28.903+00
+167	forbearance	good-natured tolerance of delay or incompetence	5		TRUE	Since she was ill and temporarily unable to work, the bank granted her forbearance on her  loan.	2017-11-25 15:22:28.904+00	2017-11-25 15:22:28.904+00
+168	fortuitous	occurring by happy chance	5		TRUE	Mark proved to be fortuitous by selecting all six winning lotto numbers.	2017-11-25 15:22:28.904+00	2017-11-25 15:22:28.904+00
+169	fractious	easily irritated or annoyed	5		TRUE		2017-11-25 15:22:28.904+00	2017-11-25 15:22:28.904+00
+170	garrulous	full of trivial conversation	5		TRUE	The garrulous gentleman held up the checkout line as he rambled on to the cashier about his pets.	2017-11-25 15:22:28.904+00	2017-11-25 15:22:28.904+00
+171	grandiloquent	lofty in style	5		TRUE	The speech was full of grandiloquent language, but it contained no new ideas.	2017-11-25 15:22:28.904+00	2017-11-25 15:22:28.904+00
+172	gourmand	a person who is devoted to eating and drinking to excess	5		TRUE	There was enough at the book launch last week to satisfy the most exacting social gourmand.	2017-11-25 15:22:28.904+00	2017-11-25 15:22:28.904+00
+173	gratuitous	unnecessary and unwarranted	5		TRUE	Because I didn’t ask for his gratuitous advice, I felt under no obligation to do what he suggested.	2017-11-25 15:22:28.904+00	2017-11-25 15:22:28.904+00
+174	hegemony	the dominance or leadership of one social group over others	5		TRUE	The musical icons are the individuals who will have a lasting hegemony over many generations of music lovers.	2017-11-25 15:22:28.904+00	2017-11-25 15:22:28.904+00
+175	hapless	unfortunate and deserving pity	5		TRUE	The hapless rabbit could not escape from the trap.	2017-11-25 15:22:28.904+00	2017-11-25 15:22:28.904+00
+176	iconoclast	someone who attacks cherished ideas or institutions	5		TRUE	Jared was an iconoclast who dared to question the company’s mission. 	2017-11-25 15:22:28.905+00	2017-11-25 15:22:28.905+00
+177	heterogenous	consisting of elements that are not of the same kind	5		TRUE	Surprisingly, the concert was filled with a heterogeneous audience and not just the usual crowd.	2017-11-25 15:22:28.905+00	2017-11-25 15:22:28.905+00
+178	idiosyncrasy	an odd habit or peculiar behavior	5		TRUE	The home’s colorful idiosyncrasy made it stand out in the neighborhood of white houses.	2017-11-25 15:22:28.905+00	2017-11-25 15:22:28.905+00
+179	impetuous	characterized by undue haste and lack of thought	5		TRUE	We made an impetuous decision to go swimming in the lake in December.	2017-11-25 15:22:28.905+00	2017-11-25 15:22:28.905+00
+180	impecunious	not having enough money to pay for necessities	5		TRUE	Although Vincent died an impecunious artist without a penny to his name, his paintings are now highly valued by art collectors.	2017-11-25 15:22:28.905+00	2017-11-25 15:22:28.905+00
+181	impute	credit to or lay responsibility on	5		TRUE	On Monday, Ellen will impute her failure to complete the project on her malfunctioning computer.	2017-11-25 15:22:28.905+00	2017-11-25 15:22:28.905+00
+182	impinge	infringe upon	5		TRUE	Hopefully the bad weather will move in a different direction and not impinge upon our plans for an outdoor reception.	2017-11-25 15:22:28.905+00	2017-11-25 15:22:28.905+00
+
+
+*/

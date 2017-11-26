@@ -40,7 +40,7 @@ export class WordList extends Component {
                     actAsExpander={true}
                     showExpandableButton={true}
                   />
-                  <CardText expandable={true}> {list.definition}
+                  <CardText expandable={true} > {list.definition}
                   </CardText>
                 </Card>
                 })

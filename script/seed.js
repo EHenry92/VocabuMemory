@@ -36,7 +36,7 @@ const satList = [
   {word:  'fatuous', definition: 'devoid of intelligence'},
   {word:  'fetter', definition: 'a shackle for the ankles or feet'},
   {word:  'flagrant', definition: 'conspicuously and outrageously bad or reprehensible'},
-{word: 'elegy', definition: 'a mournful poem; a lament for the dead'},
+  {word: 'elegy', definition: 'a mournful poem; a lament for the dead'},
   {word:  'elicit', definition: 'call forth, as an emotion, feeling, or response'},
   {word:  'embezzlement', definition: 'the fraudulent appropriation of funds or property'},
   {word:  'emend', definition: 'make corrections to'},
@@ -54,7 +54,7 @@ const satList = [
   {word:  'evanescent', definition: 'tending to vanish like vapor'},
   {word:  'evince', definition: 'give expression to'},
   {word:  'exacerbate', definition: 'make worse'},
-{word:  'advocate', definition: 'a person who pleads for a person, cause, or idea'},
+  {word:  'advocate', definition: 'a person who pleads for a person, cause, or idea'},
   {word:  'affluent', definition: 'having an abundant supply of money or possessions of value'},
   {word:  'aggrandize', definition: 'embellish; increase the scope, power, or importance of'},
   {word:  'alacrity', definition: 'liveliness and eagerness'},
@@ -118,7 +118,7 @@ const satList = [
   {word: 'defunct', definition: 'no longer in force or use; inactive'},
   {word: 'demagogue', definition: 'a leader who seeks support by appealing to popular passions'},
   {word: 'denigrate', definition: 'charge falsely or with malicious intent'},
-  {word: 'derivative', definition:' a compound obtained from another compound'},
+  {word: 'derivative', definition: ' a compound obtained from another compound'},
   {word: 'despot', definition: 'a cruel and oppressive dictator'},
   {word: 'diaphanous', definition: 'so thin as to transmit light'},
   {word: 'didactic', definition: 'instructive, especially excessively'},
@@ -132,7 +132,7 @@ const satList = [
   {word: 'disrepute', definition: 'the state of being held in low esteem'},
 
 
-  {word: 'cajole', definition: 'influence or urge by gentle urging, caressing, or flattering', sentence: ""},
+  {word: 'cajole', definition: 'influence or urge by gentle urging, caressing, or flattering', sentence: ''},
   {word: 'cleave', definition: 'separate or cut with a tool, such as a sharp instrument'},
   {word: 'cobbler', definition: 'a person who makes or repairs shoes'},
   {word: 'convivial', definition: 'occupied with or fond of the pleasures of good company'},
@@ -169,14 +169,14 @@ const satList = [
   {word:  'impute', definition: 'attribute or credit to'}
 ];
 const sensoryWords = [
-  {word: 'damp', definition: 'slightly wet',image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjSxcOPibrXAhUc0IMKHW1LBSQQjRwIBw&url=http%3A%2F%2Fwww.envirovent.com%2Fblog%2Fkeep-condensation-and-damp-out-this-winter%2F&psig=AOvVaw1n5ycDdw5aZCvh9VbALFKL&ust=1510611615451846'},
-  {word: 'sharp', definition: 'having an edge or point that is able to cut or pierce something.',image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.mcourts-haberdashery.co.uk%2Fekmps%2Fshops%2Fdonnablackman%2Fimages%2Fa30sr-8-1-2-serra-sharp-scissors-794-p.jpg&imgrefurl=http%3A%2F%2Fwww.mcourts-haberdashery.co.uk%2Fa30sr---8-12-serra-sharp-scissors-794-p.asp&docid=myBpLvHXjxGNyM&tbnid=S2adSTC1lNpzQM%3A&vet=10ahUKEwj4_azHirrXAhVFSSYKHdo2CT0QMwilASgDMAM..i&w=600&h=338&safe=strict&bih=696&biw=721&q=sharp%20sissors&ved=0ahUKEwj4_azHirrXAhVFSSYKHdo2CT0QMwilASgDMAM&iact=mrc&uact=8'},
-  {word: 'burning', definition: 'very hot or bright',image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fblog.theclymb.com%2Fwp-content%2Fuploads%2F2013%2F08%2FCaveman-Campfire.jpg&imgrefurl=http%3A%2F%2Fwww.theclymb.com%2Fstories%2Fout-there%2F6-camp-recipes-so-easy-a-caveman-could-make-them%2F&docid=r5Hp33I4RVBwJM&tbnid=Jzd6kUTn4e_5rM%3A&vet=10ahUKEwjN9OPMibrXAhXDLSYKHZhrDTcQMwj4ASgFMAU..i&w=550&h=368&safe=strict&bih=696&biw=721&q=camp%20fire&ved=0ahUKEwjN9OPMibrXAhXDLSYKHZhrDTcQMwj4ASgFMAU&iact=mrc&uact=8'},
-  {word: 'snoring', definition: 'breathe sound while asleep',image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.jdshospital.com%2Fwp-content%2Fuploads%2F2011%2F03%2Fme-snoring.jpg&imgrefurl=http%3A%2F%2Fwww.jdshospital.com%2Fsnoring%2F&docid=UPzLmE7nLvT6dM&tbnid=N5YMhmT7K6t1QM%3A&vet=10ahUKEwiS7PPjibrXAhXINSYKHRTOCFQQMwiVAigEMAQ..i&w=300&h=216&safe=strict&bih=696&biw=721&q=snoring&ved=0ahUKEwiS7PPjibrXAhXINSYKHRTOCFQQMwiVAigEMAQ&iact=mrc&uact=8'},
-  {word: 'sloppy', definition: 'messy',image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj449X5ibrXAhUE34MKHe0nA4MQjRwIBw&url=https%3A%2F%2Fwww.c2educate.com%2Fblog%2Fwhy-a-messy-bedroom-might-do-lasting-harm%2F&psig=AOvVaw2N_nhr6WjyWO5FS14Whu8O&ust=1510611886292328'},
-  {word: 'whisper', definition: 'speak very softly',image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fclipart-library.com%2Fdata_images%2F53083.jpg&imgrefurl=http%3A%2F%2Fclipart-library.com%2Fwhisper-cliparts.html&docid=CKdK6qJSWhW7CM&tbnid=pElMZP_kp26xpM%3A&vet=10ahUKEwjb9OuDirrXAhWGYiYKHYxFDGYQMwjKASgIMAg..i&w=800&h=559&safe=strict&bih=696&biw=721&q=whisper&ved=0ahUKEwjb9OuDirrXAhWGYiYKHYxFDGYQMwjKASgIMAg&iact=mrc&uact=8'},
-  {word: 'mushy', definition: 'soft and pulpy' , image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.seriouseats.com%2Frecipes%2Fassets_c%2F2012%2F07%2F201207-216410-british-bites-mushy-peas-thumb-625xauto-260323.jpg&imgrefurl=http%3A%2F%2Fwww.seriouseats.com%2Frecipes%2F2012%2F07%2Fmushy-peas-british-recipe.html&docid=uHH-pR1R1-SNYM&tbnid=QWtPvcJZGfbUeM%3A&vet=10ahUKEwjLi7uNirrXAhWBOSYKHTjOBZEQMwg_KAAwAA..i&w=625&h=469&safe=strict&bih=696&biw=721&q=mushy&ved=0ahUKEwjLi7uNirrXAhWBOSYKHTjOBZEQMwg_KAAwAA&iact=mrc&uact=8'},
-  {word: 'rotten', definition: 'suffering from decay.',image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjWm4itirrXAhVsw4MKHYpaABQQjRwIBw&url=http%3A%2F%2Fsni.scholastic.com%2FSN1%2F10_03_15_SN1%2F&psig=AOvVaw18n4ksFTfh8T0Plo7d-5J2&ust=1510611970924867'},
+  {word: 'damp', definition: 'slightly wet', image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjSxcOPibrXAhUc0IMKHW1LBSQQjRwIBw&url=http%3A%2F%2Fwww.envirovent.com%2Fblog%2Fkeep-condensation-and-damp-out-this-winter%2F&psig=AOvVaw1n5ycDdw5aZCvh9VbALFKL&ust=1510611615451846'},
+  {word: 'sharp', definition: 'having an edge or point that is able to cut or pierce something.', image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.mcourts-haberdashery.co.uk%2Fekmps%2Fshops%2Fdonnablackman%2Fimages%2Fa30sr-8-1-2-serra-sharp-scissors-794-p.jpg&imgrefurl=http%3A%2F%2Fwww.mcourts-haberdashery.co.uk%2Fa30sr---8-12-serra-sharp-scissors-794-p.asp&docid=myBpLvHXjxGNyM&tbnid=S2adSTC1lNpzQM%3A&vet=10ahUKEwj4_azHirrXAhVFSSYKHdo2CT0QMwilASgDMAM..i&w=600&h=338&safe=strict&bih=696&biw=721&q=sharp%20sissors&ved=0ahUKEwj4_azHirrXAhVFSSYKHdo2CT0QMwilASgDMAM&iact=mrc&uact=8'},
+  {word: 'burning', definition: 'very hot or bright', image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fblog.theclymb.com%2Fwp-content%2Fuploads%2F2013%2F08%2FCaveman-Campfire.jpg&imgrefurl=http%3A%2F%2Fwww.theclymb.com%2Fstories%2Fout-there%2F6-camp-recipes-so-easy-a-caveman-could-make-them%2F&docid=r5Hp33I4RVBwJM&tbnid=Jzd6kUTn4e_5rM%3A&vet=10ahUKEwjN9OPMibrXAhXDLSYKHZhrDTcQMwj4ASgFMAU..i&w=550&h=368&safe=strict&bih=696&biw=721&q=camp%20fire&ved=0ahUKEwjN9OPMibrXAhXDLSYKHZhrDTcQMwj4ASgFMAU&iact=mrc&uact=8'},
+  {word: 'snoring', definition: 'breathe sound while asleep', image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.jdshospital.com%2Fwp-content%2Fuploads%2F2011%2F03%2Fme-snoring.jpg&imgrefurl=http%3A%2F%2Fwww.jdshospital.com%2Fsnoring%2F&docid=UPzLmE7nLvT6dM&tbnid=N5YMhmT7K6t1QM%3A&vet=10ahUKEwiS7PPjibrXAhXINSYKHRTOCFQQMwiVAigEMAQ..i&w=300&h=216&safe=strict&bih=696&biw=721&q=snoring&ved=0ahUKEwiS7PPjibrXAhXINSYKHRTOCFQQMwiVAigEMAQ&iact=mrc&uact=8'},
+  {word: 'sloppy', definition: 'messy', image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj449X5ibrXAhUE34MKHe0nA4MQjRwIBw&url=https%3A%2F%2Fwww.c2educate.com%2Fblog%2Fwhy-a-messy-bedroom-might-do-lasting-harm%2F&psig=AOvVaw2N_nhr6WjyWO5FS14Whu8O&ust=1510611886292328'},
+  {word: 'whisper', definition: 'speak very softly', image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fclipart-library.com%2Fdata_images%2F53083.jpg&imgrefurl=http%3A%2F%2Fclipart-library.com%2Fwhisper-cliparts.html&docid=CKdK6qJSWhW7CM&tbnid=pElMZP_kp26xpM%3A&vet=10ahUKEwjb9OuDirrXAhWGYiYKHYxFDGYQMwjKASgIMAg..i&w=800&h=559&safe=strict&bih=696&biw=721&q=whisper&ved=0ahUKEwjb9OuDirrXAhWGYiYKHYxFDGYQMwjKASgIMAg&iact=mrc&uact=8'},
+  {word: 'mushy', definition: 'soft and pulpy', image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.seriouseats.com%2Frecipes%2Fassets_c%2F2012%2F07%2F201207-216410-british-bites-mushy-peas-thumb-625xauto-260323.jpg&imgrefurl=http%3A%2F%2Fwww.seriouseats.com%2Frecipes%2F2012%2F07%2Fmushy-peas-british-recipe.html&docid=uHH-pR1R1-SNYM&tbnid=QWtPvcJZGfbUeM%3A&vet=10ahUKEwjLi7uNirrXAhWBOSYKHTjOBZEQMwg_KAAwAA..i&w=625&h=469&safe=strict&bih=696&biw=721&q=mushy&ved=0ahUKEwjLi7uNirrXAhWBOSYKHTjOBZEQMwg_KAAwAA&iact=mrc&uact=8'},
+  {word: 'rotten', definition: 'suffering from decay.', image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjWm4itirrXAhVsw4MKHYpaABQQjRwIBw&url=http%3A%2F%2Fsni.scholastic.com%2FSN1%2F10_03_15_SN1%2F&psig=AOvVaw18n4ksFTfh8T0Plo7d-5J2&ust=1510611970924867'},
 ]
 const mathList = [
   {word: 'sum', definition: 'an amount added together'},
@@ -195,8 +195,35 @@ const mathList = [
   {word: 'similar', definition: 'figures or angles that have the same shape but different sizes'}
 ]
 
+const engineeringWords = [
+  {word: 'debounce function', definition: 'A function that limits the rate at which a function can fire.', sentence: 'function debounce(func, wait, immediate) {var timeout;  return function() {   var context = this, args = arguments;   var later = function() {    timeout = null;    if (!immediate) func.apply(context, args);   };   var callNow = immediate && !timeout;   clearTimeout(timeout);   timeout = setTimeout(later, wait);   if (callNow) func.apply(context, args);  }; };', verified: true},
+  {word: 'Hoisting', definition: "JavaScript's default behavior of moving declarations to the top.", sentence: '	x = 5; // Assign 5 to x ' + '\n' + 'elem = document.getElementById("demo"); // Find an element' + '\n' + 'elem.innerHTML = x;// Display x in the element' + '\n' + 'var x; // Declare x', verified: true},
+  {word: 'Alogrithim', definition: 'A set of well-defined rules for the solution to a problem in a finite number of steps.Generally implemented as a logical or mathematical test or calculation. ', sentence: '', verified: true},
+  {word: 'Application', definition: 'One or more software executables designed to fulfill a specific set of business functions individually or in cooperation with other applications. ', sentence: '', verified: true},
+  {word: 'Bandwidth', definition: 'The capacity of a communications channel. ', sentence: '', verified: true},
+  {word: 'Baseline', definition: 'A set of software components and documents to that has been formerly reviewed and accepted, that serves as the basis for further development or current production, which can be changed only through formal change control procedures.', sentence: '', verified: true},
+  {word: 'Component', definition: 'One of the parts that make up a system. May be hardware, software, or firmware and may be subdivided.', sentence: '', verified: true},
+  {word: 'computer software', definition: 'Detailed, pre-programmed instructions that control and coordinate the work of computer hardware and firmware components in an information system. ', sentence: '', verified: true},
+  {word: 'database', definition: 'A set of related data tables and other database objects, such as a data dictionary, that are organized as a group.  A collection of data organized to service many applications at the same time. ', sentence: '', verified: true},
+  {word: 'Database Management System (DBMS)', definition: 'Software used to create and maintain a database and enable individual business applications to extract the data they need without having to create separate files or data definitions for their own use. ', sentence: '', verified: true},
+  {word: 'Encryption', definition: 'The coding and scrambling of messages to prevent unauthorized access to or understanding of the data being stored or transmitted. ', sentence: '', verified: true},
+  {word: 'executable', definition: 'A binary data file that can be run by the operating system to perform a specific set of functions', sentence: '', verified: true},
+  {word: 'foreign key', definition: 'A field or set of fields in a table whose value must match a primary key in another table when joind with it.', sentence: '', verified: true},
+  {word: 'form', definition: 'A screen formatted to facilitate data entry and review.  Utilizes data entry fields, option selection tools, and control objects such as buttons and menu items. ', sentence: '', verified: true},
+  {word: 'hardware', definition: 'Physical computer equipment and peripherals used to process, store, or transmit software applications or data', sentence: '', verified: true},
+  {word: 'HyperText Markup Language (HTML)', definition: 'A programming toll that uses HyperText to establish dynamic links to other documents stored in the same or remote computers.', sentence: '', verified: true},
+  {word: 'metadata', definition: 'Data that describes the structure, organization, and/or location of data', sentence: 'Metadata is data about data', verified: true},
+  {word: 'Primary key', definition: 'A field or fields whose individual or combined values uniquely identify a record in a database. ', sentence: '', verified: true},
+  {word: 'pusedocode', definition:'A combination of programming language constructs and natural language used to define an algorighm or business rule', sentence: 'Pseudocode is often used as a communications bridge between end-users and analysts or programmers. ', verified: true},
+  {word: 'auery', definition: ' A statement structured to direct the retrieval or manipulation of data in a database. ', sentence: '', verified: true},
+  {word: 'Relational Database Management Sysptem (RDMS)', definition: 'A database management application that can create, organize, and store data. ', sentence: '', verified: true},
+  {word: 'software', definition: 'Computer programs, procedures, and associated documentation pertaining to the operation of an application.  The detailed in structions that control the operation of a computer system. ', sentence: '', verified: true},
+  {word: 'unit testing', definition: 'The isolated testing of each logical path of a specific implementation element or groups of related elements.  The expected output from the execution of the logical path is pre-defined to allow comparisons of the planned output against the actual outpu', sentence: '', verified: true},
+  {word: 'user interface', definition: 'The part of the application through which the end-user interacts with the system. ', sentence: '', verified: true},
+  {word: 'window', definition: 'A parent element in the chain of traceability that has no child elements associated with it. ', sentence: '', verified: true}
+,
 
-
+]
 async function seed () {
   await db.sync({force: true})
   console.log('db synced!')
@@ -219,12 +246,13 @@ async function seed () {
           word: sensoryWords[m].word,
           definition: sensoryWords[m].definition,
           verified: true,
-          image: sensoryWords[m].image
+          image: sensoryWords[m].image,
+          level: 2
         })
       }
     })
     .then(_ => {
-      for (var j=1; j <= sensoryWords.length; j++) {
+      for (var j = 1; j <= sensoryWords.length; j++) {
         Group.create({
           wordId: j, dictionaryId: 1
         })
@@ -233,12 +261,12 @@ async function seed () {
     .catch(err => console.log(err))
     ,
     Dictionary.create({title: 'Elementry Math', image: 'https://cdn.themeasuredmom.com/wp-content/uploads/2015/02/block-play.jpg'})
-    .then(_=> {
+    .then(_ => {
       for (var i = 0; i < mathList.length; i++){
         Word.create({
           word: mathList[i].word,
           definition: mathList[i].definition,
-          level: 2,
+          level: 3,
           image: mathList[i].image,
           sentence: mathList[i].sentence,
           verified: true
@@ -271,6 +299,28 @@ async function seed () {
       for (var j = (sensoryWords.length + mathList.length + 1); j <= (satList.length + mathList.length + sensoryWords.length); j++) {
         Group.create({
           wordId: j, dictionaryId: 3
+        })
+      }
+    })
+    .catch(err => console.log(err))
+    ,
+    Dictionary.create({title: 'Software Engineerig'})
+    .then(_ => {
+      for (var i = 0; i < engineeringWords.length; i++){
+        Word.create({
+          word: engineeringWords[i].word,
+          definition: engineeringWords[i].definition,
+          level: 4,
+          sentence: engineeringWords[i].sentence,
+          image: engineeringWords.image,
+          verified: true
+        })
+      }
+    })
+    .then(_ => {
+      for (var j = (sensoryWords.length + mathList.length + satList.length + 1); j <= (satList.length + mathList.length + sensoryWords.length + engineeringWords.length); j++) {
+        Group.create({
+          wordId: j, dictionaryId: 4
         })
       }
     })
@@ -507,7 +557,6 @@ const fifthGrade = [
 
 
 */
-
 
 
 /*

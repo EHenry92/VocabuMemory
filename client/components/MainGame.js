@@ -73,8 +73,8 @@ export class MainGame extends Component {
               {
                 this.state.option === 'level' ?
                 <select onChange={this.handleSelectChange}>
-                <option name="choice">Levels</option>
-                  <option name="choice" value= "1">1</option>
+                  <option name="choice">Levels</option>
+                  {/* <option name="choice" value= "1">1</option> */}
                   <option name="choice" value= "2">2</option>
                   <option name="choice" value= "3">3</option>
                   <option name="choice" value= "4">4</option>

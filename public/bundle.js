@@ -13428,11 +13428,6 @@ var MainGame = exports.MainGame = function (_Component) {
               ),
               _react2.default.createElement(
                 'option',
-                { name: 'choice', value: '1' },
-                '1'
-              ),
-              _react2.default.createElement(
-                'option',
                 { name: 'choice', value: '2' },
                 '2'
               ),

@@ -176,7 +176,11 @@ const sensoryWords = [
   {word: 'sloppy', definition: 'messy', image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj449X5ibrXAhUE34MKHe0nA4MQjRwIBw&url=https%3A%2F%2Fwww.c2educate.com%2Fblog%2Fwhy-a-messy-bedroom-might-do-lasting-harm%2F&psig=AOvVaw2N_nhr6WjyWO5FS14Whu8O&ust=1510611886292328'},
   {word: 'whisper', definition: 'speak very softly', image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fclipart-library.com%2Fdata_images%2F53083.jpg&imgrefurl=http%3A%2F%2Fclipart-library.com%2Fwhisper-cliparts.html&docid=CKdK6qJSWhW7CM&tbnid=pElMZP_kp26xpM%3A&vet=10ahUKEwjb9OuDirrXAhWGYiYKHYxFDGYQMwjKASgIMAg..i&w=800&h=559&safe=strict&bih=696&biw=721&q=whisper&ved=0ahUKEwjb9OuDirrXAhWGYiYKHYxFDGYQMwjKASgIMAg&iact=mrc&uact=8'},
   {word: 'mushy', definition: 'soft and pulpy', image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.seriouseats.com%2Frecipes%2Fassets_c%2F2012%2F07%2F201207-216410-british-bites-mushy-peas-thumb-625xauto-260323.jpg&imgrefurl=http%3A%2F%2Fwww.seriouseats.com%2Frecipes%2F2012%2F07%2Fmushy-peas-british-recipe.html&docid=uHH-pR1R1-SNYM&tbnid=QWtPvcJZGfbUeM%3A&vet=10ahUKEwjLi7uNirrXAhWBOSYKHTjOBZEQMwg_KAAwAA..i&w=625&h=469&safe=strict&bih=696&biw=721&q=mushy&ved=0ahUKEwjLi7uNirrXAhWBOSYKHTjOBZEQMwg_KAAwAA&iact=mrc&uact=8'},
-  {word: 'rotten', definition: 'suffering from decay.', image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjWm4itirrXAhVsw4MKHYpaABQQjRwIBw&url=http%3A%2F%2Fsni.scholastic.com%2FSN1%2F10_03_15_SN1%2F&psig=AOvVaw18n4ksFTfh8T0Plo7d-5J2&ust=1510611970924867'},
+  {word: 'rotten', definition: 'suffering from decay', image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjWm4itirrXAhVsw4MKHYpaABQQjRwIBw&url=http%3A%2F%2Fsni.scholastic.com%2FSN1%2F10_03_15_SN1%2F&psig=AOvVaw18n4ksFTfh8T0Plo7d-5J2&ust=1510611970924867'},
+  {word: 'fluffy', definition: 'light or airy.', image: 'https://opengameart.org/sites/default/files/cloud4.png'},
+  {word: 'shiny', definition: 'bright or glossy', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhUXNA1jVEkkibgsgt_59MlRaWBKH95WxM7ClZKjvlMlP7icQV'}
+
+
 ]
 const mathList = [
   {word: 'sum', definition: 'an amount added together'},
@@ -215,14 +219,12 @@ const engineeringWords = [
   {word: 'metadata', definition: 'Data that describes the structure, organization, and/or location of data', sentence: 'Metadata is data about data', verified: true},
   {word: 'Primary key', definition: 'A field or fields whose individual or combined values uniquely identify a record in a database. ', sentence: '', verified: true},
   {word: 'pusedocode', definition:'A combination of programming language constructs and natural language used to define an algorighm or business rule', sentence: 'Pseudocode is often used as a communications bridge between end-users and analysts or programmers. ', verified: true},
-  {word: 'auery', definition: ' A statement structured to direct the retrieval or manipulation of data in a database. ', sentence: '', verified: true},
+  {word: 'query', definition: ' A statement structured to direct the retrieval or manipulation of data in a database. ', sentence: '', verified: true},
   {word: 'Relational Database Management Sysptem (RDMS)', definition: 'A database management application that can create, organize, and store data. ', sentence: '', verified: true},
   {word: 'software', definition: 'Computer programs, procedures, and associated documentation pertaining to the operation of an application.  The detailed in structions that control the operation of a computer system. ', sentence: '', verified: true},
   {word: 'unit testing', definition: 'The isolated testing of each logical path of a specific implementation element or groups of related elements.  The expected output from the execution of the logical path is pre-defined to allow comparisons of the planned output against the actual outpu', sentence: '', verified: true},
   {word: 'user interface', definition: 'The part of the application through which the end-user interacts with the system. ', sentence: '', verified: true},
   {word: 'window', definition: 'A parent element in the chain of traceability that has no child elements associated with it. ', sentence: '', verified: true}
-,
-
 ]
 async function seed () {
   await db.sync({force: true})

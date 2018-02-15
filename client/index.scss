@@ -100,7 +100,6 @@ nav a.active {
 }
 
 #wordBank {
-  height: 80vh;
   width: 40vw;
   ul {
     margin: 2px;
@@ -833,7 +832,10 @@ figcaption p {
   right: 25%;
   top: 25%;
   bottom: 25%;
-  margin: 10px;
-  background: white;
-
+  padding: 20px;
+  background: lightcyan;
+  background: linear-gradient(lightcyan, darkcyan);
+  button {
+    float: right;
+  }
 }

@@ -23,6 +23,7 @@ export class WordList extends Component {
       }
     }
 
+
     render ()   {
         let words;
         if (this.state.dictionary) {
@@ -32,9 +33,10 @@ export class WordList extends Component {
         return (
             <div id="wordList">
               { words &&
-                words.map(list => {
-                  return <Card key={list.id}
-                  style={{width: 300}}>
+                words.map(list =>
+                  (<Card
+                  key={list.id}
+                  style={{width: '40vw'}}>
                   <CardHeader
                     title={list.word}
                     actAsExpander={true}
@@ -42,21 +44,11 @@ export class WordList extends Component {
                   />
                   <CardText expandable={true} > {list.definition}
                   </CardText>
-                </Card>
-                })
-              //  <ul>
-              //   {
-              //     words.map(list => {
-              //       return <li key={list.id}>
-              //       <div>{list.word}:
-              //           <p>{list.definition}</p>
-              //         </div>
-              //       </li>
-              //     })
-              //   }
-              // </ul>
+                </Card>)
+                )
               }
             </div>
+
         )
     }
 }

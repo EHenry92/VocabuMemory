@@ -6,18 +6,24 @@ export default function Results (props) {
         return (
           <div className="popup">
         <div className="popup_inner">
-        <button onClick={props.closePopup}>close me</button>
-          <h1>Good Job!</h1>
+        <button onClick={props.closePopup}>X</button>
           {
             rate >= 65 &&
-            <div>You did greate!. Try moving one level up.</div>
+            <div>
+              <h1>You did great!</h1>
+              <p>Try moving one level up.</p>
+              </div>
           }
           {
             rate < 20 ?
-            <div>You found all the matches!. Head over to our dictionary to continue learning more words.</div>
+            <div>
+                <h1>You found all the matches!.</h1>
+                <p>Head over to our dictionary to continue learning more words.</p>
+                </div>
             :
             <div>
-              You're doing well. Start another round to continue increasing your vocabulary.
+              <h1>You're doing well.</h1>
+                <p>Start another round to continue increasing your vocabulary.</p>
               </div>
           }
           <div id="wordBank">

@@ -241,7 +241,7 @@ async function seed () {
 
 
   const dictionaries = await Promise.all([
-    Dictionary.create({title: 'Sensory Words', image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiKqtmXjLrXAhWf0YMKHfSpAFkQjRwIBw&url=https%3A%2F%2Fercare24.com%2Ffive-senses%2F&psig=AOvVaw07I5ff4QpSlCb8Xmf4RIZ2&ust=1510612485883176'})
+    Dictionary.create({title: 'Sensory Words', image: 'http://1069thefox.com/wp-content/blogs.dir/8/files/2015/02/five-senses.jpg'})
     .then(_ => {
       for (var m = 0; m < sensoryWords.length; m++)  {
         Word.create({
@@ -306,7 +306,7 @@ async function seed () {
     })
     .catch(err => console.log(err))
     ,
-    Dictionary.create({title: 'Software Engineerig'})
+    Dictionary.create({title: 'Software Engineerig', image:'https://media-exp2.licdn.com/mpr/mpr/AAEAAQAAAAAAAAdxAAAAJDBkZmQ4NmQ4LTRjOTktNDdiYi04NmFkLWE1ZTA1NjI1Y2M1Yg.jpg'})
     .then(_ => {
       for (var i = 0; i < engineeringWords.length; i++){
         Word.create({

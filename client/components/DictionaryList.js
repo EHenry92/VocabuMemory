@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import {fetchDictionaries} from '../store/dictionary'
 import {connect} from 'react-redux';
+import {List, ListItem} from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
 
 
 export class DictionaryList extends Component {
@@ -12,14 +14,19 @@ export class DictionaryList extends Component {
 
     render ()   {
         return (
-            <div> Select One
-              <ul>
+            <div>
+              <List>
+                <Subheader inset={true}>Select a dictionary: </Subheader>
                 {
                   this.props.dictionary.map(list => {
-                    return <li key={list.id}><NavLink to={`/dictionary/${list.id}`} key={list.id}>{list.title}</NavLink></li>
+                    return (<ListItem
+                    key= {list.title}
+                    leftAvatar= {<img style={{maxWidth: 50, maxHeight: 50}} src={`${list.image}`} />}
+                    primaryText={list.title}
+                  />)
                   })
                 }
-              </ul>
+            </List>
             </div>
         )
     }

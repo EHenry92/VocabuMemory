@@ -83,18 +83,34 @@ export class GameBoard extends Component {
       }
         return (
             <div>
-              <h4>Directions: Match each word to its definition.</h4>
-              <div id="hintBox">
-              <button
-                onClick={this.hint}>
-                Hint
-                </button>
               {
-                this.state.showHint &&
-               <div><a>{this.state.hint}</a></div>
+              list.length > 0 ?
+                <div>
+                    <h4>Directions: Match each word to its definition.</h4>
+                    <div id="hintBox">
+                    <button
+                      onClick={this.hint}>
+                      Hint
+                      </button>
+                    {
+                      this.state.showHint &&
+                    <div><a>{this.state.hint}</a></div>
 
+                    }
+                    </div>
+                </div>
+                :
+                <div>
+                  <h4> Directions: </h4>
+                  <ol>
+                      <li>Choose a level or dictionary you want to practice.</li>
+                      <li>Choose a board size.</li>
+                      <li>Click 'play' to start.</li>
+                  </ol>
+
+                  </div>
               }
-              </div>
+
               <div className="gameBoard">
               {
                 list.map((item, idx) => {

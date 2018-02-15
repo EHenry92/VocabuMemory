@@ -25,7 +25,8 @@ export class GameBoard extends Component {
       const place = evt.target.value;
       if (this.state.clicks < 2) {
         let aHint = this.props.list[place].hint;
-        this.setState({clicks: this.state.clicks + 1, hint: aHint, clickCount: this.state.clickCount + 1, showHint: false});
+        let iHint = this.props.list[place].hintImage;
+        this.setState({clicks: this.state.clicks + 1, hint: aHint, clickCount: this.state.clickCount + 1,hintImage: iHint, showHint: false});
 
           let card = document.getElementsByClassName('gamePiece')[place];
             card.classList.add('cardFace');
@@ -87,17 +88,7 @@ export class GameBoard extends Component {
               list.length > 0 ?
                 <div>
                     <h4>Directions: Match each word to its definition.</h4>
-                    <div id="hintBox">
-                    <button
-                      onClick={this.hint}>
-                      Hint
-                      </button>
-                    {
-                      this.state.showHint &&
-                    <div><a>{this.state.hint}</a></div>
 
-                    }
-                    </div>
                 </div>
                 :
                 <div>
@@ -110,7 +101,7 @@ export class GameBoard extends Component {
 
                   </div>
               }
-
+              <div style={{display: 'flex'}}>
               <div className="gameBoard">
               {
                 list.map((item, idx) => {
@@ -127,6 +118,21 @@ export class GameBoard extends Component {
                   </div>)
                 })
               }
+                </div>
+                <div id="hintBox" >
+                    <button
+                      onClick={this.hint}>
+                      Hint
+                      </button>
+                    {
+                      this.state.showHint &&
+                        this.state.hintImage ?
+                        <div><img style={{maxWidth: '10vw'}} src={this.state.hintImage} /></div>
+                        :
+                        <div><a>{this.state.hint}</a></div>
+                    }
+
+                    </div>
                 </div>
                 {
                   this.state.complete &&

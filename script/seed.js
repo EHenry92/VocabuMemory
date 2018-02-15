@@ -169,8 +169,8 @@ const satList = [
   {word:  'impute', definition: 'attribute or credit to'}
 ];
 const sensoryWords = [
-  {word: 'damp', definition: 'slightly wet', image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjSxcOPibrXAhUc0IMKHW1LBSQQjRwIBw&url=http%3A%2F%2Fwww.envirovent.com%2Fblog%2Fkeep-condensation-and-damp-out-this-winter%2F&psig=AOvVaw1n5ycDdw5aZCvh9VbALFKL&ust=1510611615451846'},
-  {word: 'sharp', definition: 'having an edge or point that is able to cut or pierce something.', image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.mcourts-haberdashery.co.uk%2Fekmps%2Fshops%2Fdonnablackman%2Fimages%2Fa30sr-8-1-2-serra-sharp-scissors-794-p.jpg&imgrefurl=http%3A%2F%2Fwww.mcourts-haberdashery.co.uk%2Fa30sr---8-12-serra-sharp-scissors-794-p.asp&docid=myBpLvHXjxGNyM&tbnid=S2adSTC1lNpzQM%3A&vet=10ahUKEwj4_azHirrXAhVFSSYKHdo2CT0QMwilASgDMAM..i&w=600&h=338&safe=strict&bih=696&biw=721&q=sharp%20sissors&ved=0ahUKEwj4_azHirrXAhVFSSYKHdo2CT0QMwilASgDMAM&iact=mrc&uact=8'},
+  {word: 'damp', definition: 'slightly wet', sentence: "Don't put that damp towel into the bag.", image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjSxcOPibrXAhUc0IMKHW1LBSQQjRwIBw&url=http%3A%2F%2Fwww.envirovent.com%2Fblog%2Fkeep-condensation-and-damp-out-this-winter%2F&psig=AOvVaw1n5ycDdw5aZCvh9VbALFKL&ust=1510611615451846'},
+  {word: 'sharp', definition: 'having an edge or point that is able to cut or pierce something.', sentence: 'The scissors are sharp.',image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.mcourts-haberdashery.co.uk%2Fekmps%2Fshops%2Fdonnablackman%2Fimages%2Fa30sr-8-1-2-serra-sharp-scissors-794-p.jpg&imgrefurl=http%3A%2F%2Fwww.mcourts-haberdashery.co.uk%2Fa30sr---8-12-serra-sharp-scissors-794-p.asp&docid=myBpLvHXjxGNyM&tbnid=S2adSTC1lNpzQM%3A&vet=10ahUKEwj4_azHirrXAhVFSSYKHdo2CT0QMwilASgDMAM..i&w=600&h=338&safe=strict&bih=696&biw=721&q=sharp%20sissors&ved=0ahUKEwj4_azHirrXAhVFSSYKHdo2CT0QMwilASgDMAM&iact=mrc&uact=8'},
   {word: 'burning', definition: 'very hot or bright', image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fblog.theclymb.com%2Fwp-content%2Fuploads%2F2013%2F08%2FCaveman-Campfire.jpg&imgrefurl=http%3A%2F%2Fwww.theclymb.com%2Fstories%2Fout-there%2F6-camp-recipes-so-easy-a-caveman-could-make-them%2F&docid=r5Hp33I4RVBwJM&tbnid=Jzd6kUTn4e_5rM%3A&vet=10ahUKEwjN9OPMibrXAhXDLSYKHZhrDTcQMwj4ASgFMAU..i&w=550&h=368&safe=strict&bih=696&biw=721&q=camp%20fire&ved=0ahUKEwjN9OPMibrXAhXDLSYKHZhrDTcQMwj4ASgFMAU&iact=mrc&uact=8'},
   {word: 'snoring', definition: 'breathe sound while asleep', image: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.jdshospital.com%2Fwp-content%2Fuploads%2F2011%2F03%2Fme-snoring.jpg&imgrefurl=http%3A%2F%2Fwww.jdshospital.com%2Fsnoring%2F&docid=UPzLmE7nLvT6dM&tbnid=N5YMhmT7K6t1QM%3A&vet=10ahUKEwiS7PPjibrXAhXINSYKHRTOCFQQMwiVAigEMAQ..i&w=300&h=216&safe=strict&bih=696&biw=721&q=snoring&ved=0ahUKEwiS7PPjibrXAhXINSYKHRTOCFQQMwiVAigEMAQ&iact=mrc&uact=8'},
   {word: 'sloppy', definition: 'messy', image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj449X5ibrXAhUE34MKHe0nA4MQjRwIBw&url=https%3A%2F%2Fwww.c2educate.com%2Fblog%2Fwhy-a-messy-bedroom-might-do-lasting-harm%2F&psig=AOvVaw2N_nhr6WjyWO5FS14Whu8O&ust=1510611886292328'},
@@ -218,7 +218,7 @@ const engineeringWords = [
   {word: 'hypertext markup language (HTML)', definition: 'A programming toll that uses HyperText to establish dynamic links to other documents stored in the same or remote computers.', sentence: '', verified: true},
   {word: 'metadata', definition: 'Data that describes the structure, organization, and/or location of data', sentence: 'Metadata is data about data', verified: true},
   {word: 'primary key', definition: 'A field or fields whose individual or combined values uniquely identify a record in a database. ', sentence: '', verified: true},
-  {word: 'pusedocode', definition:'A combination of programming language constructs and natural language used to define an algorighm or business rule', sentence: 'Pseudocode is often used as a communications bridge between end-users and analysts or programmers. ', verified: true},
+  {word: 'pusedocode', definition: 'A combination of programming language constructs and natural language used to define an algorighm or business rule', sentence: 'Pseudocode is often used as a communications bridge between end-users and analysts or programmers. ', verified: true},
   {word: 'query', definition: 'A statement structured to direct the retrieval or manipulation of data in a database. ', sentence: '', verified: true},
   {word: 'relational database management System (RDMS)', definition: 'A database management application that can create, organize, and store data. ', sentence: '', verified: true},
   {word: 'software', definition: 'Computer programs, procedures, and associated documentation pertaining to the operation of an application.  The detailed in structions that control the operation of a computer system. ', sentence: '', verified: true},
@@ -306,7 +306,7 @@ async function seed () {
     })
     .catch(err => console.log(err))
     ,
-    Dictionary.create({title: 'Software Engineering', image:'https://media-exp2.licdn.com/mpr/mpr/AAEAAQAAAAAAAAdxAAAAJDBkZmQ4NmQ4LTRjOTktNDdiYi04NmFkLWE1ZTA1NjI1Y2M1Yg.jpg'})
+    Dictionary.create({title: 'Software Engineering', image: 'https://media-exp2.licdn.com/mpr/mpr/AAEAAQAAAAAAAAdxAAAAJDBkZmQ4NmQ4LTRjOTktNDdiYi04NmFkLWE1ZTA1NjI1Y2M1Yg.jpg'})
     .then(_ => {
       for (var i = 0; i < engineeringWords.length; i++){
         Word.create({

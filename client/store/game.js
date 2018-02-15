@@ -62,7 +62,7 @@ export const fetchCards = (option, value, size) => (dispatch) => {
               out.push({data: mixed[i].definition,
                         match: i,
                         id: mixed[i].id,
-                        hint: mixed[i].image})
+                        hintImage: mixed[i].image})
             }
             return shuffle(out);
           })

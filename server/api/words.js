@@ -3,7 +3,9 @@ const {Word} = require('../db/models');
 module.exports = router;
 
 router.get('/', (req, res, next) => {
-  Word.findAll({})
+  Word.findAll({ order: [
+    ['word', 'ASC']
+    ]})
     .then(words => res.json(words))
     .catch(next)
 })

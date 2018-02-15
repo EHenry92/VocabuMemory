@@ -36,7 +36,7 @@ export class WordList extends Component {
                 words.map(list =>
                   (<Card
                   key={list.id}
-                  style={{width: '40vw'}}>
+                  style={{width: '20vw', margin: 5}}>
                   <CardHeader
                     title={list.word}
                     actAsExpander={true}

@@ -21,7 +21,8 @@ export class DictionaryList extends Component {
                   this.props.dictionary.map(list => {
                     return (<ListItem
                     key= {list.title}
-                    leftAvatar= {<img style={{maxWidth: 50, maxHeight: 50}} src={`${list.image}`} />}
+                    style={{fontSize: 30}}
+                    leftAvatar= {<img style={{maxWidth: 55, maxHeight: 100}} src={`${list.image}`} />}
                     primaryText={list.title}
                   />)
                   })

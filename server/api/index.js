@@ -4,6 +4,8 @@ module.exports = router
 router.use('/users', require('./users'))
 router.use('/words', require('./words'))
 router.use('/dictionaries', require('./dictionaries'))
+router.use('/groups', require('./groups'))
+
 
 
 router.use((req, res, next) => {

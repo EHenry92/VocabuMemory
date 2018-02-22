@@ -4,7 +4,7 @@ import {Router} from 'react-router'
 import {Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from './history'
-import {Main, Login, Signup, UserHome, DictionaryList, MainGame, Home, WordList, Admin} from './components'
+import {Main, Login, Signup, UserHome, DictionaryList, MainGame, Home, WordList, Admin, AddDictionary} from './components'
 import {me} from './store'
 
 /**
@@ -37,6 +37,7 @@ class Routes extends Component {
             <Route exact path="/dictionaries" component={DictionaryList} />
             <Route path="/dictionary/:id" component={WordList} />
             <Route path="/words" component={WordList} />
+            <Route path="/new" component={AddDictionary} />
             <Route path="/" component={Home} />
           </Switch>
         </Main>

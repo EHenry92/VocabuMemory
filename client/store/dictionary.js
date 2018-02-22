@@ -77,16 +77,16 @@ export const fetchDictionary = (id) => {
    .catch(err => err)
  }}
 
- export const postDictionary = (data) => {
-  return (dispatch) =>  {
-    axios.get('/api/dictionaries', data)
-    .then(res => res.data)
-    .then(dictionary => {
-      dispatch(addDictionary(dictionary))
-    })
-    .catch(err => err)
-  }
-}
+//  export const postDictionary = (data) => {
+//   return (dispatch) =>  {
+//     axios.get('/api/dictionaries', data)
+//     .then(res => res.data)
+//     .then(dictionary => {
+//       dispatch(addDictionary(dictionary))
+//     })
+//     .catch(err => err)
+//   }
+// }
 
 export const addWord = (dictionaryId, wordId) => {
   return (dispatch) =>  {

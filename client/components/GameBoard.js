@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {fetchDictionary} from '../store/dictionary';
 import {postMatch, fetchCards} from '../store/game';
 import {connect} from 'react-redux';
 import {Results} from './index';
@@ -26,7 +25,7 @@ export class GameBoard extends Component {
       if (this.state.clicks < 2) {
         let aHint = this.props.list[place].hint;
         let iHint = this.props.list[place].hintImage;
-        this.setState({clicks: this.state.clicks + 1, hint: aHint, clickCount: this.state.clickCount + 1,hintImage: iHint, showHint: false});
+        this.setState({clicks: this.state.clicks + 1, hint: aHint, clickCount: this.state.clickCount + 1, hintImage: iHint, showHint: false});
 
           let card = document.getElementsByClassName('gamePiece')[place];
             card.classList.add('cardFace');
@@ -125,11 +124,12 @@ export class GameBoard extends Component {
                       Hint
                       </button>
                     {
-                      this.state.showHint &&
+                      this.state.showHint && (
                         this.state.hintImage ?
                         <div><img style={{maxWidth: '10vw'}} src={this.state.hintImage} /></div>
                         :
                         <div><a>{this.state.hint}</a></div>
+                      )
                     }
 
                     </div>
@@ -156,5 +156,5 @@ const mapStateToProps = (state) => {
 
   }
 }
-const mapDispatchToProps = {fetchDictionary, postMatch, fetchCards};
+const mapDispatchToProps = {postMatch, fetchCards};
 export default connect(mapStateToProps, mapDispatchToProps)(GameBoard);

@@ -13,4 +13,6 @@ export {default as MainGame} from './MainGame';
 export {default as Home} from './Home';
 export {default as Results} from './Results';
 export {default as Admin} from './Admin';
+export {default as AddDictionary} from './AddDictionary';
+
 

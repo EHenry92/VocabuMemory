@@ -19,12 +19,12 @@ export class DictionaryList extends Component {
                 <Subheader inset={true}>Select a dictionary: </Subheader>
                 {
                   this.props.dictionary.map(list => {
-                    return (<ListItem
+                    return (<NavLink to={`/dictionary/${list.id}`} key={list.id}><ListItem
                     key= {list.title}
                     style={{fontSize: 30}}
                     leftAvatar= {<img style={{maxWidth: 55, maxHeight: 100}} src={`${list.image}`} />}
                     primaryText={list.title}
-                  />)
+                  /></NavLink>)
                   })
                 }
             </List>

@@ -6,8 +6,9 @@ import user from './user';
 import word from './word';
 import dictionary from './dictionary';
 import game from './game';
+import newDictionary from './newDictionary'
 
-const reducer = combineReducers({user, dictionary, word, game})
+const reducer = combineReducers({user, dictionary, word, game, newDictionary})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})
@@ -19,3 +20,4 @@ export * from './user';
 export * from './word';
 export * from './dictionary';
 export * from './game';
+export * from './newDictionary';

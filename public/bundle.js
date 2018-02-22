@@ -17114,8 +17114,8 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
       evt.preventDefault();
       var dictionary = this.props.dictionaryEdit,
           words = this.props.wordEdit,
-          removed = this.props.deletedWords;
-      dictionary.title && words.length > 0 && this.props.submitData({ dictionary: dictionary, words: words, removed: removed });
+          deleted = this.props.deletedWords;
+      dictionary.title && words.length > 0 && this.props.submitData({ dictionary: dictionary, words: words, deleted: deleted });
     }
   }, {
     key: 'newWordHandler',
@@ -17156,8 +17156,8 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
 
       evt.preventDefault();
       var input = evt.target.value.toLowerCase();
-      var wordList = this.props.words.filter(function (item) {
-        return _this2.props.dictionaryEdit.id && item.dictionaryId !== _this2.props.dictionaryEdit.id || item.word.indexOf(input) > -1;
+      var wordList = this.props.words.filter(function (wItem) {
+        return _this2.props.dictionaryEdit.id && wItem.dictionaryId !== _this2.props.dictionaryEdit.id || wItem.word.indexOf(input) > -1;
       });
       this.setState({ wordList: wordList });
     }
@@ -18888,28 +18888,42 @@ var addWord = function addWord(data) {
   });
   return id;
 };
+var makeupdates = function makeupdates(dictId, stateData) {
+  stateData.deleted.map(function (wordId) {
+    _axios2.default.delete('/api/groups/' + dictId + '/' + wordId).then(function (res) {
+      return res.data;
+    }).catch(function (err) {
+      return err;
+    });
+  });
+  stateData.words.map(function (word) {
+    var wordId = word.id || addWord(word);
+    _axios2.default.post('/api/groups/' + dictId + '/' + wordId).then(function (res) {
+      return res.data;
+    }).catch(function (err) {
+      return err;
+    });
+  });
+};
+var determineDId = function determineDId(dictionary) {
+  return dictionary.id || addDcitionary(dictionary);
+};
 
 var submitData = exports.submitData = function submitData(stateData) {
   return function (_) {
-    var dictId = stateData.dictionary.id || addDcitionary(stateData.dictionary);
-    stateData.words.map(function (word) {
-      var wordId = word.id || addWord(word);
-      _axios2.default.post('/api/groups/' + dictId + '/' + wordId).then(function (res) {
-        return res.data;
-      }).catch(function (err) {
-        return err;
-      });
+    var dictId = void 0;
+    new Promise(function (resolve, reject) {
+      resolve(determineDId(stateData.dictionary));
+    }).then(function (id) {
+      dictId = id;
+    }).then(function () {
+      return makeupdates(dictId, stateData);
+    }).then(function () {
+      _history2.default.push('/dictionary/' + dictId);
     });
-    stateData.deleted.map(function (wordId) {
-      _axios2.default.delete('/api/groups/' + dictId + '/' + wordId).then(function (res) {
-        return res.data;
-      }).catch(function (err) {
-        return err;
-      });
-    });
-    _history2.default.push('/dictionary/' + dictId);
   };
 };
+
 var chooseDictionary = exports.chooseDictionary = function chooseDictionary(id) {
   return function (dispatch) {
     _axios2.default.get('/api/dictionaries/' + id).then(function (res) {

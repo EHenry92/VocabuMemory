@@ -4,7 +4,7 @@ const defaultState = {
   words: [],
   dictionary: {},
   tempIdCount: 0,
-  deletedWords:[]
+  deletedWords: []
 }
 
 //if word contains an id, it is an existing word else it is a new word
@@ -28,7 +28,8 @@ const addDcitionary = (data) => {
   let id;
   axios.post('/api/dictionaries', data )
       .then(res => res.data)
-      .then(dInfo => {id = dInfo.id})
+      .then(dInfo => {
+        id = dInfo.id})
       .catch(err => err)
   return id;
 }
@@ -41,22 +42,31 @@ const addWord = (data) => {
       .catch(err => err)
   return id;
 }
-
-export const submitData = (stateData) => _ => {
-  let dictId = stateData.dictionary.id || addDcitionary(stateData.dictionary);
+const makeupdates = (dictId, stateData) => {
+  stateData.deleted.map(wordId => {
+    axios.delete(`/api/groups/${dictId}/${wordId}`)
+    .then(res => res.data)
+    .catch(err => err)
+  })
   stateData.words.map(word => {
     let wordId = word.id || addWord(word);
       axios.post(`/api/groups/${dictId}/${wordId}`, )
       .then(res => res.data)
       .catch(err => err)
   })
-  stateData.deleted.map(wordId => {
-    axios.delete(`/api/groups/${dictId}/${wordId}`)
-    .then(res => res.data)
-    .catch(err => err)
-  })
-  history.push(`/dictionary/${dictId}`)
 }
+const determineDId = dictionary => {return dictionary.id || addDcitionary(dictionary)};
+
+export const submitData = (stateData) => _ => {
+  let dictId;
+  new Promise((resolve, reject) => {
+    resolve(determineDId(stateData.dictionary))
+  })
+  .then(id => {dictId = id})
+  .then( () => makeupdates(dictId, stateData))
+  .then( () => {history.push(`/dictionary/${dictId}`)})
+}
+
 export const chooseDictionary = id => dispatch => {
   axios.get(`/api/dictionaries/${id}`)
   .then(res => res.data)
@@ -66,34 +76,32 @@ export const chooseDictionary = id => dispatch => {
       return el;
     })
     dispatch(pickDict({id: dictionary.id, title: dictionary.title}, words))
-  }
-    )
+  })
   .catch(err => err)
 }
 
 export default function reducer(state = defaultState, action) {
   switch (action.type) {
     case SELECT_DICTIONARY :
-    return {...state,
-      dictionary: action.data,
-      words: action.words,
-      tempIdCount: action.words.length}
+      return {...state,
+        dictionary: action.data,
+        words: action.words,
+        tempIdCount: action.words.length};
     case ADD_DICTIONARY:
-    return {...state, dictionary: action.data}
+      return {...state, dictionary: action.data}
     case SELECT_WORD:
     case ADD_WORD:
-    return { ...state,
-      words: [...state.words, action.data],
-      tempIdCount: state.tempIdCount + 1
-    };
+      return { ...state,
+        words: [...state.words, action.data],
+        tempIdCount: state.tempIdCount + 1
+      };
     case REMOVE_WORD:
-    return Object.assign({}, state, {
-      words: state.words.filter(item => item.tempId != action.tempId),
-      deletedWords: [...state.deletedWords, action.id]
-    });
+      return Object.assign({}, state, {
+        words: state.words.filter(item => item.tempId != action.tempId),
+        deletedWords: [...state.deletedWords, action.id]
+      });
 
     default:
-    return state;
+      return state;
   }
-
 }

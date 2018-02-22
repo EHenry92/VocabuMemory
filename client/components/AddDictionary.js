@@ -32,9 +32,9 @@ export class AddDictionary extends Component {
     evt.preventDefault();
     let dictionary = this.props.dictionaryEdit,
         words = this.props.wordEdit,
-        removed = this.props.deletedWords
+        deleted = this.props.deletedWords
     dictionary.title && words.length > 0 &&
-    this.props.submitData({dictionary, words, removed });
+    this.props.submitData({dictionary, words, deleted });
   }
   newWordHandler(evt) {
     evt.preventDefault();
@@ -65,9 +65,10 @@ export class AddDictionary extends Component {
   filterIt(evt) {
     evt.preventDefault();
     let input = evt.target.value.toLowerCase();
-    let wordList = this.props.words.filter(item => {
-      return this.props.dictionaryEdit.id && item.dictionaryId !== this.props.dictionaryEdit.id ||
-      item.word.indexOf(input) > -1
+    let wordList = this.props.words.filter(wItem => {
+      return (this.props.dictionaryEdit.id && (wItem.dictionaryId !== this.props.dictionaryEdit.id) ||
+      wItem.word.indexOf(input) > -1)
+
     })
     this.setState({wordList})
   }

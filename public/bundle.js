@@ -17079,7 +17079,6 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
     _this.newWordHandler = _this.newWordHandler.bind(_this);
     _this.newDictHandler = _this.newDictHandler.bind(_this);
     _this.filterIt = _this.filterIt.bind(_this);
-    _this.clearIt = _this.clearIt.bind(_this);
     _this.del = _this.del.bind(_this);
     return _this;
   }
@@ -17145,7 +17144,10 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
     key: 'selectHandler',
     value: function selectHandler(evt) {
       evt.preventDefault();
-      this.props.chooseDictionary(evt.target.value);
+      var id = evt.target.value,
+          word = evt.target.attributes.name.value,
+          tempId = this.props.tempIdCount + 1;
+      this.props.pickWord({ id: id, word: word, tempId: tempId });
     }
   }, {
     key: 'filterIt',
@@ -17203,7 +17205,9 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
               ),
               this.state.changeD && _react2.default.createElement(
                 'select',
-                { onChange: this.selectHandler },
+                { onChange: function onChange(evt) {
+                    evt.preventDefault();_this3.props.chooseDictionary(evt.target.value);
+                  } },
                 this.props.dictionaries.map(function (group) {
                   return _react2.default.createElement(
                     'option',
@@ -17261,11 +17265,11 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
                 _react2.default.createElement('input', { type: 'text', id: 'myInput', onClick: this.filterIt, onChange: this.filterIt, placeholder: 'Search for word.' }),
                 _react2.default.createElement(
                   'ul',
-                  { id: 'filteredList', onChange: this.selectHandler },
+                  { id: 'filteredList', onClick: this.selectHandler },
                   this.state.wordList && this.state.wordList.map(function (item) {
                     return _react2.default.createElement(
                       'li',
-                      { onClick: _this3.selectHandler, value: item.id, key: item.word },
+                      { value: item.id, name: item.word, key: item.word },
                       item.word
                     );
                   })

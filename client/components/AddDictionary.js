@@ -13,7 +13,6 @@ export class AddDictionary extends Component {
     this.newWordHandler = this.newWordHandler.bind(this);
     this.newDictHandler = this.newDictHandler.bind(this);
     this.filterIt  = this.filterIt.bind(this);
-    this.clearIt = this.clearIt.bind(this);
     this.del = this.del.bind(this);
   }
   componentWillMount()  {
@@ -58,7 +57,10 @@ export class AddDictionary extends Component {
   }
   selectHandler(evt) {
       evt.preventDefault();
-      this.props.chooseDictionary(evt.target.value);
+      let id = evt.target.value,
+          word = evt.target.attributes.name.value,
+          tempId = this.props.tempIdCount + 1;
+      this.props.pickWord({id, word, tempId})
   }
   filterIt(evt) {
     evt.preventDefault();
@@ -88,7 +90,8 @@ export class AddDictionary extends Component {
             }
             {
               this.state.changeD &&
-                  <select onChange={this.selectHandler}>
+                  <select onChange={(evt) => {evt.preventDefault(); this.props.chooseDictionary(evt.target.value);
+                  }}>
                   {
                   this.props.dictionaries.map(group =>
                     <option value={group.id} key={group.title}>{group.title}</option>)
@@ -117,10 +120,10 @@ export class AddDictionary extends Component {
               this.state.changeW &&
               <div>
                 <input type="text" id="myInput" onClick={this.filterIt} onChange={this.filterIt} placeholder="Search for word."/>
-                <ul id="filteredList" onChange={this.selectHandler}>
+                <ul id="filteredList" onClick={this.selectHandler} >
                 {
                 this.state.wordList && this.state.wordList.map(item =>
-                  <li onClick={this.selectHandler} value={item.id} key={item.word}>{item.word}</li>)
+                  <li value={item.id} name={item.word} key={item.word}>{item.word}</li>)
                 }
                 </ul>
               </div>

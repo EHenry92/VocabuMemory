@@ -17945,20 +17945,16 @@ function Home() {
 							{ className: "hardcover_front" },
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "coverDesign blue" },
 								_react2.default.createElement(
-									"div",
-									{ className: "coverDesign blue" },
-									_react2.default.createElement(
-										"h1",
-										null,
-										"Vocabu- Memory"
-									),
-									_react2.default.createElement(
-										"p",
-										null,
-										"*"
-									)
+									"h1",
+									null,
+									"Vocabu- Memory"
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									"*"
 								)
 							),
 							_react2.default.createElement("li", null)

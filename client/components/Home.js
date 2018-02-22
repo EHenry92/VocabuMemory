@@ -11,12 +11,10 @@ export default function Home (){
 						<figure className="book">
 							{/* <!-- Front --> */}
 							<ul className="hardcover_front">
-								<li>
-									<div className="coverDesign blue">
+								<li className="coverDesign blue">
 										<h1>Vocabu-
                       Memory</h1>
 										<p>*</p>
-									</div>
 								</li>
 								<li />
 							</ul>

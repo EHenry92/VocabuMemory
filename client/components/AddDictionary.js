@@ -31,11 +31,11 @@ export class AddDictionary extends Component {
   }
   submitHandler (evt) {
     evt.preventDefault();
-    this.props.dictionaryEdit.title && this.props.wordEdit.length > 0 &&
-    this.props.submitData({dictionary: this.props.dictionaryEdit, words: this.props.wordEdit});
-  }
-  clearIt() {
-    this._typeahead.getInstance().clear()
+    let dictionary = this.props.dictionaryEdit,
+        words = this.props.wordEdit,
+        removed = this.props.deletedWords
+    dictionary.title && words.length > 0 &&
+    this.props.submitData({dictionary, words, removed });
   }
   newWordHandler(evt) {
     evt.preventDefault();
@@ -52,7 +52,9 @@ export class AddDictionary extends Component {
   }
   del (evt) {
     evt.preventDefault();
-    this.props.delWord(evt.target.name);
+    evt.target.value ? this.props.delWord(evt.target.name, evt.target.value)
+    :
+    this.props.delWord(evt.target.name)
   }
   selectHandler(evt) {
       evt.preventDefault();
@@ -118,7 +120,7 @@ export class AddDictionary extends Component {
                 <ul id="filteredList" onChange={this.selectHandler}>
                 {
                 this.state.wordList && this.state.wordList.map(item =>
-                  <li value={item.id} key={item.word}><div>{item.word}</div></li>)
+                  <li onClick={this.selectHandler} value={item.id} key={item.word}>{item.word}</li>)
                 }
                 </ul>
               </div>
@@ -139,7 +141,7 @@ export class AddDictionary extends Component {
               {
                 this.props.wordEdit.map(word =>
                   (<li key={word.tempId}>
-                    <button style={{float: 'right', backgroundColor: 'black', color: 'white'}} name={word.tempId} onClick={this.del}>x</button>
+                    <button style={{float: 'right', backgroundColor: 'black', color: 'white'}} name={word.tempId} value={word.id} onClick={this.del}>x</button>
                     <div style={{textAlign: 'center'}}>{word.word}</div>
                   </li>))
               }
@@ -162,7 +164,8 @@ const mapStateToProps = (state) => {
     words: state.word,
     dictionaryEdit: state.newDictionary.dictionary,
     wordEdit: state.newDictionary.words,
-    tempIdCount: state.newDictionary.tempIdCount
+    tempIdCount: state.newDictionary.tempIdCount,
+    deletedWords: state.newDictionary.deletedWords
   }
 }
 const mapDispatchToProps = {fetchDictionaries, fetchWords, submitData, chooseDictionary, pickWord, newWord, newDict, delWord};

@@ -17113,12 +17113,10 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
     key: 'submitHandler',
     value: function submitHandler(evt) {
       evt.preventDefault();
-      this.props.dictionaryEdit.title && this.props.wordEdit.length > 0 && this.props.submitData({ dictionary: this.props.dictionaryEdit, words: this.props.wordEdit });
-    }
-  }, {
-    key: 'clearIt',
-    value: function clearIt() {
-      this._typeahead.getInstance().clear();
+      var dictionary = this.props.dictionaryEdit,
+          words = this.props.wordEdit,
+          removed = this.props.deletedWords;
+      dictionary.title && words.length > 0 && this.props.submitData({ dictionary: dictionary, words: words, removed: removed });
     }
   }, {
     key: 'newWordHandler',
@@ -17141,7 +17139,7 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
     key: 'del',
     value: function del(evt) {
       evt.preventDefault();
-      this.props.delWord(evt.target.name);
+      evt.target.value ? this.props.delWord(evt.target.name, evt.target.value) : this.props.delWord(evt.target.name);
     }
   }, {
     key: 'selectHandler',
@@ -17267,12 +17265,8 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
                   this.state.wordList && this.state.wordList.map(function (item) {
                     return _react2.default.createElement(
                       'li',
-                      { value: item.id, key: item.word },
-                      _react2.default.createElement(
-                        'div',
-                        null,
-                        item.word
-                      )
+                      { onClick: _this3.selectHandler, value: item.id, key: item.word },
+                      item.word
                     );
                   })
                 )
@@ -17317,7 +17311,7 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
                           { key: word.tempId },
                           _react2.default.createElement(
                             'button',
-                            { style: { float: 'right', backgroundColor: 'black', color: 'white' }, name: word.tempId, onClick: _this3.del },
+                            { style: { float: 'right', backgroundColor: 'black', color: 'white' }, name: word.tempId, value: word.id, onClick: _this3.del },
                             'x'
                           ),
                           _react2.default.createElement(
@@ -17352,7 +17346,8 @@ var mapStateToProps = function mapStateToProps(state) {
     words: state.word,
     dictionaryEdit: state.newDictionary.dictionary,
     wordEdit: state.newDictionary.words,
-    tempIdCount: state.newDictionary.tempIdCount
+    tempIdCount: state.newDictionary.tempIdCount,
+    deletedWords: state.newDictionary.deletedWords
   };
 };
 var mapDispatchToProps = { fetchDictionaries: _store.fetchDictionaries, fetchWords: _store.fetchWords, submitData: _store.submitData, chooseDictionary: _store.chooseDictionary, pickWord: _store.pickWord, newWord: _store.newWord, newDict: _store.newDict, delWord: _store.delWord };
@@ -18839,7 +18834,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var defaultState = {
   words: [],
   dictionary: {},
-  tempIdCount: 0
+  tempIdCount: 0,
+  deletedWords: []
 
   //if word contains an id, it is an existing word else it is a new word
   //if dictionary contians an id, it is an existing dictionary, else a new dictionary
@@ -18862,8 +18858,8 @@ var newWord = exports.newWord = function newWord(data) {
 var newDict = exports.newDict = function newDict(data) {
   return { type: ADD_DICTIONARY, data: data };
 };
-var delWord = exports.delWord = function delWord(tempId) {
-  return { type: REMOVE_WORD, tempId: tempId };
+var delWord = exports.delWord = function delWord(tempId, id) {
+  return { type: REMOVE_WORD, tempId: tempId, id: id };
 };
 var submitChanges = exports.submitChanges = function submitChanges(dictionaryData) {
   return { type: SUBMIT_CHANGES, dictionaryData: dictionaryData };
@@ -18904,10 +18900,16 @@ var submitData = exports.submitData = function submitData(stateData) {
         return err;
       });
     });
+    stateData.deleted.map(function (wordId) {
+      _axios2.default.delete('/api/groups/' + dictId + '/' + wordId).then(function (res) {
+        return res.data;
+      }).catch(function (err) {
+        return err;
+      });
+    });
     _history2.default.push('/dictionary/' + dictId);
   };
 };
-
 var chooseDictionary = exports.chooseDictionary = function chooseDictionary(id) {
   return function (dispatch) {
     _axios2.default.get('/api/dictionaries/' + id).then(function (res) {
@@ -18946,8 +18948,10 @@ function reducer() {
       return Object.assign({}, state, {
         words: state.words.filter(function (item) {
           return item.tempId != action.tempId;
-        })
+        }),
+        deletedWords: [].concat(_toConsumableArray(state.deletedWords), [action.id])
       });
+
     default:
       return state;
   }

@@ -3,7 +3,8 @@ import history from '../history';
 const defaultState = {
   words: [],
   dictionary: {},
-  tempIdCount: 0
+  tempIdCount: 0,
+  deletedWords:[]
 }
 
 //if word contains an id, it is an existing word else it is a new word
@@ -19,7 +20,7 @@ export const pickDict = (data, words) => ({type: SELECT_DICTIONARY, data, words}
 export const pickWord = (data) => ({type: SELECT_WORD, data});
 export const newWord = (data) => ({type: ADD_WORD, data});
 export const newDict = (data) => ({type: ADD_DICTIONARY, data});
-export const delWord = (tempId) => ({type: REMOVE_WORD, tempId});
+export const delWord = (tempId, id) => ({type: REMOVE_WORD, tempId, id});
 export const submitChanges = (dictionaryData) => ({type: SUBMIT_CHANGES, dictionaryData});
 
 
@@ -49,9 +50,13 @@ export const submitData = (stateData) => _ => {
       .then(res => res.data)
       .catch(err => err)
   })
+  stateData.deleted.map(wordId => {
+    axios.delete(`/api/groups/${dictId}/${wordId}`)
+    .then(res => res.data)
+    .catch(err => err)
+  })
   history.push(`/dictionary/${dictId}`)
 }
-
 export const chooseDictionary = id => dispatch => {
   axios.get(`/api/dictionaries/${id}`)
   .then(res => res.data)
@@ -83,8 +88,10 @@ export default function reducer(state = defaultState, action) {
     };
     case REMOVE_WORD:
     return Object.assign({}, state, {
-      words: state.words.filter(item => item.tempId != action.tempId)
+      words: state.words.filter(item => item.tempId != action.tempId),
+      deletedWords: [...state.deletedWords, action.id]
     });
+
     default:
     return state;
   }

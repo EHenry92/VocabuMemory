@@ -31,6 +31,12 @@ export class WordList extends Component {
         }
         else {words = this.props.words}
         return (
+          <div>
+            {
+                this.props.dictionary.id &&
+                <div>{this.props.dictionary.title}
+                </div>
+              }
             <div id="wordList">
               { words &&
                 words.map(list =>
@@ -48,6 +54,7 @@ export class WordList extends Component {
                 )
               }
             </div>
+          </div>
 
         )
     }

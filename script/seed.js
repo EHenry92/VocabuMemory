@@ -262,7 +262,7 @@ async function seed () {
     })
     .catch(err => console.log(err))
     ,
-    Dictionary.create({title: 'Elementry Math', image: 'https://cdn.themeasuredmom.com/wp-content/uploads/2015/02/block-play.jpg'})
+    Dictionary.create({title: 'Elementary Math', image: 'https://cdn.themeasuredmom.com/wp-content/uploads/2015/02/block-play.jpg'})
     .then(_ => {
       for (var i = 0; i < mathList.length; i++){
         Word.create({

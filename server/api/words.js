@@ -17,11 +17,12 @@ router.get('/level/:levelId', (req, res, next) => {
     .catch(next)
 })
 router.post('/', (req, res, next) => {
-  Word.create(req.body)
-  .then(word => res.json(word))
+  let {sentence, word, definition} = req.body;
+  Word.create({sentence, word, definition})
+  .then(pData => res.json(pData))
   .catch(next)
-  res.end();
 })
+
 router.get('/:id', (req, res, next) => {
   Word.findById(req.params.id)
   .then(word => res.json(word))

@@ -25,22 +25,17 @@ export const submitChanges = (dictionaryData) => ({type: SUBMIT_CHANGES, diction
 
 
 const addDcitionary = (data) => {
-  let id;
-  axios.post('/api/dictionaries', data )
+  return axios.post('/api/dictionaries', data )
       .then(res => res.data)
-      .then(dInfo => {
-        id = dInfo.id})
+      .then(dInfo => dInfo.id)
       .catch(err => err)
-  return id;
 }
 
 const addWord = (data) => {
-  let id;
-  axios.post('/api/words', data )
+  return axios.post('/api/words', data )
       .then(res => res.data)
-      .then(wInfo => {id = wInfo.id})
+      .then(wInfo => wInfo.id)
       .catch(err => err)
-  return id;
 }
 const makeupdates = (dictId, stateData) => {
   stateData.deleted.map(wordId => {
@@ -49,22 +44,23 @@ const makeupdates = (dictId, stateData) => {
     .catch(err => err)
   })
   stateData.words.map(word => {
-    let wordId = word.id || addWord(word);
-      axios.post(`/api/groups/${dictId}/${wordId}`, )
-      .then(res => res.data)
-      .catch(err => err)
+    new Promise((resolve, reject) => {
+      let newWordId = word.id || addWord(word);
+      newWordId ? resolve(newWordId) : reject(newWordId)
+    })
+    .then(newId => axios.post(`/api/groups/${dictId}/${newId}`))
+    .then(res => res.data)
+    .catch(err => err)
   })
 }
-const determineDId = dictionary => dictionary.id || addDcitionary(dictionary);
 
 export const submitData = (stateData) => _ => {
-  let dictId;
   new Promise((resolve, reject) => {
-    resolve(determineDId(stateData.dictionary))
+      let theid = stateData.dictionary.id || addDcitionary(stateData.dictionary)
+      theid ? resolve(theid) : reject(theid)
   })
-  .then(id => {dictId = id} )
-  .then( () => makeupdates(dictId, stateData))
-  .then( () => {history.push(`/dictionary/${dictId}`)})
+  .then(id => {makeupdates(id, stateData); return id})
+  .then( dId => {history.push(`/dictionary/${dId}`)})
 }
 
 export const chooseDictionary = id => dispatch => {
@@ -97,7 +93,7 @@ export default function reducer(state = defaultState, action) {
       })
     case REMOVE_WORD:
       return Object.assign({}, state, {
-        words: state.words.filter(item => item.tempId !== action.tempId),
+        words: state.words.filter(item => item.tempId != action.tempId),
         deletedWords: [...state.deletedWords, action.id]
       });
 

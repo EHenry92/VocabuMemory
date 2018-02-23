@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchDictionaries, fetchWords, submitData, chooseDictionary, pickWord, newWord, newDict, delWord} from '../store';
-import {Typeahead} from 'react-bootstrap-typeahead';
 
 export class AddDictionary extends Component {
   constructor (props) {
@@ -41,7 +40,7 @@ export class AddDictionary extends Component {
     let word = evt.target.word.value;
     let definition =  evt.target.definition.value;
     let sentence = evt.target.hint.value;
-    let tempId =  this.props.tempIdCount;
+    let tempId =  this.props.tempIdCount + 1;
     word && definition && this.props.newWord({word, definition, sentence, tempId});
     evt.target.reset();
   }
@@ -66,9 +65,8 @@ export class AddDictionary extends Component {
     evt.preventDefault();
     let input = evt.target.value.toLowerCase();
     let wordList = this.props.words.filter(wItem => {
-      return (this.props.dictionaryEdit.id && (wItem.dictionaryId !== this.props.dictionaryEdit.id) ||
-      wItem.word.indexOf(input) > -1)
-
+      return ((this.props.dictionaryEdit.id && (wItem.dictionaryId !== this.props.dictionaryEdit.id) ||
+      wItem.word.indexOf(input) > -1)  && this.props.wordEdit.indexOf(wItem.tempId) === -1)
     })
     this.setState({wordList})
   }
@@ -120,7 +118,7 @@ export class AddDictionary extends Component {
             {
               this.state.changeW &&
               <div>
-                <input type="text" id="myInput" onClick={this.filterIt} onChange={this.filterIt} placeholder="Search for word."/>
+                <input type="text" id="myInput" onClick={this.filterIt} onChange={this.filterIt} placeholder="Search for word." />
                 <ul id="filteredList" onClick={this.selectHandler} >
                 {
                 this.state.wordList && this.state.wordList.map(item =>

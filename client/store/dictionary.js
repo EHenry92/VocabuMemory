@@ -4,8 +4,8 @@ const GET_DICTIONARIES = 'GET_DICTIONARIES';
 const GET_DICTIONARY = 'GET_DICTIONARY';
 const EDIT_DICTIONARY = 'EDIT_DICTIONARY';
 const DELETE_DICTIONARY = 'DELETE_DICTIONARY';
-const ADD_DICTIONARY = 'ADD_DICTIONARY';
-const ADD_DICTIONARY_WORD = 'ADD_DICTIONARY_WORD';
+// const ADD_DICTIONARY = 'ADD_DICTIONARY';
+// const ADD_DICTIONARY_WORD = 'ADD_DICTIONARY_WORD';
 
 export const getDictionaries = (dictionaries) => {
   const action = {type: GET_DICTIONARIES, dictionaries};
@@ -26,15 +26,15 @@ export const deleteDictionary = (id) => {
   return action;
 }
 
-export const addDictionary = (dictionary) => {
-  const action = {type: ADD_DICTIONARY, dictionary};
-  return action;
-}
+// export const addDictionary = (dictionary) => {
+//   const action = {type: ADD_DICTIONARY, dictionary};
+//   return action;
+// }
 
-export const addDictionaryWord = (id, word) => {
-  const action = {type: ADD_DICTIONARY_WORD, id, word};
-  return action;
-}
+// export const addDictionaryWord = (id, word) => {
+//   const action = {type: ADD_DICTIONARY_WORD, id, word};
+//   return action;
+// }
 
 export const fetchDictionaries = () => {
  return (dispatch) =>  {
@@ -88,16 +88,16 @@ export const fetchDictionary = (id) => {
 //   }
 // }
 
-export const addWord = (dictionaryId, wordId) => {
-  return (dispatch) =>  {
-    axios.get(`/api/dictionaries/${dictionaryId}/${wordId}`)
-    .then(res => res.data)
-    .then(dictionary => {
-      dispatch(addDictionaryWord(dictionary))
-    })
-    .catch(err => err)
-  }
-}
+// export const addWord = (dictionaryId, wordId) => {
+//   return (dispatch) =>  {
+//     axios.get(`/api/dictionaries/${dictionaryId}/${wordId}`)
+//     .then(res => res.data)
+//     .then(dictionary => {
+//       dispatch(addDictionaryWord(dictionary))
+//     })
+//     .catch(err => err)
+//   }
+// }
 
 export default function reducer (state = [], action) {
   switch (action.type) {
@@ -109,10 +109,10 @@ export default function reducer (state = [], action) {
       return [...state, action.dictionary];
     case DELETE_DICTIONARY:
       return state.filter(dictionary => dictionary.id != action.id);
-    case ADD_DICTIONARY:
-      return [...state, action.dictionary]
-    case ADD_DICTIONARY_WORD:
-      return [...state, action.dictionary]
+    // case ADD_DICTIONARY:
+    //   return [...state, action.dictionary]
+    // case ADD_DICTIONARY_WORD:
+    //   return [...state, action.dictionary]
     default:
       return state;
   }

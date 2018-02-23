@@ -5,14 +5,14 @@ const GET_WORD = 'GET_WORD';
 const GET_LEVEL = 'GET_LEVEL';
 const EDIT_WORD = 'EDIT_WORD';
 const DELETE_WORD = 'DELETE_WORD';
-const ADD_WORD = 'ADD_WORD';
+// const ADD_WORD = 'ADD_WORD';
 
 const getWords = (words) => ({type: GET_WORDS, words});
 const getWord = (word) => ({type: GET_WORD, word});
 const getLevel = (words) => ({type: GET_LEVEL, words});
 const editWord = (word) => ({type: EDIT_WORD, word});
 const deleteWord = (id) => ({type: DELETE_WORD, id});
-const addWord = (word) => ({type: ADD_WORD, word});
+// const addWord = (word) => ({type: ADD_WORD, word});
 
 export const fetchWords = () => (dispatch) => {
   return axios.get('/api/words')
@@ -49,12 +49,12 @@ export const destroyWord = (id) => (dispatch) => {
   .catch(err => err)
 }
 
-export const postWord = (data) => (dispatch) => {
-  return axios.post('/api/words', data)
-  .then(res => res.data)
-  .then(word => dispatch(addWord(word)))
-  .catch(err => err)
-}
+// export const postWord = (data) => (dispatch) => {
+//   return axios.post('/api/words', data)
+//   .then(res => res.data)
+//   .then(word => dispatch(addWord(word)))
+//   .catch(err => err)
+// }
 
 export default function reducer (state = [], action) {
   switch (action.type) {
@@ -68,8 +68,8 @@ export default function reducer (state = [], action) {
       return [...state, action.word]
     case DELETE_WORD:
       return state.filter(word => word.id !== action.id)
-    case ADD_WORD:
-      return [...state, action.word]
+    // case ADD_WORD:
+    //   return [...state, action.word]
     default:
       return state;
   }

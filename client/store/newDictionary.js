@@ -55,14 +55,14 @@ const makeupdates = (dictId, stateData) => {
       .catch(err => err)
   })
 }
-const determineDId = dictionary => {return dictionary.id || addDcitionary(dictionary)};
+const determineDId = dictionary => dictionary.id || addDcitionary(dictionary);
 
 export const submitData = (stateData) => _ => {
   let dictId;
   new Promise((resolve, reject) => {
     resolve(determineDId(stateData.dictionary))
   })
-  .then(id => {dictId = id})
+  .then(id => {dictId = id} )
   .then( () => makeupdates(dictId, stateData))
   .then( () => {history.push(`/dictionary/${dictId}`)})
 }
@@ -88,16 +88,16 @@ export default function reducer(state = defaultState, action) {
         words: action.words,
         tempIdCount: action.words.length};
     case ADD_DICTIONARY:
-      return {...state, dictionary: action.data}
+      return Object.assign({}, state, {dictionary: action.data})
     case SELECT_WORD:
     case ADD_WORD:
-      return { ...state,
+      return Object.assign({}, state, {
         words: [...state.words, action.data],
         tempIdCount: state.tempIdCount + 1
-      };
+      })
     case REMOVE_WORD:
       return Object.assign({}, state, {
-        words: state.words.filter(item => item.tempId != action.tempId),
+        words: state.words.filter(item => item.tempId !== action.tempId),
         deletedWords: [...state.deletedWords, action.id]
       });
 

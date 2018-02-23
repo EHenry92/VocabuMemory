@@ -38,11 +38,6 @@ const addWord = (data) => {
       .catch(err => err)
 }
 const makeupdates = (dictId, stateData) => {
-  stateData.deleted.map(wordId => {
-    axios.delete(`/api/groups/${dictId}/${wordId}`)
-    .then(res => res.data)
-    .catch(err => err)
-  })
   stateData.words.map(word => {
     new Promise((resolve, reject) => {
       let newWordId = word.id || addWord(word);
@@ -59,6 +54,7 @@ export const submitData = (stateData) => _ => {
       let theid = stateData.dictionary.id || addDcitionary(stateData.dictionary)
       theid ? resolve(theid) : reject(theid)
   })
+  .then(dictId => {axios.delete(`/api/groups/all/${dictId}`); return dictId})
   .then(id => {makeupdates(id, stateData); return id})
   .then( dId => {history.push(`/dictionary/${dId}`)})
 }
@@ -96,7 +92,6 @@ export default function reducer(state = defaultState, action) {
         words: state.words.filter(item => item.tempId != action.tempId),
         deletedWords: [...state.deletedWords, action.id]
       });
-
     default:
       return state;
   }

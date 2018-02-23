@@ -37,7 +37,7 @@ class Routes extends Component {
             <Route exact path="/dictionaries" component={DictionaryList} />
             <Route path="/dictionary/:id" component={WordList} />
             <Route path="/words" component={WordList} />
-            <Route path="/new" component={AddDictionary} />
+            <Route path="/edit" component={AddDictionary} />
             <Route path="/" component={Home} />
           </Switch>
         </Main>

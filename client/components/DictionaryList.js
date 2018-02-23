@@ -1,20 +1,21 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
-import {fetchDictionaries} from '../store/dictionary'
+import {fetchDictionaries} from '../store'
 import {connect} from 'react-redux';
 import {List, ListItem} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
+import history from '../history'
 
 
 export class DictionaryList extends Component {
-    componentWillMount()  {
+    componentWillMount() {
       this.props.loadInitialDictionary();
-      // console.log(this.props);
     }
+
 
     render ()   {
         return (
-            <div>
+            <div style={{display: 'flex'}}>
               <List>
                 <Subheader inset={true}>Select a dictionary: </Subheader>
                 {
@@ -28,6 +29,13 @@ export class DictionaryList extends Component {
                   })
                 }
             </List>
+            <div>
+              <button onClick={() => {history.push('/edit')}}>
+                    Add/Edit
+                    <br />
+                    Dictionary
+              </button>
+            </div>
             </div>
         )
     }
@@ -35,7 +43,7 @@ export class DictionaryList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    dictionary: state.dictionary
+    dictionary: state.dictionaryList
   }
 }
 const mapDispatchToProps = (dispatch) => {

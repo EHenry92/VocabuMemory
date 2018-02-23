@@ -162,7 +162,7 @@ export class AddDictionary extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    dictionaries: state.dictionary,
+    dictionaries: state.dictionaryList,
     words: state.word,
     dictionaryEdit: state.newDictionary.dictionary,
     wordEdit: state.newDictionary.words,

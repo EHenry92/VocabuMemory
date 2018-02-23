@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {fetchDictionaries} from '../store/dictionary';
-import {fetchCards, destroyCards} from '../store/game';
+import {fetchCards, destroyCards, fetchDictionaries} from '../store';
 import {connect} from 'react-redux';
 import {GameBoard} from './index';
 
@@ -113,7 +112,7 @@ export class MainGame extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    dictionary: state.dictionary,
+    dictionary: state.dictionaryList,
   }
 }
 const mapDispatchToProps = {fetchDictionaries, fetchCards, destroyCards}

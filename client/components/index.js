@@ -15,4 +15,3 @@ export {default as Results} from './Results';
 export {default as Admin} from './Admin';
 export {default as AddDictionary} from './AddDictionary';
 
-

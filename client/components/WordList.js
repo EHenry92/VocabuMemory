@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
-import {fetchDictionary} from '../store/dictionary';
-import {fetchWords} from '../store/word'
+import {fetchDictionary, fetchWords} from '../store';
 import {connect} from 'react-redux';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 
 export class WordList extends Component {
-    constructor(props)  {
+    constructor(props) {
       super(props);
       this.state = {
         dictionary: true
       }
     }
-    componentWillMount()  {
+    componentWillMount() {
       let location = this.props.location.pathname;
       if (location.startsWith('/dictionary')) {
             let number = location.slice(location.lastIndexOf('/') + 1)
@@ -24,7 +23,7 @@ export class WordList extends Component {
     }
 
 
-    render ()   {
+    render () {
         let words;
         if (this.state.dictionary) {
           words = this.props.dictionary.words;

@@ -50,13 +50,14 @@ const makeupdates = (dictId, stateData) => {
 }
 
 export const submitData = (stateData) => _ => {
+  let theid;
   new Promise((resolve, reject) => {
-      let theid = stateData.dictionary.id || addDcitionary(stateData.dictionary)
+      theid = stateData.dictionary.id || addDcitionary(stateData.dictionary)
       theid ? resolve(theid) : reject(theid)
   })
-  .then(dictId => {axios.delete(`/api/groups/all/${dictId}`); return dictId})
-  .then(id => {makeupdates(id, stateData); return id})
-  .then( dId => {history.push(`/dictionary/${dId}`)})
+  .then(dictId => axios.delete(`/api/groups/all/${dictId}`))
+  .then(makeupdates(theid, stateData))
+  .then(_ => {history.push(`/dictionary/${theid}`)})
 }
 
 export const chooseDictionary = id => dispatch => {

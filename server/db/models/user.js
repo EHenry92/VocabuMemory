@@ -20,10 +20,6 @@ const User = db.define('user', {
   admin: {
     type: Sequelize.BOOLEAN,
     defaultValue: false
-  },
-  teacher: {
-    type: Sequelize.BOOLEAN,
-    defaultValue: false
   }
 })
 

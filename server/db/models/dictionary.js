@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
+const Word = require('./word')
 
 const Dictionary = db.define('dictionary', {
   title: {
@@ -13,10 +14,9 @@ const Dictionary = db.define('dictionary', {
   }
   }, {
     defaultScope: {
-      include: [{all: true}]
+      include: [{model: Word}]
     }
   }
 )
 
 module.exports = Dictionary;
-

@@ -15,6 +15,7 @@ const ADD_WORD = 'ADD_WORD';
 const ADD_DICTIONARY = 'ADD_DICTIONARY';
 const REMOVE_WORD = 'REMOVE_WORD';
 const SUBMIT_CHANGES = 'SUBMIT_CHANGES';
+const CLEAR = 'CLEAR';
 
 export const pickDict = (data, words) => ({type: SELECT_DICTIONARY, data, words});
 export const pickWord = (data) => ({type: SELECT_WORD, data});
@@ -22,6 +23,7 @@ export const newWord = (data) => ({type: ADD_WORD, data});
 export const newDict = (data) => ({type: ADD_DICTIONARY, data});
 export const delWord = (tempId, id) => ({type: REMOVE_WORD, tempId, id});
 export const submitChanges = (dictionaryData) => ({type: SUBMIT_CHANGES, dictionaryData});
+export const clearEdit = () => ({type: CLEAR});
 
 
 const addDcitionary = (data) => {
@@ -49,7 +51,7 @@ const makeupdates = (dictId, stateData) => {
   })
 }
 
-export const submitData = (stateData) => _ => {
+export const submitData = (stateData) => dispatch => {
   new Promise((resolve, reject) => {
       let theid = stateData.dictionary.id || addDcitionary(stateData.dictionary)
       theid ? resolve(theid) : reject(theid)
@@ -64,7 +66,10 @@ export const submitData = (stateData) => _ => {
       id ? resolve(id) : reject(temp)
     })
   )
-  .then( did => {history.push(`/dictionary/${did}`)})
+  .then( did => {
+    dispatch(clearEdit())
+    history.push(`/dictionary/${did}`)
+  })
 }
 
 export const chooseDictionary = id => dispatch => {
@@ -100,6 +105,8 @@ export default function reducer(state = defaultState, action) {
         words: state.words.filter(item => item.tempId != action.tempId),
         deletedWords: [...state.deletedWords, action.id]
       });
+    case CLEAR:
+      return defaultState;
     default:
       return state;
   }

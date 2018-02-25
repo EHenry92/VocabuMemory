@@ -1336,7 +1336,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var reducer = (0, _redux.combineReducers)({ user: _user2.default, dictionary: _dictionary2.default, word: _word2.default, game: _game2.default, newDictionary: _newDictionary2.default, dictionaryList: _dictionaryList2.default });
 var middleware = (0, _reduxDevtoolsExtension.composeWithDevTools)((0, _redux.applyMiddleware)(_reduxThunk2.default, (0, _reduxLogger2.default)({ collapsed: true })));
-var store = (0, _redux.createStore)(reducer, middleware);
+var store = (0, _redux.createStore)(reducer, localStorage.storeState && JSON.parse(localStorage.storeState), middleware);
+
+store.subscribe(function () {
+  localStorage.storeState = JSON.stringify(store.getState());
+});
 
 exports.default = store;
 
@@ -15057,7 +15061,7 @@ function reducer() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.chooseDictionary = exports.submitData = exports.submitChanges = exports.delWord = exports.newDict = exports.newWord = exports.pickWord = exports.pickDict = undefined;
+exports.chooseDictionary = exports.submitData = exports.clearEdit = exports.submitChanges = exports.delWord = exports.newDict = exports.newWord = exports.pickWord = exports.pickDict = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -15089,6 +15093,7 @@ var ADD_WORD = 'ADD_WORD';
 var ADD_DICTIONARY = 'ADD_DICTIONARY';
 var REMOVE_WORD = 'REMOVE_WORD';
 var SUBMIT_CHANGES = 'SUBMIT_CHANGES';
+var CLEAR = 'CLEAR';
 
 var pickDict = exports.pickDict = function pickDict(data, words) {
   return { type: SELECT_DICTIONARY, data: data, words: words };
@@ -15107,6 +15112,9 @@ var delWord = exports.delWord = function delWord(tempId, id) {
 };
 var submitChanges = exports.submitChanges = function submitChanges(dictionaryData) {
   return { type: SUBMIT_CHANGES, dictionaryData: dictionaryData };
+};
+var clearEdit = exports.clearEdit = function clearEdit() {
+  return { type: CLEAR };
 };
 
 var addDcitionary = function addDcitionary(data) {
@@ -15144,7 +15152,7 @@ var makeupdates = function makeupdates(dictId, stateData) {
 };
 
 var submitData = exports.submitData = function submitData(stateData) {
-  return function (_) {
+  return function (dispatch) {
     new Promise(function (resolve, reject) {
       var theid = stateData.dictionary.id || addDcitionary(stateData.dictionary);
       theid ? resolve(theid) : reject(theid);
@@ -15157,6 +15165,7 @@ var submitData = exports.submitData = function submitData(stateData) {
         id ? resolve(id) : reject(temp);
       });
     }).then(function (did) {
+      dispatch(clearEdit());
       _history2.default.push('/dictionary/' + did);
     });
   };
@@ -15203,6 +15212,8 @@ function reducer() {
         }),
         deletedWords: [].concat(_toConsumableArray(state.deletedWords), [action.id])
       });
+    case CLEAR:
+      return defaultState;
     default:
       return state;
   }

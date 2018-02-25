@@ -15145,14 +15145,19 @@ var makeupdates = function makeupdates(dictId, stateData) {
 
 var submitData = exports.submitData = function submitData(stateData) {
   return function (_) {
-    var theid = void 0;
     new Promise(function (resolve, reject) {
-      theid = stateData.dictionary.id || addDcitionary(stateData.dictionary);
+      var theid = stateData.dictionary.id || addDcitionary(stateData.dictionary);
       theid ? resolve(theid) : reject(theid);
-    }).then(function (dictId) {
-      return _axios2.default.delete('/api/groups/all/' + dictId);
-    }).then(makeupdates(theid, stateData)).then(function (_) {
-      _history2.default.push('/dictionary/' + theid);
+    }).then(function (finalId) {
+      _axios2.default.delete('/api/groups/all/' + finalId);
+      return finalId;
+    }).then(function (id) {
+      return new Promise(function (resolve, reject) {
+        var temp = makeupdates(id, stateData);
+        id ? resolve(id) : reject(temp);
+      });
+    }).then(function (did) {
+      _history2.default.push('/dictionary/' + did);
     });
   };
 };

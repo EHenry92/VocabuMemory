@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import {fetchDictionaries, destroyDictionary} from '../store/dictionary';
-import {fetchWords, destroyWord} from '../store/word';
+import {fetchDictionaries, destroyDictionary, fetchWords, destroyWord} from '../store';
 import {connect} from 'react-redux';
 
 export class GameBoard extends Component {
-    constructor(props)  {
+    constructor(props) {
       super(props);
       this.handleDelete = this.handleDelete.bind(this);
     }
@@ -12,8 +11,6 @@ export class GameBoard extends Component {
       this.props.fetchWords()
       this.props.fetchDictionaries()
     }
-
-
     handleDelete(evt){
       evt.preventDefault();
       let id = evt.target.value;
@@ -23,9 +20,7 @@ export class GameBoard extends Component {
       :
       this.props.destroyWord(id)
     }
-
-    render ()   {
-
+    render () {
         return (
             <div>
               <table className="table">

@@ -1,0 +1,50 @@
+
+input,textarea {
+  background-color: transparent;
+  border-style: none none solid none;
+  border-color: black;
+  font-size: 15px;
+  max-width: 24vw;
+  margin: 10px;
+}
+select {
+  border-style: solid;
+  border-color: black;
+}
+option {
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+}
+
+#login-form{
+  display: flex;
+  flex-direction: column;
+}
+
+#edit-form{
+  display: flex;
+  #edit-control{
+    width: 25vw;
+  }
+  #edit-data{
+    width: 65vw;
+    height: 80vh;
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        width: 10vw;
+        margin: 2px;
+        overflow: scroll;
+        border-style: solid;
+        border-width: thin;
+        height: 60px;
+        }
+      }
+    }
+}
+#filteredList {
+  max-height: 20vh;
+  overflow-y: scroll;
+}

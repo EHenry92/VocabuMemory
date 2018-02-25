@@ -14,4 +14,5 @@ export {default as Home} from './Home';
 export {default as Results} from './Results';
 export {default as Admin} from './Admin';
 export {default as AddDictionary} from './AddDictionary';
+export {default as LoginSignup} from './LoginSignup';
 

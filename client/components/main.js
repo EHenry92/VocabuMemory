@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {withRouter, Link} from 'react-router-dom'
+import {withRouter, NavLink} from 'react-router-dom'
 import {logout} from '../store'
-
 /**
  * COMPONENT
  *  The Main component is our 'picture frame' - it displays the navbar and anything
@@ -11,18 +10,25 @@ import {logout} from '../store'
  *  rendered out by the component's `children`.
  */
 const Main = (props) => {
-  const {children, handleClick} = props
+  const {children, handleClick, isLoggedIn} = props
 
   return (
     <div>
       <nav>
-        <a href="/home">Home</a>
-        <a href="/game">Game</a>
-        <a href="/dictionaries">Dictionaries</a>
-        <a href="/words">Words</a>
-        <a id="title">
+        <NavLink to="/home">Home</NavLink>
+        <NavLink to="/game">Game</NavLink>
+        <NavLink to="/dictionaries">Dictionaries</NavLink>
+        {
+          isLoggedIn ?
+          <a onClick={handleClick}> Logout </a>
+          :
+          <NavLink to="/loginSignup">LogIn/SignUp</NavLink>
+
+
+        }
+        <div id="title">
         VocabuMemory
-        </a>
+        </div>
       </nav>
       <hr />
       {children}
@@ -59,18 +65,3 @@ Main.propTypes = {
   handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }
-
-{/* <div>
-        <Link to="/home">Home </Link>
-        <Link to="/game">Game</Link>
-          </div>
-        {
-          isLoggedIn
-            ? <div>
-              <Link to="/profile">My Profile</Link>
-              <a href="#" onClick={handleClick}>Logout</a>
-            </div>
-            : <div>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Sign Up</Link>
-            </div> */}

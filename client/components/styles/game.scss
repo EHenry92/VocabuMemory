@@ -1,0 +1,49 @@
+
+.gamePiece {
+  height: 20vh;
+  width: 20vw;
+  margin: 10px;
+  border-radius: 12px;
+  font-size: 2vw;
+  transition: transform 1s;
+
+}
+.outGame {
+  transform: rotate(360deg);
+
+}
+.cardBack {
+  color: transparent;
+  border-color: rgb(9, 165, 238);
+  border-width: 5px;
+  background:linear-gradient(to right, rgb(6, 170, 145) , rgb(9, 165, 238));
+}
+.cardFace {
+  background-color: rgb(6, 170, 145);
+  color: black;
+}
+
+.gameBoard {
+  display:flex;
+  flex-flow: row wrap;
+  width: 90vw;
+}
+
+#wordBank {
+  width: 40vw;
+  ul {
+    margin: 2px;
+    padding: 0;
+  }
+
+}
+
+#controlBox {
+  background-color: rgb(6, 170, 145);
+  border-radius: 12px;
+}
+#hintBox {
+  border-radius: 12px;
+  height: 35px;
+  max-width: 10vw;
+}

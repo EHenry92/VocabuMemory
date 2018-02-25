@@ -3,8 +3,6 @@ import React from 'react';
 export default function Home (){
         return (
             <div>
-              {/* <h1> VocabuMemory </h1>
-              <h3> Practice you vocabulary skills with this memory matching game</h3> */}
               <div className="component">
 				<ul className="align">
 					<li>
@@ -14,7 +12,7 @@ export default function Home (){
 								<li className="coverDesign blue">
 										<h1>Vocabu-
                       Memory</h1>
-										<p>*</p>
+                      <p> By Evlis Henry</p>
 								</li>
 								<li />
 							</ul>
@@ -40,7 +38,7 @@ export default function Home (){
 							<figcaption>
 								<h1>Stretch your memory muscles while reviewing your vocabulary.</h1>
 								<span />
-								<p> By Evlis Henry</p>
+								{/* <p> By Evlis Henry</p> */}
 							</figcaption>
 						</figure>
 					</li>

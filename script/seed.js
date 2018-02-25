@@ -198,7 +198,6 @@ const mathList = [
   {word: 'congruent', definition: 'figures or angles that have the same size and same shape'},
   {word: 'similar', definition: 'figures or angles that have the same shape but different sizes'}
 ]
-
 const engineeringWords = [
   {word: 'debounce function', definition: 'A function that limits the rate at which a function can fire.', sentence: 'function debounce(func, wait, immediate) {var timeout;  return function() {   var context = this, args = arguments;   var later = function() {    timeout = null;    if (!immediate) func.apply(context, args);   };   var callNow = immediate && !timeout;   clearTimeout(timeout);   timeout = setTimeout(later, wait);   if (callNow) func.apply(context, args);  }; };', verified: true},
   {word: 'hoisting', definition: "JavaScript's default behavior of moving declarations to the top.", sentence: '	x = 5; // Assign 5 to x ' + '\n' + 'elem = document.getElementById("demo"); // Find an element' + '\n' + 'elem.innerHTML = x;// Display x in the element' + '\n' + 'var x; // Declare x', verified: true},
@@ -229,13 +228,10 @@ const engineeringWords = [
 async function seed () {
   await db.sync({force: true})
   console.log('db synced!')
-  // Whoa! Because we `await` the promise that db.sync returns, the next line will not be
-  // executed until that promise resolves!
-
   const users = await Promise.all([
     User.create({email: 'cody@email.com', password: '123'}),
     User.create({email: 'murphy@email.com', password: '123'}),
-    User.create({email: 'evlis@email.com', password: '789', admin: true})
+    User.create({name: 'Evlis', email: 'evlis@email.com', password: '789', admin: true})
 
   ])
 

@@ -1,0 +1,32 @@
+$background-color: teal;
+.tab-container{
+  border-style: solid;
+  display:flex;
+  width: 60vw;
+  margin: 20px 20vw;
+  border-width: thin;
+}
+
+.side-tabs {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+
+  .tab {
+    height: 70px;
+    text-align: center;
+
+    div{
+      width: 100%;
+      margin: 20px auto;
+    }
+  }
+  .tab.active{
+    background-color: $background-color;
+  }
+}
+.tab-content {
+  width: 70%;
+  border-width: thick;
+  border-left: solid $background-color;
+}

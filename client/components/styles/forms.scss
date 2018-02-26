@@ -8,15 +8,12 @@ input,textarea {
   margin: 10px;
 }
 select {
-  border-style: solid;
-  border-color: black;
+  border-style: none;
+  background-color: black;
+  color:white;
+
 }
 
-option {
-  background-color: white;
-  border-style: solid;
-  border-color: black;
-}
 
 label {
   display: block;

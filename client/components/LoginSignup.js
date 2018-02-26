@@ -21,6 +21,8 @@ class LoginSignup extends Component {
   }
   render () {
     return (
+    <div className="outter-box">
+      <div className="top-tab" />
       <div className="tab-container">
         <div className="side-tabs">
         <div className="blank-tab" />
@@ -40,6 +42,7 @@ class LoginSignup extends Component {
             <Signup />
           }
         </div>
+      </div>
     </div>
   )}
 }

@@ -13,6 +13,7 @@ export class MainGame extends Component {
         option: 'level',
         size: 16,
         began: false,
+        small: true
       }
       this.handleOptionChange = this.handleOptionChange.bind(this);
       this.playGame = this.playGame.bind(this);
@@ -49,24 +50,14 @@ export class MainGame extends Component {
             <form onSubmit = {this.playGame} className="controlPanel">
               <div>
                 <div>
-                    <input
-                      type="checkbox"
-                      name="gameGroup"
-                      value="dictionary"
-                      onChange = {this.handleOptionChange}
-                      checked={!this.state.level} />
-                      Select a dictionary
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="gameGroup"
-                      value="level"
-                      onChange = {this.handleOptionChange}
-                      checked = {this.state.level} />Select a level
-
+                <label onChange={(evt) => {
+                      let level = evt.target.value == 'level';
+                      this.setState({level, option: evt.target.value, choice: -1});
+                    }}>Choose:
+                      <input type="checkbox" name="gameGroup" value="dictionary" checked={!this.state.level} /> Dictionary
+                      <input type="checkbox" name="gameGroup" value="level" checked = {this.state.level} /> Level
+                    </label>
                 </div>
-
               {
                 this.state.option === 'level' ?
                 <select onChange={this.handleSelectChange}>
@@ -90,10 +81,12 @@ export class MainGame extends Component {
               </div>
               <div>
                 <div>
-                  <label onChange={(evt) => {this.setState({size: evt.target.value})
-  }}>Size:
-                  <input type="checkbox" name="sizeChoice" value={12} /> 4x3
-                  <input type="checkbox" name="sizeChoice" value={16} /> 4x4
+                  <label onChange={(evt) => {
+                    let small = evt.target.value == '12';
+                    this.setState({small, size: evt.target.value});
+                  }}>Size:
+                  <input type="checkbox" name="sizeChoice" value={12} checked={this.state.small}/> 4x3
+                  <input type="checkbox" name="sizeChoice" value={16} checked={!this.state.small}/> 4x4
                   </label>
                 </div>
               </div>

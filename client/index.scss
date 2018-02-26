@@ -7,16 +7,6 @@ body {
   a {
     text-decoration: none;
   }
-
-  label {
-    display: block;
-  }
-
-
-  form div {
-    margin: 1em;
-    display: inline-block;
-  }
 }
 #wordList {
   display: flex;
@@ -28,7 +18,10 @@ body {
 ul {
 	margin: 0;
 	padding: 0;
-	list-style: none;
+  list-style: none;
+  li>button{
+    margin: 0;
+  }
 }
 
 
@@ -75,8 +68,6 @@ ul {
     float: right;
   }
 }
-
-
 
 
 @import '/components/styles/book.scss';

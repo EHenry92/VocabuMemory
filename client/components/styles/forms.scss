@@ -11,11 +11,33 @@ select {
   border-style: solid;
   border-color: black;
 }
+
 option {
   background-color: white;
   border-style: solid;
   border-color: black;
 }
+
+label {
+  display: block;
+}
+
+
+form div {
+  margin: 8px 1em;
+  display: inline-block;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border-style: solid;
+  margin: 2px 0 5px 5px;
+  border-color: teal;
+  border-width: thin;
+  min-height: 20px;
+  }
+
 
 #login-form{
   display: flex;
@@ -26,6 +48,14 @@ option {
   display: flex;
   #edit-control{
     width: 25vw;
+    border-style: solid;
+    border-width: thin;
+    div{
+      min-height: 25%;
+      form, select{
+        margin-left: 1vw;
+      }
+    }
   }
   #edit-data{
     width: 65vw;
@@ -40,6 +70,8 @@ option {
         border-style: solid;
         border-width: thin;
         height: 60px;
+        box-shadow: 3px 2px 2px $dark-grey;
+        background: $teal-color;
         }
       }
     }
@@ -48,3 +80,6 @@ option {
   max-height: 20vh;
   overflow-y: scroll;
 }
+
+
+@import './variables.scss'

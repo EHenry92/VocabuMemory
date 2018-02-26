@@ -3,13 +3,13 @@
   height: 20vh;
   width: 20vw;
   margin: 10px;
-  // border-radius: 12px;
-  font-size: 2vw;
+  font-size: 100%;
   transition: transform 1s;
   box-shadow: $box-shadow-style;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   div {
     padding: 0px 15px;
     pointer-events: none;
@@ -18,6 +18,9 @@
 .outGame {
   transform: rotate(360deg);
   pointer-events: none;
+  border-style: dashed;
+  border-color: black;
+  box-shadow: 0 0;
 
 }
 .cardBack {
@@ -25,9 +28,10 @@
   border-color: $blue-color;
   border-width: 5px;
   background:linear-gradient(to right, $teal-color, $blue-color);
+  display:flex;
 }
 .cardFace {
-  background-color: $teal-color;
+  background-color: $highlight-color;
   color: black;
 }
 
@@ -45,16 +49,23 @@
   }
 
 }
-
+#gameBox{
+  min-height: 85vh;
+}
 #controlBox {
-  background-color: $teal-color;
-  // border-radius: 12px;
-  box-shadow: $box-shadow-style;
+  border-color: $teal-color;
+  border-style: solid none;
 }
 #hintBox {
   border-radius: 12px;
   height: 35px;
-  max-width: 10vw;
+  max-width: 15vw;
+  *{
+    max-width: 9vw;
+  }
+}
+.controlPanel>div{
+  margin: 0;
 }
 
 @import './variables.scss'

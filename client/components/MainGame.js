@@ -17,7 +17,7 @@ export class MainGame extends Component {
       this.handleOptionChange = this.handleOptionChange.bind(this);
       this.playGame = this.playGame.bind(this);
       this.handleSelectChange = this.handleSelectChange.bind(this);
-      this.handleSizeChange = this.handleSizeChange.bind(this);
+
     }
     componentWillMount()  {
       this.props.destroyCards();
@@ -26,9 +26,7 @@ export class MainGame extends Component {
     handleOptionChange(evt) {
       this.setState({level: !this.state.level, option: evt.target.value, choice: -1})
     }
-    handleSizeChange(evt) {
-      this.setState({size: evt.target.value})
-    }
+
     handleSelectChange(evt) {
       this.setState({choice: evt.target.value})
     }
@@ -46,32 +44,29 @@ export class MainGame extends Component {
     }
     render () {
         return (
-          <div>
+          <div id="gameBox">
             <div id="controlBox">
-              <form
-                onSubmit = {this.playGame}
-                className="controlPanel">
+            <form onSubmit = {this.playGame} className="controlPanel">
               <div>
-
-                  <input
-                    type="radio"
-                    name="gameGroup"
-                    value="dictionary"
-                    onChange = {this.handleOptionChange}
-                    checked={!this.state.level} />
-                    Select a dictionary
+                <div>
+                    <input
+                      type="checkbox"
+                      name="gameGroup"
+                      value="dictionary"
+                      onChange = {this.handleOptionChange}
+                      checked={!this.state.level} />
+                      Select a dictionary
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="gameGroup"
+                      value="level"
+                      onChange = {this.handleOptionChange}
+                      checked = {this.state.level} />Select a level
 
                 </div>
-                <div>
 
-                  <input
-                    type="radio"
-                    name="gameGroup"
-                    value="level"
-                    onChange = {this.handleOptionChange}
-                    checked = {this.state.level} />Select a level
-
-              </div>
               {
                 this.state.option === 'level' ?
                 <select onChange={this.handleSelectChange}>
@@ -92,23 +87,29 @@ export class MainGame extends Component {
                 }
               </select>
               }
-              <div>
-                <label onChange={this.handleSizeChange}>Size:
-                <input type="radio" name="sizeChoice" value={12} /> 4x3
-                <input type="radio" name="sizeChoice" value={16} /> 4x4
-                </label>
               </div>
+              <div>
+                <div>
+                  <label onChange={(evt) => {this.setState({size: evt.target.value})
+  }}>Size:
+                  <input type="checkbox" name="sizeChoice" value={12} /> 4x3
+                  <input type="checkbox" name="sizeChoice" value={16} /> 4x4
+                  </label>
+                </div>
+              </div>
+              <div>
               { !this.state.began ?
                   <button type="submit" name="playReset" value="play">Play</button>
                   :
                   <button type="submit" name="playReset" value="reset">Reset</button>
               }
-              </form>
               </div>
-              <div>
-              <GameBoard />
-              </div>
-            </div>
+          </form>
+          </div>
+          <div>
+          <GameBoard />
+          </div>
+        </div>
         )
     }
 }

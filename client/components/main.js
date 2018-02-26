@@ -15,6 +15,8 @@ const Main = (props) => {
   return (
     <div>
       <nav>
+
+        <div>
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/game">Game</NavLink>
         <NavLink to="/dictionaries">Dictionaries</NavLink>
@@ -22,10 +24,11 @@ const Main = (props) => {
           isLoggedIn ?
           <a onClick={handleClick}> Logout </a>
           :
-          <NavLink to="/loginSignup">LogIn/SignUp</NavLink>
+          <NavLink to="/loginSignup">Signin</NavLink>
 
 
         }
+        </div>
         <div id="title">
         VocabuMemory
         </div>

@@ -32,8 +32,7 @@ export class GameBoard extends Component {
             card.classList.add('cardFace');
             card.classList.remove('cardBack');
 
-console.log("matched", this.props.matched.length, "paris", this.props.pairs)
-          if (this.state.click1 == -1) {
+            if (this.state.click1 == -1) {
             this.setState({click1: cardName})
           }
           else {
@@ -121,6 +120,8 @@ console.log("matched", this.props.matched.length, "paris", this.props.pairs)
                 })
               }
                 </div>
+              {
+                this.state.iHint || this.state.hintImage &&
                 <div id="hintBox" >
                     <button
                       onClick={this.hint}>
@@ -129,13 +130,14 @@ console.log("matched", this.props.matched.length, "paris", this.props.pairs)
                     {
                       this.state.showHint && (
                         this.state.hintImage ?
-                        <div><img style={{maxWidth: '10vw'}} src={this.state.hintImage} /></div>
+                        <div><img src={this.state.hintImage} /></div>
                         :
                         <div><a>{this.state.hint}</a></div>
                       )
                     }
 
                     </div>
+              }
                 </div>
                 {
                   this.state.complete &&

@@ -21,7 +21,8 @@ export class GameBoard extends Component {
     }
     pick(evt) {
       evt.preventDefault();
-      const place = evt.target.value;
+      const cardName = evt.target.attributes.name.value;
+      const place = evt.target.attributes.value.value;
       if (this.state.clicks < 2) {
         let aHint = this.props.list[place].hint;
         let iHint = this.props.list[place].hintImage;
@@ -31,18 +32,18 @@ export class GameBoard extends Component {
             card.classList.add('cardFace');
             card.classList.remove('cardBack');
           if (this.state.click1 == -1) {
-            this.setState({click1: evt.target.name})
+            this.setState({click1: cardName})
           }
           else {
             const pairs = document.getElementsByClassName('cardFace');
-            if (this.state.click1 == evt.target.name) {
+            if (this.state.click1 == cardName) {
                 pairs[0].disabled = true;
                 pairs[1].disabled = true;
                 pairs[0].classList.add('outGame');
                 pairs[0].classList.remove('cardFace');
                 pairs[0].classList.add('outGame');
                 pairs[0].classList.remove('cardFace');
-                this.props.postMatch(evt.target.name);
+                this.props.postMatch(cardName);
                 if (this.props.matched.length === this.props.pairs - 1) {
                   setTimeout(() => {
                     this.setState({click1: -1, clicks: 0, complete: true})
@@ -106,14 +107,14 @@ export class GameBoard extends Component {
                 list.map((item, idx) => {
                   return (
                   <div key={item.data}>
-                    <button
+                    <div
                         key={item.data}
                         value = {idx}
                         onClick={this.pick}
                         name = {item.id}
                         className="gamePiece cardBack">
                         {item.data}
-                    </button>
+                    </div>
                   </div>)
                 })
               }

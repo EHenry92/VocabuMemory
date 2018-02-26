@@ -3,9 +3,10 @@
   height: 20vh;
   width: 20vw;
   margin: 10px;
-  border-radius: 12px;
+  // border-radius: 12px;
   font-size: 2vw;
   transition: transform 1s;
+  box-shadow: $box-shadow-style;
 
 }
 .outGame {
@@ -14,12 +15,12 @@
 }
 .cardBack {
   color: transparent;
-  border-color: rgb(9, 165, 238);
+  border-color: $blue-color;
   border-width: 5px;
-  background:linear-gradient(to right, rgb(6, 170, 145) , rgb(9, 165, 238));
+  background:linear-gradient(to right, $teal-color, $blue-color);
 }
 .cardFace {
-  background-color: rgb(6, 170, 145);
+  background-color: $teal-color;
   color: black;
 }
 
@@ -39,7 +40,7 @@
 }
 
 #controlBox {
-  background-color: rgb(6, 170, 145);
+  background-color: $teal-color;
   border-radius: 12px;
 }
 #hintBox {

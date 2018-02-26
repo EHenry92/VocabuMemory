@@ -1,6 +1,5 @@
-/* Add a black background color to the top navigation */
 nav {
-  background-color: rgb(9, 165, 238);
+  background-color: $blue-color;
   overflow: hidden;
   #title {
     float: right;
@@ -10,11 +9,10 @@ nav {
     text-shadow: 2px 2px black;
     font-family: "Times New Roman", Times, serif;
     text-decoration: underline;
-    background:linear-gradient(to right, rgb(9, 165, 238), rgb(6, 170, 145));
+    background:linear-gradient(to right, $blue-color, $teal-color);
   }
 }
 
-/* Style the links inside the navigation bar */
 nav a {
   float: left;
   display: block;
@@ -24,15 +22,12 @@ nav a {
   text-decoration: none;
   font-size: 15px;
 }
-/* Change the color of links on hover */
 nav a:hover {
-  background-color: rgb(6, 170, 145);
-  // #ddd;
+  background-color: $teal-color;
   color: black;
 }
 
-/* Add a color to the active/current link */
 nav a.active {
-  background-color: #4CAF50;
+  background-color: $teal-color;
   color: white;
 }

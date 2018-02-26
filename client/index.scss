@@ -1,8 +1,8 @@
-// (7, 223, 194)
-$teal-Color: #16a085;
+@import '/components/styles/variables.scss';
+
 body {
   font-family: sans-serif;
-  background-color: lightcyan;
+  background-color: $page-background;
   a {
     text-decoration: none;
   }
@@ -34,7 +34,7 @@ ul {
 .btn {
 	display: inline-block;
 	text-transform: uppercase;
-	border: 2px solid #2c3e50;
+	border: 2px solid $dark-grey;
 	margin-top: 100px;
 	font-size: 0.7em;
 	font-weight: 700;
@@ -46,8 +46,8 @@ ul {
 }
 
 .btn:hover {
-	border-color: $teal-Color;
-	color: $teal-Color;
+	border-color: $teal-color;
+	color: $teal-color;
 }
 
 .popup {
@@ -68,8 +68,8 @@ ul {
   top: 25%;
   bottom: 25%;
   padding: 20px;
-  background: lightcyan;
-  background: linear-gradient(lightcyan, darkcyan);
+  background: $page-background;
+  background: linear-gradient($page-background, $dark-light);
   button {
     float: right;
   }
@@ -83,7 +83,6 @@ ul {
 @import '/components/styles/game.scss';
 @import '/components/styles/forms.scss';
 @import '/components/styles/tab.scss';
-
 
 
 

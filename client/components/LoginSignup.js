@@ -23,12 +23,14 @@ class LoginSignup extends Component {
     return (
       <div className="tab-container">
         <div className="side-tabs">
+        <div className="blank-tab" />
           <div id="ltab" className="tab active" onClick = {this.handleClick}>
             <div>Login</div>
           </div>
           <div id="stab" className="tab" onClick = {this.handleClick}>
             <div>Signup</div>
           </div>
+          <div className="blank-ab" />
         </div>
         <div className="tab-content">
           {

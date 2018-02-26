@@ -85,16 +85,14 @@ export default function reducer(state = initialState, action) {
     case VIEW_MATCHES:
       return action.words;
     case END_GAME:
-      return {
-        cards: [],
-        score: 0,
-      }
+      return initialState;
     case SET_SIZE:
       return action.size;
     case PICK_WORDS:
       return Object.assign({}, state, {
         cards: action.words,
-        score: 0
+        score: 0,
+        matched: []
       })
     default:
       return state;

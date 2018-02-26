@@ -31,6 +31,8 @@ export class GameBoard extends Component {
           let card = document.getElementsByClassName('gamePiece')[place];
             card.classList.add('cardFace');
             card.classList.remove('cardBack');
+
+console.log("matched", this.props.matched.length, "paris", this.props.pairs)
           if (this.state.click1 == -1) {
             this.setState({click1: cardName})
           }

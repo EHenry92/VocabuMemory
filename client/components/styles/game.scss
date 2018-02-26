@@ -7,13 +7,17 @@
   font-size: 2vw;
   transition: transform 1s;
   box-shadow: $box-shadow-style;
-  div{
-    text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    padding: 0px 15px;
+    pointer-events: none;
   }
-
 }
 .outGame {
   transform: rotate(360deg);
+  pointer-events: none;
 
 }
 .cardBack {

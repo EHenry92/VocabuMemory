@@ -9,7 +9,7 @@ export class MainGame extends Component {
       super(props);
       this.state = {
         level: true,
-        value: -1,
+        choice: -1,
         option: 'level',
         size: 16,
         began: false,
@@ -20,24 +20,26 @@ export class MainGame extends Component {
       this.handleSizeChange = this.handleSizeChange.bind(this);
     }
     componentWillMount()  {
+      this.props.destroyCards();
       this.props.fetchDictionaries();
     }
     handleOptionChange(evt) {
-      this.setState({level: !this.state.level, option: evt.target.value, value: -1})
+      this.setState({level: !this.state.level, option: evt.target.value, choice: -1})
     }
     handleSizeChange(evt) {
       this.setState({size: evt.target.value})
     }
     handleSelectChange(evt) {
-      this.setState({value: evt.target.value})
+      this.setState({choice: evt.target.value})
     }
     playGame(evt) {
       evt.preventDefault();
-      if ((!this.state.began) && (this.state.value > -1 && this.state.option)) {
-              this.props.fetchCards(this.state.option, this.state.value, this.state.size)
+      const act = evt.target.playReset.value;
+      if (act == 'play' && this.state.choice > -1) {
+              this.props.fetchCards(this.state.option, this.state.choice, this.state.size)
               this.setState({began: true})
       }
-      else {
+      else if (act == 'reset'){
         this.props.destroyCards();
         this.setState({began: false});
       }
@@ -56,7 +58,8 @@ export class MainGame extends Component {
                     name="gameGroup"
                     value="dictionary"
                     onChange = {this.handleOptionChange}
-                    checked={!this.state.level} />Select a dictionary
+                    checked={!this.state.level} />
+                    Select a dictionary
 
                 </div>
                 <div>
@@ -96,9 +99,9 @@ export class MainGame extends Component {
                 </label>
               </div>
               { !this.state.began ?
-                  <button type="submit" value="play">Play</button>
+                  <button type="submit" name="playReset" value="play">Play</button>
                   :
-                  <button value="reset">Reset</button>
+                  <button type="submit" name="playReset" value="reset">Reset</button>
               }
               </form>
               </div>

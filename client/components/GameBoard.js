@@ -113,7 +113,7 @@ export class GameBoard extends Component {
                         onClick={this.pick}
                         name = {item.id}
                         className="gamePiece cardBack">
-                        {item.data}
+                        <div>{item.data}</div>
                     </div>
                   </div>)
                 })

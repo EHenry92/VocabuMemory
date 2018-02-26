@@ -7,6 +7,9 @@
   font-size: 2vw;
   transition: transform 1s;
   box-shadow: $box-shadow-style;
+  div{
+    text-align:center;
+  }
 
 }
 .outGame {
@@ -41,10 +44,13 @@
 
 #controlBox {
   background-color: $teal-color;
-  border-radius: 12px;
+  // border-radius: 12px;
+  box-shadow: $box-shadow-style;
 }
 #hintBox {
   border-radius: 12px;
   height: 35px;
   max-width: 10vw;
 }
+
+@import './variables.scss'

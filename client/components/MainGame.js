@@ -22,7 +22,7 @@ export class MainGame extends Component {
     }
     componentWillMount()  {
       this.props.destroyCards();
-      this.props.fetchDictionaries();
+      this.props.fetchDictionaries(this.props.userId);
     }
     handleOptionChange(evt) {
       this.setState({level: !this.state.level, option: evt.target.value, choice: -1})
@@ -110,6 +110,7 @@ export class MainGame extends Component {
 const mapStateToProps = (state) => {
   return {
     dictionary: state.dictionaryList,
+    userId: state.user.id
   }
 }
 const mapDispatchToProps = {fetchDictionaries, fetchCards, destroyCards}

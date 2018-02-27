@@ -14312,7 +14312,7 @@ var MainGame = exports.MainGame = function (_Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       this.props.destroyCards();
-      this.props.fetchDictionaries();
+      this.props.fetchDictionaries(this.props.userId);
     }
   }, {
     key: 'handleOptionChange',
@@ -14464,7 +14464,8 @@ var MainGame = exports.MainGame = function (_Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    dictionary: state.dictionaryList
+    dictionary: state.dictionaryList,
+    userId: state.user.id
   };
 };
 var mapDispatchToProps = { fetchDictionaries: _store.fetchDictionaries, fetchCards: _store.fetchCards, destroyCards: _store.destroyCards };

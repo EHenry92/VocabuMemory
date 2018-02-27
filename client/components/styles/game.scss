@@ -1,9 +1,9 @@
 
 .gamePiece {
-  height: 20vh;
-  width: 20vw;
+  height: 19vh;
+  width: 19vw;
   margin: 10px;
-  font-size: 100%;
+  font-size: 2vmax;
   transition: transform 1s;
   box-shadow: $box-shadow-style;
   display: flex;
@@ -38,7 +38,7 @@
 .gameBoard {
   display:flex;
   flex-flow: row wrap;
-  width: 90vw;
+  width: 85vw;
 }
 
 #wordBank {
@@ -59,7 +59,7 @@
 #hintBox {
   border-radius: 12px;
   height: 35px;
-  max-width: 15vw;
+  max-width: 10vw;
   *{
     max-width: 9vw;
   }

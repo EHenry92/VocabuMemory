@@ -133,7 +133,7 @@ export class AddDictionary extends Component {
           <table>
             <thead>
             <tr><td>
-            Dictionary: {this.props.dictionaryEdit.title}
+            <h2>{this.props.dictionaryEdit.title} Words: </h2>
             </td></tr>
             </thead>
             <tbody>

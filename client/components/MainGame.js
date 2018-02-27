@@ -11,7 +11,7 @@ export class MainGame extends Component {
         level: true,
         choice: -1,
         option: 'level',
-        size: 16,
+        size: 12,
         began: false,
         small: true
       }

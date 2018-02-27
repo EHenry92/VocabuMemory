@@ -9,15 +9,14 @@ import history from '../history'
 
 export class DictionaryList extends Component {
     componentWillMount() {
-      this.props.loadInitialDictionary();
+      this.props.loadInitialDictionary(this.props.user.id);
     }
-
 
     render ()   {
         return (
             <div style={{display: 'flex'}}>
               <List>
-                <Subheader inset={true}>Select a dictionary: </Subheader>
+                <Subheader inset={true}><h3>{this.props.user.name} dictionary: </h3> </Subheader>
                 {
                   this.props.dictionary.map(list => {
                     return (<NavLink to={`/dictionary/${list.id}`} key={list.id}><ListItem
@@ -43,13 +42,14 @@ export class DictionaryList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    dictionary: state.dictionaryList
+    dictionary: state.dictionaryList,
+    user: state.user
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    loadInitialDictionary () {
-      dispatch(fetchDictionaries())
+    loadInitialDictionary (id) {
+      dispatch(fetchDictionaries(id))
     }
   }
 }

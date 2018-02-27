@@ -13203,7 +13203,7 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
   _createClass(AddDictionary, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      this.props.fetchDictionaries();
+      this.props.fetchDictionaries(this.props.userId);
       this.props.fetchWords();
     }
   }, {
@@ -13249,7 +13249,7 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
     key: 'newDictHandler',
     value: function newDictHandler(evt) {
       evt.preventDefault();
-      this.props.newDict({ title: evt.target.title.value });
+      this.props.newDict({ title: evt.target.title.value, userId: this.props.userId });
     }
   }, {
     key: 'del',
@@ -13472,7 +13472,8 @@ var mapStateToProps = function mapStateToProps(state) {
     dictionaryEdit: state.newDictionary.dictionary,
     wordEdit: state.newDictionary.words,
     tempIdCount: state.newDictionary.tempIdCount,
-    deletedWords: state.newDictionary.deletedWords
+    deletedWords: state.newDictionary.deletedWords,
+    userId: state.user.id
   };
 };
 var mapDispatchToProps = { fetchDictionaries: _store.fetchDictionaries, fetchWords: _store.fetchWords, submitData: _store.submitData, chooseDictionary: _store.chooseDictionary, pickWord: _store.pickWord, newWord: _store.newWord, newDict: _store.newDict, delWord: _store.delWord };
@@ -13744,7 +13745,7 @@ var DictionaryList = exports.DictionaryList = function (_Component) {
   _createClass(DictionaryList, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      this.props.loadInitialDictionary();
+      this.props.loadInitialDictionary(this.props.user.id);
     }
   }, {
     key: 'render',
@@ -13758,7 +13759,13 @@ var DictionaryList = exports.DictionaryList = function (_Component) {
           _react2.default.createElement(
             _Subheader2.default,
             { inset: true },
-            'Select a dictionary: '
+            _react2.default.createElement(
+              'h3',
+              null,
+              this.props.user.name,
+              ' dictionary: '
+            ),
+            ' '
           ),
           this.props.dictionary.map(function (list) {
             return _react2.default.createElement(
@@ -13795,13 +13802,14 @@ var DictionaryList = exports.DictionaryList = function (_Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    dictionary: state.dictionaryList
+    dictionary: state.dictionaryList,
+    user: state.user
   };
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    loadInitialDictionary: function loadInitialDictionary() {
-      dispatch((0, _store.fetchDictionaries)());
+    loadInitialDictionary: function loadInitialDictionary(id) {
+      dispatch((0, _store.fetchDictionaries)(id));
     }
   };
 };
@@ -14041,7 +14049,6 @@ var mapStateToProps = function mapStateToProps(state) {
     dictionary: state.dictionary,
     matched: state.game.matches,
     pairs: state.game.cards.length / 2
-
   };
 };
 var mapDispatchToProps = { postMatch: _game.postMatch, fetchCards: _game.fetchCards };
@@ -15020,9 +15027,9 @@ var getDictionaries = exports.getDictionaries = function getDictionaries(diction
   return action;
 };
 
-var fetchDictionaries = exports.fetchDictionaries = function fetchDictionaries() {
+var fetchDictionaries = exports.fetchDictionaries = function fetchDictionaries(userId) {
   return function (dispatch) {
-    _axios2.default.get('/api/dictionaries').then(function (res) {
+    _axios2.default.get('/api/dictionaries/user/' + userId).then(function (res) {
       return res.data;
     }).then(function (dictionaries) {
       dispatch(getDictionaries(dictionaries));

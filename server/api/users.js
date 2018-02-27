@@ -5,14 +5,17 @@ module.exports = router
 
 router.get('/', (req, res, next) => {
   User.findAll({
-    attributes: ['id', 'email', 'admin']
+    attributes: ['id', 'email']
   })
     .then(users => res.json(users))
     .catch(next)
 })
 
 router.get('/:id', (req, res, next) => {
-  User.findById(req.params.id)
+  User.findOne({
+    where: {id: req.params.id},
+    attributes: ['id', 'name', 'email']
+    })
     .then(user => res.json(user))
     .catch(next)
 })

@@ -158,7 +158,6 @@ const mapStateToProps = (state) => {
     dictionary: state.dictionary,
     matched: state.game.matches,
     pairs: state.game.cards.length / 2
-
   }
 }
 const mapDispatchToProps = {postMatch, fetchCards};

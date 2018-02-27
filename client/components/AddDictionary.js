@@ -15,7 +15,7 @@ export class AddDictionary extends Component {
     this.del = this.del.bind(this);
   }
   componentWillMount()  {
-    this.props.fetchDictionaries();
+    this.props.fetchDictionaries(this.props.userId);
     this.props.fetchWords();
   }
   toggleHandler (evt) {
@@ -33,7 +33,7 @@ export class AddDictionary extends Component {
         words = this.props.wordEdit,
         deleted = this.props.deletedWords
     dictionary.title && words.length > 0 &&
-    this.props.submitData({dictionary, words, deleted });
+    this.props.submitData({dictionary, words, deleted});
   }
   newWordHandler(evt) {
     evt.preventDefault();
@@ -46,7 +46,7 @@ export class AddDictionary extends Component {
   }
   newDictHandler(evt) {
     evt.preventDefault();
-    this.props.newDict({title: evt.target.title.value})
+    this.props.newDict({title: evt.target.title.value, userId: this.props.userId})
   }
   del (evt) {
     evt.preventDefault();
@@ -167,7 +167,8 @@ const mapStateToProps = (state) => {
     dictionaryEdit: state.newDictionary.dictionary,
     wordEdit: state.newDictionary.words,
     tempIdCount: state.newDictionary.tempIdCount,
-    deletedWords: state.newDictionary.deletedWords
+    deletedWords: state.newDictionary.deletedWords,
+    userId: state.user.id
   }
 }
 const mapDispatchToProps = {fetchDictionaries, fetchWords, submitData, chooseDictionary, pickWord, newWord, newDict, delWord};

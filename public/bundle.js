@@ -13326,7 +13326,7 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
                     evt.preventDefault();_this3.props.chooseDictionary(evt.target.value);
                   } },
                 this.props.dictionaries.map(function (group) {
-                  return _react2.default.createElement(
+                  return group.userId == _this3.props.userId && _react2.default.createElement(
                     'option',
                     { value: group.id, key: group.title },
                     group.title
@@ -13787,7 +13787,7 @@ var DictionaryList = exports.DictionaryList = function (_Component) {
             'button',
             { onClick: function onClick() {
                 _history2.default.push('/edit');
-              } },
+              }, disabled: this.props.user.id || false },
             'Add/Edit',
             _react2.default.createElement('br', null),
             'Dictionary'
@@ -14465,7 +14465,7 @@ var MainGame = exports.MainGame = function (_Component) {
 var mapStateToProps = function mapStateToProps(state) {
   return {
     dictionary: state.dictionaryList,
-    userId: state.user.id
+    userId: state.user.id || 0
   };
 };
 var mapDispatchToProps = { fetchDictionaries: _store.fetchDictionaries, fetchCards: _store.fetchCards, destroyCards: _store.destroyCards };
@@ -15029,8 +15029,9 @@ var getDictionaries = exports.getDictionaries = function getDictionaries(diction
 };
 
 var fetchDictionaries = exports.fetchDictionaries = function fetchDictionaries(userId) {
+  var theId = userId || 0;
   return function (dispatch) {
-    _axios2.default.get('/api/dictionaries/user/' + userId).then(function (res) {
+    _axios2.default.get('/api/dictionaries/user/' + theId).then(function (res) {
       return res.data;
     }).then(function (dictionaries) {
       dispatch(getDictionaries(dictionaries));

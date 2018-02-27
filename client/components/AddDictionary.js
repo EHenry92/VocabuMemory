@@ -93,6 +93,7 @@ export class AddDictionary extends Component {
                   }}>
                   {
                   this.props.dictionaries.map(group =>
+                    group.userId == this.props.userId &&
                     <option value={group.id} key={group.title}>{group.title}</option>)
                   }
                   </select>

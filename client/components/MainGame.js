@@ -110,7 +110,7 @@ export class MainGame extends Component {
 const mapStateToProps = (state) => {
   return {
     dictionary: state.dictionaryList,
-    userId: state.user.id
+    userId: state.user.id || 0
   }
 }
 const mapDispatchToProps = {fetchDictionaries, fetchCards, destroyCards}

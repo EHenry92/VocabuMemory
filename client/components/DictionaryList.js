@@ -28,8 +28,9 @@ export class DictionaryList extends Component {
                   })
                 }
             </List>
+
             <div>
-              <button onClick={() => {history.push('/edit')}}>
+              <button onClick={() => {history.push('/edit')}} disabled={this.props.user.id || false}>
                     Add/Edit
                     <br />
                     Dictionary

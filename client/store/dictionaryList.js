@@ -8,8 +8,9 @@ export const getDictionaries = dictionaries => {
 }
 
 export const fetchDictionaries = (userId) => {
+  let theId = userId || 0;
   return (dispatch) =>  {
-   axios.get(`/api/dictionaries/user/${userId}`)
+   axios.get(`/api/dictionaries/user/${theId}`)
    .then(res => res.data)
    .then(dictionaries => {
      dispatch(getDictionaries(dictionaries))

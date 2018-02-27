@@ -30,10 +30,13 @@ button {
   color: white;
   border-style: solid;
   margin: 2px 0 5px 5px;
-  border-color: teal;
+  border-color: $teal-color;
   border-width: thin;
   min-height: 20px;
   }
+button:disabled{
+  background-color: grey;
+}
 
 
 #login-form{

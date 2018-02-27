@@ -10,9 +10,10 @@ import history from '../history'
 export class DictionaryList extends Component {
     componentWillMount() {
       this.props.loadInitialDictionary(this.props.user.id);
+      if(this.props.userId) {document.getElementById('editButton').disable = false;}
     }
 
-    render ()   {
+    render () {
         return (
             <div style={{display: 'flex'}}>
               <List>
@@ -30,11 +31,14 @@ export class DictionaryList extends Component {
             </List>
 
             <div>
-              <button onClick={() => {history.push('/edit')}} disabled={this.props.user.id || false}>
+              <button onClick={() => {history.push('/edit')}} disabled className="tooltip" >
                     Add/Edit
                     <br />
                     Dictionary
+                    <span className="tooltiptext"> Must be logged in to add/edit dictionaries</span>
               </button>
+
+
             </div>
             </div>
         )

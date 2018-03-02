@@ -11,10 +11,6 @@ export class DictionaryList extends Component {
     componentWillMount() {
       this.props.loadInitialDictionary(this.props.user.id);
     }
-    componentDidMount() {
-      if (this.props.user.id) {document.getElementById('editButton').disabled = false;}
-
-    }
 
     render () {
         return (
@@ -34,12 +30,22 @@ export class DictionaryList extends Component {
             </List>
 
             <div>
-              <button className="tooltip" id="editButton" onClick={() => {history.push('/edit')}} disabled >
+              {
+                this.props.user.id ?
+                <button className="tooltip" id="editButton" onClick={() => {history.push('/edit')}} >
+                      Add/Edit
+                      <br />
+                      Dictionary
+                </button>
+                :
+                <button className="tooltip" id="editButton" onClick={() => {history.push('/edit')}} disabled >
                     Add/Edit
                     <br />
                     Dictionary
                     <span className="tooltiptext"> Must be logged in to add/edit dictionaries</span>
               </button>
+              }
+
 
 
             </div>

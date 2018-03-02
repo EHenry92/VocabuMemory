@@ -13746,8 +13746,12 @@ var DictionaryList = exports.DictionaryList = function (_Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       this.props.loadInitialDictionary(this.props.user.id);
-      if (this.props.userId) {
-        document.getElementById('editButton').disable = false;
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.user.id) {
+        document.getElementById('editButton').disabled = false;
       }
     }
   }, {
@@ -13788,9 +13792,9 @@ var DictionaryList = exports.DictionaryList = function (_Component) {
           null,
           _react2.default.createElement(
             'button',
-            { onClick: function onClick() {
+            { className: 'tooltip', id: 'editButton', onClick: function onClick() {
                 _history2.default.push('/edit');
-              }, disabled: true, className: 'tooltip' },
+              }, disabled: true },
             'Add/Edit',
             _react2.default.createElement('br', null),
             'Dictionary',

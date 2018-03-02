@@ -10,7 +10,10 @@ import history from '../history'
 export class DictionaryList extends Component {
     componentWillMount() {
       this.props.loadInitialDictionary(this.props.user.id);
-      if(this.props.userId) {document.getElementById('editButton').disable = false;}
+    }
+    componentDidMount() {
+      if (this.props.user.id) {document.getElementById('editButton').disabled = false;}
+
     }
 
     render () {
@@ -31,7 +34,7 @@ export class DictionaryList extends Component {
             </List>
 
             <div>
-              <button onClick={() => {history.push('/edit')}} disabled className="tooltip" >
+              <button className="tooltip" id="editButton" onClick={() => {history.push('/edit')}} disabled >
                     Add/Edit
                     <br />
                     Dictionary

@@ -19,7 +19,6 @@ const AuthForm = (props) => {
               <label htmlFor="name"><small>Name</small></label>
               <input name="uName" type="text" />
             </div>
-
         }
         <div>
           <label htmlFor="email"><small>Email</small></label>

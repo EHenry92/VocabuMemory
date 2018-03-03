@@ -13188,6 +13188,7 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
     _this.selectHandler = _this.selectHandler.bind(_this);
     _this.newWordHandler = _this.newWordHandler.bind(_this);
     _this.newDictHandler = _this.newDictHandler.bind(_this);
+    _this.clearHandler = _this.clearHandler.bind(_this);
     _this.filterIt = _this.filterIt.bind(_this);
     _this.del = _this.del.bind(_this);
     return _this;
@@ -13234,8 +13235,9 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
       var word = evt.target.word.value;
       var definition = evt.target.definition.value;
       var sentence = evt.target.hint.value;
+      var level = evt.target.level.value;
       var tempId = this.props.tempIdCount + 1;
-      word && definition && this.props.newWord({ word: word, definition: definition, sentence: sentence, tempId: tempId });
+      word && definition && this.props.newWord({ word: word, definition: definition, sentence: sentence, level: level, tempId: tempId });
       evt.target.reset();
     }
   }, {
@@ -13258,6 +13260,12 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
           word = evt.target.attributes.name.value,
           tempId = this.props.tempIdCount + 1;
       this.props.pickWord({ id: id, word: word, tempId: tempId });
+    }
+  }, {
+    key: 'clearHandler',
+    value: function clearHandler(evt) {
+      evt.preventDefault();
+      this.props.clearEdit();
     }
   }, {
     key: 'filterIt',
@@ -13364,6 +13372,13 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
                 ),
                 _react2.default.createElement('textarea', { name: 'hint' }),
                 _react2.default.createElement(
+                  'label',
+                  { htmlFor: 'level' },
+                  ' Level '
+                ),
+                _react2.default.createElement('input', { name: 'level', type: 'number', size: 1, min: 1, max: 5, value: 2 }),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
                   'button',
                   null,
                   ' Add Word '
@@ -13450,6 +13465,11 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
           'button',
           { onClick: this.submitHandler },
           ' Save Changes '
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: this.clearHandler },
+          ' Clear '
         )
       );
     }
@@ -13469,7 +13489,7 @@ var mapStateToProps = function mapStateToProps(state) {
     userId: state.user.id
   };
 };
-var mapDispatchToProps = { fetchDictionaries: _store.fetchDictionaries, fetchWords: _store.fetchWords, submitData: _store.submitData, chooseDictionary: _store.chooseDictionary, pickWord: _store.pickWord, newWord: _store.newWord, newDict: _store.newDict, delWord: _store.delWord };
+var mapDispatchToProps = { fetchDictionaries: _store.fetchDictionaries, fetchWords: _store.fetchWords, submitData: _store.submitData, chooseDictionary: _store.chooseDictionary, pickWord: _store.pickWord, newWord: _store.newWord, newDict: _store.newDict, delWord: _store.delWord, clearEdit: _store.clearEdit };
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AddDictionary);
 
 /***/ }),

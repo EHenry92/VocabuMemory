@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchDictionaries, fetchWords, submitData, chooseDictionary, pickWord, newWord, newDict, delWord} from '../store';
+import {fetchDictionaries, fetchWords, submitData, chooseDictionary, pickWord, newWord, newDict, delWord, clearEdit} from '../store';
 
 export class AddDictionary extends Component {
   constructor (props) {
@@ -11,6 +11,7 @@ export class AddDictionary extends Component {
     this.selectHandler = this.selectHandler.bind(this);
     this.newWordHandler = this.newWordHandler.bind(this);
     this.newDictHandler = this.newDictHandler.bind(this);
+    this.clearHandler = this.clearHandler.bind(this);
     this.filterIt  = this.filterIt.bind(this);
     this.del = this.del.bind(this);
   }
@@ -40,8 +41,9 @@ export class AddDictionary extends Component {
     let word = evt.target.word.value;
     let definition =  evt.target.definition.value;
     let sentence = evt.target.hint.value;
+    let level = evt.target.level.value;
     let tempId =  this.props.tempIdCount + 1;
-    word && definition && this.props.newWord({word, definition, sentence, tempId});
+    word && definition && this.props.newWord({word, definition, sentence, level, tempId});
     evt.target.reset();
   }
   newDictHandler(evt) {
@@ -60,6 +62,10 @@ export class AddDictionary extends Component {
           word = evt.target.attributes.name.value,
           tempId = this.props.tempIdCount + 1;
       this.props.pickWord({id, word, tempId})
+  }
+  clearHandler(evt) {
+    evt.preventDefault();
+    this.props.clearEdit();
   }
   filterIt(evt) {
     evt.preventDefault();
@@ -113,6 +119,9 @@ export class AddDictionary extends Component {
                       <textarea name="definition" />
                       <label htmlFor="hint"> Sentence: </label>
                       <textarea name="hint" />
+                      <label htmlFor="level"> Level </label>
+                      <input name="level" type="number" size={1} min={1} max={5} value= {2} />
+                      <br />
                       <button> Add Word </button>
                   </form>
             }
@@ -156,6 +165,7 @@ export class AddDictionary extends Component {
         </div>
       </div>
         <button onClick={this.submitHandler}> Save Changes </button>
+        <button onClick={this.clearHandler}> Clear </button>
     </div>
     )
   }
@@ -172,5 +182,5 @@ const mapStateToProps = (state) => {
     userId: state.user.id
   }
 }
-const mapDispatchToProps = {fetchDictionaries, fetchWords, submitData, chooseDictionary, pickWord, newWord, newDict, delWord};
+const mapDispatchToProps = {fetchDictionaries, fetchWords, submitData, chooseDictionary, pickWord, newWord, newDict, delWord, clearEdit};
 export default connect(mapStateToProps, mapDispatchToProps)(AddDictionary);

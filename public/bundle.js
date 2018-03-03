@@ -13271,19 +13271,24 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
   }, {
     key: 'filterIt',
     value: function filterIt(evt) {
-      var _this2 = this;
-
       evt.preventDefault();
+      var _props = this.props,
+          words = _props.words,
+          wordEdit = _props.wordEdit;
+
       var input = evt.target.value.toLowerCase();
-      var wordList = this.props.words.filter(function (wItem) {
-        return (_this2.props.dictionaryEdit.id && wItem.dictionaryId !== _this2.props.dictionaryEdit.id || wItem.word.indexOf(input) > -1) && _this2.props.wordEdit.indexOf(wItem.tempId) === -1;
+      var wordList = words.filter(function (wItem) {
+        var notSelectedYet = wordEdit.find(function (itm) {
+          return itm.word == wItem.word;
+        }) ? false : true;
+        return notSelectedYet && wItem.word.indexOf(input) > -1;
       });
       this.setState({ wordList: wordList });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       return _react2.default.createElement(
         'div',
@@ -13325,10 +13330,10 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
               this.state.changeD && _react2.default.createElement(
                 'select',
                 { onChange: function onChange(evt) {
-                    evt.preventDefault();_this3.props.chooseDictionary(evt.target.value);
+                    evt.preventDefault();_this2.props.chooseDictionary(evt.target.value);
                   } },
                 this.props.dictionaries.map(function (group) {
-                  return group.userId == _this3.props.userId && _react2.default.createElement(
+                  return group.userId == _this2.props.userId && _react2.default.createElement(
                     'option',
                     { value: group.id, key: group.title },
                     group.title
@@ -13445,7 +13450,7 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
                           { key: word.tempId },
                           _react2.default.createElement(
                             'button',
-                            { style: { float: 'right', backgroundColor: 'black', color: 'white' }, name: word.tempId, value: word.id, onClick: _this3.del },
+                            { style: { float: 'right', backgroundColor: 'black', color: 'white' }, name: word.tempId, value: word.id, onClick: _this2.del },
                             'x'
                           ),
                           _react2.default.createElement(

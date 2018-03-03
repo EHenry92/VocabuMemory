@@ -70,10 +70,11 @@ export class AddDictionary extends Component {
   }
   filterIt(evt) {
     evt.preventDefault();
+    const {words, wordEdit} = this.props;
     let input = evt.target.value.toLowerCase();
-    let wordList = this.props.words.filter(wItem => {
-      return ((this.props.dictionaryEdit.id && (wItem.dictionaryId !== this.props.dictionaryEdit.id) ||
-      wItem.word.indexOf(input) > -1)  && this.props.wordEdit.indexOf(wItem.tempId) === -1)
+    let wordList = words.filter(wItem => {
+        let notSelectedYet = wordEdit.find(itm => {return itm.word == wItem.word})? false : true;
+        return (notSelectedYet && wItem.word.indexOf(input) > -1)
     })
     this.setState({wordList})
   }

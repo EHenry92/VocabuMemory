@@ -13755,8 +13755,8 @@ var DictionaryList = exports.DictionaryList = function (_Component) {
             _react2.default.createElement(
               'h3',
               null,
-              this.props.user.name,
-              ' dictionary: '
+              this.props.user.name || 'Guest',
+              ' Dictionaries: '
             ),
             ' '
           ),

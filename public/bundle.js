@@ -6007,7 +6007,7 @@ var AuthForm = function AuthForm(props) {
             'Name'
           )
         ),
-        _react2.default.createElement('input', { name: 'name', type: 'text' })
+        _react2.default.createElement('input', { name: 'uName', type: 'text' })
       ),
       _react2.default.createElement(
         'div',
@@ -6087,7 +6087,7 @@ var mapDispatch = function mapDispatch(dispatch) {
       var formName = evt.target.name;
       var email = evt.target.email.value;
       var password = evt.target.password.value;
-      var name = evt.target.name ? evt.target.name.value : null;
+      var name = evt.target.uName ? evt.target.uName.value : null;
       email && password && dispatch((0, _store.auth)(email, password, formName, name));
     }
   };
@@ -15304,9 +15304,9 @@ var me = exports.me = function me() {
   };
 };
 
-var auth = exports.auth = function auth(email, password, method) {
+var auth = exports.auth = function auth(email, password, method, name) {
   return function (dispatch) {
-    return _axios2.default.post('/auth/' + method, { email: email, password: password }).then(function (res) {
+    return _axios2.default.post('/' + method, { email: email, password: password, name: name }).then(function (res) {
       dispatch(getUser(res.data));
       _history2.default.push('/home');
     }).catch(function (error) {

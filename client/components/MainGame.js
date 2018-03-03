@@ -85,8 +85,7 @@ export class MainGame extends Component {
                     let small = evt.target.value == '12';
                     this.setState({small, size: evt.target.value});
                   }}>Size:
-                  <input
-type="checkbox" name="sizeChoice" value={12}
+                  <input type="checkbox" name="sizeChoice" value={12}
                   readOnly checked={this.state.small} /> 4x3
                   <input type="checkbox" name="sizeChoice" value={16}  readOnly checked={!this.state.small} /> 4x4
                   </label>

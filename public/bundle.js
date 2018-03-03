@@ -13376,7 +13376,7 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
                   { htmlFor: 'level' },
                   ' Level '
                 ),
-                _react2.default.createElement('input', { name: 'level', type: 'number', size: 1, min: 1, max: 5, value: 2 }),
+                _react2.default.createElement('input', { name: 'level', type: 'number', size: 1, min: 1, max: 5 }),
                 _react2.default.createElement('br', null),
                 _react2.default.createElement(
                   'button',

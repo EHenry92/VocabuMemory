@@ -120,7 +120,7 @@ export class AddDictionary extends Component {
                       <label htmlFor="hint"> Sentence: </label>
                       <textarea name="hint" />
                       <label htmlFor="level"> Level </label>
-                      <input name="level" type="number" size={1} min={1} max={5} value= {2} />
+                      <input name="level" type="number" size={1} min={1} max={5}/>
                       <br />
                       <button> Add Word </button>
                   </form>

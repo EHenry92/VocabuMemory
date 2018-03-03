@@ -31,10 +31,9 @@ export default function Results (props) {
               <ul>
               {
                 props.matches &&
-                props.matches.map(word => {
-                  return (<li key={word.id}>* {word.word}: {word.definition}
-                  </li>)
-                })
+                props.matches.map(word =>
+                  <li key={word.id}>* {word.word}: {word.definition}</li>
+                )
               }
               </ul>
               </div>

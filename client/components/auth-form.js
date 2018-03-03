@@ -18,6 +18,7 @@ class AuthForm extends Component {
     this.handleChange = this.handleChange.bind(this);
 }
 
+<<<<<<< HEAD
 handleChange(event) {
     const { formData } = this.state;
     formData[event.target.name] = event.target.value;
@@ -67,6 +68,33 @@ render() {
         </ValidatorForm>
     );
   }
+=======
+  return (
+    <div>
+      <form id="login-form" onSubmit={handleSubmit} name={name}>
+        {
+          name === 'signup' &&
+            <div>
+              <label htmlFor="name"><small>Name</small></label>
+              <input name="uName" type="text" />
+            </div>
+        }
+        <div>
+          <label htmlFor="email"><small>Email</small></label>
+          <input name="email" type="email" />
+        </div>
+        <div>
+          <label htmlFor="password"><small>Password</small></label>
+          <input name="password" type="password" />
+        </div>
+        <div>
+          <button style={{float: 'right'}} type="submit">{displayName}</button>
+        </div>
+        {error && error.response && <div> {error.response.data} </div>}
+      </form>
+    </div>
+  )
+>>>>>>> origin/master
 }
 
 const mapLogin = (state) => {

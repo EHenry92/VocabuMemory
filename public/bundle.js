@@ -14740,6 +14740,76 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 
 
 
+<<<<<<< HEAD
+=======
+  _createClass(DictionaryList, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.props.loadInitialDictionary(this.props.user.id);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { style: { display: 'flex' } },
+        _react2.default.createElement(
+          _List.List,
+          null,
+          _react2.default.createElement(
+            _Subheader2.default,
+            { inset: true },
+            _react2.default.createElement(
+              'h3',
+              null,
+              this.props.user.name || 'Guest',
+              ' Dictionaries: '
+            ),
+            ' '
+          ),
+          this.props.dictionary.map(function (list) {
+            return _react2.default.createElement(
+              _reactRouterDom.NavLink,
+              { to: '/dictionary/' + list.id, key: list.id },
+              _react2.default.createElement(_List.ListItem, {
+                key: list.title,
+                style: { fontSize: 30 },
+                leftAvatar: _react2.default.createElement('img', { style: { maxWidth: 55, maxHeight: 100 }, src: '' + list.image }),
+                primaryText: list.title
+              })
+            );
+          })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          this.props.user.id ? _react2.default.createElement(
+            'button',
+            { className: 'tooltip', id: 'editButton', onClick: function onClick() {
+                _history2.default.push('/edit');
+              } },
+            'Add/Edit',
+            _react2.default.createElement('br', null),
+            'Dictionary'
+          ) : _react2.default.createElement(
+            'button',
+            { className: 'tooltip', id: 'editButton', onClick: function onClick() {
+                _history2.default.push('/edit');
+              }, disabled: true },
+            'Add/Edit',
+            _react2.default.createElement('br', null),
+            'Dictionary',
+            _react2.default.createElement(
+              'span',
+              { className: 'tooltiptext' },
+              ' Must be logged in to add/edit dictionaries'
+            )
+          )
+        )
+      );
+    }
+  }]);
+>>>>>>> origin/master
 
 
 /**

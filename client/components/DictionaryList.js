@@ -16,7 +16,7 @@ export class DictionaryList extends Component {
         return (
             <div style={{display: 'flex'}}>
               <List>
-                <Subheader inset={true}><h3>{this.props.user.name} dictionary: </h3> </Subheader>
+                <Subheader inset={true}><h3>{this.props.user.name || 'Guest'} Dictionaries: </h3> </Subheader>
                 {
                   this.props.dictionary.map(list => {
                     return (<NavLink to={`/dictionary/${list.id}`} key={list.id}><ListItem

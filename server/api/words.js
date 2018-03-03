@@ -17,8 +17,8 @@ router.get('/level/:levelId', (req, res, next) => {
     .catch(next)
 })
 router.post('/', (req, res, next) => {
-  let {sentence, word, definition} = req.body;
-  Word.create({sentence, word, definition})
+  let {sentence, word, definition, level} = req.body;
+  Word.create({sentence, word, definition, level})
   .then(pData => res.json(pData))
   .catch(next)
 })

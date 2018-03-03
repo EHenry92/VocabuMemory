@@ -54,8 +54,8 @@ export class MainGame extends Component {
                       let level = evt.target.value == 'level';
                       this.setState({level, option: evt.target.value, choice: -1});
                     }}>Choose:
-                      <input type="checkbox" name="gameGroup" value="dictionary" checked={!this.state.level} /> Dictionary
-                      <input type="checkbox" name="gameGroup" value="level" checked = {this.state.level} /> Level
+                      <input type="checkbox" name="gameGroup" value="dictionary" readOnly checked={!this.state.level} /> Dictionary
+                      <input type="checkbox" name="gameGroup" value="level" readOnly checked = {this.state.level} /> Level
                     </label>
                 </div>
               {
@@ -85,8 +85,10 @@ export class MainGame extends Component {
                     let small = evt.target.value == '12';
                     this.setState({small, size: evt.target.value});
                   }}>Size:
-                  <input type="checkbox" name="sizeChoice" value={12} checked={this.state.small}/> 4x3
-                  <input type="checkbox" name="sizeChoice" value={16} checked={!this.state.small}/> 4x4
+                  <input
+type="checkbox" name="sizeChoice" value={12}
+                  readOnly checked={this.state.small} /> 4x3
+                  <input type="checkbox" name="sizeChoice" value={16}  readOnly checked={!this.state.small} /> 4x4
                   </label>
                 </div>
               </div>

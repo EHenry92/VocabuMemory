@@ -6021,7 +6021,7 @@ var AuthForm = function AuthForm(props) {
             'Email'
           )
         ),
-        _react2.default.createElement('input', { name: 'email', type: 'text' })
+        _react2.default.createElement('input', { name: 'email', type: 'email' })
       ),
       _react2.default.createElement(
         'div',
@@ -6057,13 +6057,6 @@ var AuthForm = function AuthForm(props) {
   );
 };
 
-/**
- * CONTAINER
- *   Note that we have two different sets of 'mapStateToProps' functions -
- *   one for Login, and one for Signup. However, they share the same 'mapDispatchToProps'
- *   function, and share the same Component. This is a good example of how we
- *   can stay DRY with interfaces that are very similar to each other!
- */
 var mapLogin = function mapLogin(state) {
   return {
     name: 'login',
@@ -14377,9 +14370,9 @@ var MainGame = exports.MainGame = function (_Component) {
                       _this2.setState({ level: level, option: evt.target.value, choice: -1 });
                     } },
                   'Choose:',
-                  _react2.default.createElement('input', { type: 'checkbox', name: 'gameGroup', value: 'dictionary', checked: !this.state.level }),
+                  _react2.default.createElement('input', { type: 'checkbox', name: 'gameGroup', value: 'dictionary', readOnly: true, checked: !this.state.level }),
                   ' Dictionary',
-                  _react2.default.createElement('input', { type: 'checkbox', name: 'gameGroup', value: 'level', checked: this.state.level }),
+                  _react2.default.createElement('input', { type: 'checkbox', name: 'gameGroup', value: 'level', readOnly: true, checked: this.state.level }),
                   ' Level'
                 )
               ),
@@ -14441,9 +14434,11 @@ var MainGame = exports.MainGame = function (_Component) {
                       _this2.setState({ small: small, size: evt.target.value });
                     } },
                   'Size:',
-                  _react2.default.createElement('input', { type: 'checkbox', name: 'sizeChoice', value: 12, checked: this.state.small }),
+                  _react2.default.createElement('input', {
+                    type: 'checkbox', name: 'sizeChoice', value: 12,
+                    readOnly: true, checked: this.state.small }),
                   ' 4x3',
-                  _react2.default.createElement('input', { type: 'checkbox', name: 'sizeChoice', value: 16, checked: !this.state.small }),
+                  _react2.default.createElement('input', { type: 'checkbox', name: 'sizeChoice', value: 16, readOnly: true, checked: !this.state.small }),
                   ' 4x4'
                 )
               )

@@ -15306,7 +15306,7 @@ var me = exports.me = function me() {
 
 var auth = exports.auth = function auth(email, password, method, name) {
   return function (dispatch) {
-    return _axios2.default.post('/' + method, { email: email, password: password, name: name }).then(function (res) {
+    return _axios2.default.post('/auth/' + method, { email: email, password: password, name: name }).then(function (res) {
       dispatch(getUser(res.data));
       _history2.default.push('/home');
     }).catch(function (error) {

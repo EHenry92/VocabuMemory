@@ -4,8 +4,9 @@ input,textarea {
   border-style: none none solid none;
   border-color: black;
   font-size: 15px;
-  max-width: 24vw;
+  max-width: 20vw;
   margin: 10px;
+  max-height: 10vh;
 }
 select {
   border-style: none;
@@ -79,6 +80,7 @@ button:disabled{
 #filteredList {
   max-height: 20vh;
   overflow-y: scroll;
+  padding-left: 10px;
 }
 
 

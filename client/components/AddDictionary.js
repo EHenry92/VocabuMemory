@@ -16,6 +16,7 @@ export class AddDictionary extends Component {
     this.del = this.del.bind(this);
   }
   componentWillMount()  {
+    this.props.clearEdit();
     this.props.fetchDictionaries(this.props.userId);
     this.props.fetchWords();
   }

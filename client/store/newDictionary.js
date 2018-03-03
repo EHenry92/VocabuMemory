@@ -67,7 +67,6 @@ export const submitData = (stateData) => dispatch => {
     })
   )
   .then( did => {
-    dispatch(clearEdit())
     history.push(`/dictionary/${did}`)
   })
 }

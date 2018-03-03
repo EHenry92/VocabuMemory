@@ -15308,6 +15308,7 @@ var auth = exports.auth = function auth(email, password, method, name) {
   return function (dispatch) {
     return _axios2.default.post('/auth/' + method, { email: email, password: password, name: name }).then(function (res) {
       dispatch(getUser(res.data));
+    }).then(function (_) {
       _history2.default.push('/home');
     }).catch(function (error) {
       return dispatch(getUser({ error: error }));

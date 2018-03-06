@@ -22,17 +22,16 @@ class Routes extends Component {
       <Router history={history}>
         <Main>
           <Switch>
-            <Route path="/loginSignup" component={LoginSignup} />
-
             {
               isLoggedIn &&
-                //   {/* Routes placed here are only available after logging in */}
                   <Route path="/profile" component={UserHome} />
             }
             {
               isAdmin &&
               <Route path="/controlRoom" component={Admin} />
             }
+                        <Route path="/loginSignup" component={LoginSignup} />
+
             <Route path="/game" component={MainGame} />
             <Route exact path="/dictionaries" component={DictionaryList} />
             <Route path="/dictionary/:id" component={WordList} />

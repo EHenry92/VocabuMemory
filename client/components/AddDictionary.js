@@ -11,7 +11,6 @@ export class AddDictionary extends Component {
     this.selectHandler = this.selectHandler.bind(this);
     this.newWordHandler = this.newWordHandler.bind(this);
     this.newDictHandler = this.newDictHandler.bind(this);
-    this.clearHandler = this.clearHandler.bind(this);
     this.filterIt  = this.filterIt.bind(this);
     this.del = this.del.bind(this);
   }
@@ -63,10 +62,6 @@ export class AddDictionary extends Component {
           word = evt.target.attributes.name.value,
           tempId = this.props.tempIdCount + 1;
       this.props.pickWord({id, word, tempId})
-  }
-  clearHandler(evt) {
-    evt.preventDefault();
-    this.props.clearEdit();
   }
   filterIt(evt) {
     evt.preventDefault();
@@ -167,7 +162,7 @@ export class AddDictionary extends Component {
         </div>
       </div>
         <button onClick={this.submitHandler}> Save Changes </button>
-        <button onClick={this.clearHandler}> Clear </button>
+        <button onClick={() => {this.props.clearEdit();}}> Clear </button>
     </div>
     )
   }

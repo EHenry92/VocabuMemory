@@ -13188,7 +13188,6 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
     _this.selectHandler = _this.selectHandler.bind(_this);
     _this.newWordHandler = _this.newWordHandler.bind(_this);
     _this.newDictHandler = _this.newDictHandler.bind(_this);
-    _this.clearHandler = _this.clearHandler.bind(_this);
     _this.filterIt = _this.filterIt.bind(_this);
     _this.del = _this.del.bind(_this);
     return _this;
@@ -13261,12 +13260,6 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
           word = evt.target.attributes.name.value,
           tempId = this.props.tempIdCount + 1;
       this.props.pickWord({ id: id, word: word, tempId: tempId });
-    }
-  }, {
-    key: 'clearHandler',
-    value: function clearHandler(evt) {
-      evt.preventDefault();
-      this.props.clearEdit();
     }
   }, {
     key: 'filterIt',
@@ -13474,7 +13467,9 @@ var AddDictionary = exports.AddDictionary = function (_Component) {
         ),
         _react2.default.createElement(
           'button',
-          { onClick: this.clearHandler },
+          { onClick: function onClick() {
+              _this2.props.clearEdit();
+            } },
           ' Clear '
         )
       );

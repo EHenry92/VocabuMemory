@@ -1,12 +1,16 @@
 import React from 'react';
+import {PopOverlay} from './common'
+
 
 export default function Results (props) {
       let rate = (props.matches.length * 200 / props.clickCounter);
 
         return (
-          <div className="popup">
-        <div className="popup_inner">
-        <button onClick={props.closePopup}>X</button>
+          <PopOverlay
+            onClose = {props.closePopup}
+            closeText = {'X'}
+            headerText={'Vocabumemory'}
+          >
           {
             rate >= 65 &&
             <div>
@@ -37,7 +41,7 @@ export default function Results (props) {
               }
               </ul>
               </div>
-        </div>
-      </div>
+        </PopOverlay>
+
         )
 }
